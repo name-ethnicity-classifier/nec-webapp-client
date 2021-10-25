@@ -1,0 +1,380 @@
+
+.modelSubmissionBox {
+    position: absolute;
+    width: 100%;
+    height: 1350px;
+    background-color: rgb(255, 255, 255);
+    left: 0px;
+    top: 0px;
+}
+
+
+.modelSubmissionTitle {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 27px;
+    left: 0px;
+    top: -5px;
+    width: 1417px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(224, 224, 224);
+}
+
+
+/* "request model" request box */
+.requestModelBox {
+    position: absolute;
+    width: 1000px;
+    height: 800px;
+    top: 70px;
+    left: 440px;
+    float: left;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.requestModelTitle {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 25px;
+    left: 10px;
+    top: -5px;
+}
+
+/* dataset name text field */
+.modelNameBox {
+    position: absolute;
+    top: 77px;
+    left: 7px;
+    width: 980px;
+    height: 45px;
+    background-color: white;
+}
+
+.modelNameTitle {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 22px;
+    top: -25px;
+    left: 17px;
+}
+
+.modelNameField {
+    position: absolute;
+    left: 15px;
+    top: 27px;
+    width: 929px;
+    height: 26px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+    border-bottom: solid 2px rgb(224, 224, 224);
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.modelNameField:hover, .modelNameField:focus {
+    background-color: rgb(243, 243, 243);
+    left: 12px;
+    width: 931px;
+    border-radius: 20px;
+    padding-left: 13px;
+    transition: all .15s ease-out;
+}
+
+.modelNameField::placeholder {
+    color:rgb(180, 180, 180);
+}
+
+
+
+.minimizeHelpBoxButton {
+    position: absolute;
+    outline: none;
+    right: -1px;
+    background-color: transparent;
+    border: none;
+    top: 18px;
+
+}
+
+/* custom dataset present and edit box */
+.customDatasetBox {
+    position: absolute;
+    left: 7px;
+    top: 155px;
+    background-color: rgb(255, 255, 255);
+    width: 980px;
+    height: 300px;
+    /*border-bottom: solid 2px rgb(224, 224, 224);*/
+}
+
+.customDatasetTitle {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 22px;
+    left: 17px;
+}
+
+.customDatasetPresentBox {
+    position: absolute;
+    width: 938px;
+    height: 75%;
+    top: 55px;
+    left: 17px;
+    background-color: white;
+    border-top: solid 2px rgb(224, 224, 224);
+    border-bottom: solid 2px rgb(224, 224, 224);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.editDatasetButton {
+    position: absolute;
+    font-size: 20px;
+    background: linear-gradient(to bottom right, rgb(72, 83, 235) 30%, rgb(138, 65, 255)); /* 90 90 90 */
+    border: none;
+    top: 14px;
+    right: 25px;
+    border-radius: 3px;
+    color: white;
+    height: 30px;
+    width: 85px;
+    padding-top: 0px;
+
+    outline: none;
+}
+
+.editDatasetButton:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.editDatasetButton:active {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    font-size: 19px;
+}
+
+.datasetInstructionText {
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    top: 80px;
+    color: rgb(170, 170, 170);
+}
+
+.chosenNationalityText {
+    position: relative;
+    display: inline-block;
+    scroll-margin: 0px;
+    text-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 20px;
+    margin-bottom: -20px;
+    margin-right: 5px;
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    color: rgb(63, 63, 63);
+    border-color: rgb(243, 243, 243);
+    outline: none;
+}
+
+.chosenNationalityText:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+/* dataset information box */
+.datasetInformationBox {
+    position: absolute;
+    left: 7px;
+    top: 460px;
+    background-color: white;
+    width: 980px;
+    height: 230px;
+    /*border-bottom: solid 2px rgb(224, 224, 224);*/
+}
+
+.datasetInformationTitle {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 22px;
+    left: 17px;
+    top: -0px;
+}
+
+
+.datasetInformationTable {
+    position: absolute;
+    top: 50px;
+    left: 17px;
+    border: none;
+    font-size: 20px;
+    border-spacing: 0px;
+    color: rgb(63, 63, 63);
+}
+
+.infoKey {
+    width: 630px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-bottom: solid;
+    border-right: solid;
+    border-width: 1px;
+    border-color: rgb(202, 202, 202);
+}
+
+.infoValue {
+    border-bottom: solid;
+    border-width: 1px;
+    width: 268px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-color: rgb(202, 202, 202);
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.infoDatasetName {
+    border-bottom: solid;
+    border-width: 1px;
+    width: 255px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-color: rgb(202, 202, 202);
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+
+.requestModelButton {
+    position: absolute;
+    left: calc(50% - 80px);
+    top: 715px;
+}
+
+.requestedTitle {
+    position: absolute;
+    font-size: 50px;
+    color: rgb(0, 218, 189);
+    left: 140px;
+    top: 100px;
+}
+
+.requestButtonShadow {
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 725px;
+    width: 178px;
+    height: 68px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+}
+
+.confirmationBox {
+    position: fixed;
+    background-color: white;
+    border-radius: 7px;
+    width: 650px;
+    height: 340px;
+    top: 300px;
+    left: calc(50% - 325px);
+    float: left;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    z-index: 12000;
+}
+
+.confirmationTitle {
+    position: absolute;
+    color: rgb(50, 50, 50);
+    font-size: 23px;
+    padding-left: 30px;
+    padding-right: 30px;
+    top: 10px;
+    text-align: center;
+}
+
+
+.confirmationText {
+    position: absolute;
+    color: rgb(39, 39, 39);
+    font-size: 20px;
+    left: 75px;
+    right: 75px;
+    top: 105px;
+    text-align: center;
+
+}
+
+.confirmRequestButton, .cancelRequestButton {
+    position: absolute;
+    top: 248px;
+    width: 130px;
+    height: 50px;
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.confirmRequestButton {
+    left: 120px;
+    background-color: rgb(44, 107, 231);
+}
+
+.cancelRequestButton {
+    right: 120px;
+    background-color: rgb(238, 79, 79);
+}
+
+.confirmRequestButton:hover, .cancelRequestButton:hover {
+    font-size: 22px;
+}
+
+.confirmRequestButton:active, .cancelRequestButton:active {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.confirmationPopupOverlay {
+    position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 10000;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.65;
+}
+
+
+

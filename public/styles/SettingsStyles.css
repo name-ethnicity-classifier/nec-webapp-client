@@ -1,0 +1,324 @@
+
+.settingsBox {
+    position: fixed;
+    right: 19px;
+    top: 15px;
+    height: 946px;
+    width: 368px;
+    background-color: white;
+    z-index: 20;
+    border-radius: 7px;
+}
+
+.slideInRight {
+    grid-column: 1 / 4;
+    transform: translateX(+100%);
+    transition: transform 225ms ease-in;
+}
+
+.slideInRight.appear {
+    transform: translateX(0%);
+}
+
+.closeSettingsButton {
+    position: absolute;
+    top: 10px;
+    left: 7px;
+    outline: none;
+    right: -1px;
+    background-color: transparent;
+    border: none;
+}
+
+.closeIcon {
+    height: 30px;
+    border-radius: 50%;
+    transition: all .1s ease-out;
+}
+
+.closeIcon:hover {
+    transition: all .1s ease-out;
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 1);
+}
+
+.userSettingsBox {
+    position: relative;
+    top: 50px;
+    padding-top: 10px;
+    width: 100%;
+    height: 290px;
+    background-color: white;
+    border-top: solid 2px rgb(230, 230, 230);
+}
+
+.settingsTitle {
+    position: relative;
+    top: -7px;
+    left: 20px;
+    font-size: 25px;
+    color: rgb(63, 63, 63);
+    margin-bottom: 7px;
+}
+
+.settingButton {
+    position: relative;
+    left: 20px;
+    width: 330px;
+    height: 60px;
+    text-align: left;
+    padding-left: 5px;
+    outline: none;
+    border: none;
+    background-color: white;
+    border-bottom: solid 1px rgb(231, 231, 231);
+}
+
+.settingText {
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(63, 63, 63);
+}
+
+#firstBox {
+    border-top: solid 1px rgb(231, 231, 231);
+}
+
+.settingButton:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.settingButton:active {
+    background-color: rgb(235, 235, 235);
+    transition: all .085s ease-out;
+}
+
+.settingsIcon {
+    position: absolute;
+    left: 9px;
+    top: 17px;
+    height: 25px;
+    padding-right: 30px;
+}
+
+
+/* contact section */
+.contactBox {
+    position: relative;
+    top: 35px;
+    width: 100%;
+    height: 470px;
+    background-color: white;
+    /*border-bottom: solid 2px rgb(224, 224, 224);*/
+}
+
+.contactSection {
+    position: relative;
+    left: 20px;
+    width: 330px;
+    height: 60px;
+    padding-left: 5px;
+    background-color: white;
+    border-bottom: solid 1px rgb(231, 231, 231);
+}
+
+.contactSectionTitle {
+    position: absolute;
+    top: 3px;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(63, 63, 63);
+}
+
+.contactSectionText {
+    position: absolute;
+    left: 115px;
+    top: 2px;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(63, 63, 63);
+}
+
+#linkText {
+    top: 20px;
+}
+
+.contactInquirySection {
+    position: relative;
+    left: 20px;
+    top: -17px;
+    width: 330px;
+    height: 215px;
+    padding-left: 5px;
+    background-color: white;
+    border-bottom: solid 1px rgb(224, 224, 224);
+}
+
+.contactInquiryText {
+    position: relative;
+    left: 12px;
+    top: 55px;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(63, 63, 63);
+}
+
+
+/* setting popup */
+.settingPopup {
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: calc(50% - 1280px);
+    float: left;
+    transform: translate(+25%, -50%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    z-index: 12000;
+    font-family: inherit;
+}
+
+.settingPopupTitle {
+    position: relative;
+    color: rgb(63, 63, 63);
+    font-size: 28px;
+    left: 0px;
+    padding-left: 22px;
+    padding-bottom: 12px;
+    top: -5px;
+    width: calc(100% - 22px);
+    display: inline-block;
+    border-bottom: solid 2px rgb(224, 224, 224);
+}
+
+.authField {
+    position: absolute;
+    left: 74px;
+    border-radius: 5px;
+    border: solid 1px rgb(195, 195, 195);
+    height: 35px;
+    width: 322px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    font-family: inherit;
+    font-size: 16px;
+    padding-left: 12px;
+    outline: none;
+}
+
+.authLabel {
+    position: absolute;
+    top: 90px;
+    left: 74px;
+    font-weight: 600;
+    font-size: 17px;
+    color: rgb(50, 50, 50); 
+}
+
+/* change password */
+
+.oldPasswordLabel {
+    top: 90px;
+}
+.oldPasswordField {
+    top: 120px;
+}
+
+
+.newPasswordLabel {
+    top: 190px;
+}
+.newPasswordField {
+    top: 220px;
+}
+
+
+.newRepeatedPasswordLabel {
+    top: 290px;
+}
+.newRepeatedPasswordField {
+    top: 320px;
+}
+
+.oldPasswordField:focus, .newPasswordField:focus, .newRepeatedPasswordField:focus {
+    border-color: rgb(86, 97, 250, 0.5);
+    box-shadow: 1px 2px 4px rgba(86, 97, 250, 0.5);
+}
+
+.submitNewPasswordButton {
+    position: absolute;
+    top: 405px;
+    left: calc(50% - 60px);
+}
+
+/* delete user */
+.confirmationPasswordLabel {
+    top: 130px;
+}
+
+.confirmationPasswordField {
+    top: 160px;
+}
+
+.confirmationPasswordField:focus {
+    border-color: rgb(86, 97, 250, 0.5);
+    box-shadow: 1px 2px 4px rgba(86, 97, 250, 0.5);
+}
+
+.confirmDeletionText {
+    position: absolute;
+    top: 240px;
+    width: 350px;
+    left: 77px;
+    font-family: inherit;
+    font-size: 17px;
+    color: rgb(50, 50, 50); 
+}
+
+.confirmDeletionButton {
+    position: absolute;
+    top: 310px;
+    left: calc(50% - 55px);
+    width: 110px;
+    height: 45px;
+    font-size: 22px;
+    font-family: inherit;
+    background-color: rgb(248, 54, 54);
+    border: none;
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.confirmDeletionButton:hover {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.confirmDeletionButton:active {
+    font-size: 23px;
+}
+
+.cancelDeletionButton {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 30px);
+    outline: none;
+    font-family: inherit;
+    border: none;
+    font-size: 18px;
+    color: rgb(100, 100, 100);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.cancelDeletionButton:hover {
+    color: rgb(150, 150, 150);
+}
+
+.cancelDeletionButton:active {
+    bottom: 10px;
+    left: calc(50% - 29px);
+    font-size: 17px;
+}

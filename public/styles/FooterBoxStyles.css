@@ -1,0 +1,55 @@
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 280px;
+    z-index: 4;
+    /*background-color: rgb(63, 63, 63);*/
+    background: linear-gradient(to bottom right, rgb(72, 83, 235) 30%, rgb(138, 65, 255));
+    clip-path: polygon(0% 0%, 100% 25%, 100% 100%, 0 100%);
+}
+
+.footerTitle {
+    position: relative;
+    top: 50px;
+    left: calc(50% - 151px);
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.footerLinks {
+    position: relative;
+    left: calc(50% - 50px);
+    top: 50px;
+    width: 100px;
+    height: 35px;
+}
+
+.sponsorButton {
+    padding-right: 15px;
+}
+
+.githubButton {
+    padding-left: 15px;
+}
+
+.authorParagraph {
+    position: relative;
+    left: calc(50% - 250px);
+    width: 500px;
+    top: 5px;
+    text-align: center;
+    color: rgb(201, 201, 201);
+}
+
+.copyRightParagraph {
+    position: relative;
+    left: calc(50% - 250px);
+    width: 500px;
+    text-align: center;
+    color: rgb(201, 201, 201);
+}

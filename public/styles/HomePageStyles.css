@@ -1,0 +1,750 @@
+
+.homePageBox {
+    position: absolute;
+    height: 3800px;
+    background-color: rgb(255, 255, 255);
+    left: 0px;
+    width: 100%;
+    top: 40px;
+}
+
+.startBackground {
+    position: relative;
+    top: -2vw;
+    left: 0px;
+    height: 34.3vw;
+    right: 0px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom right, rgb(72, 83, 235) 30%, rgb(138, 65, 255));
+}
+
+.earthPinIllustration {
+    position: absolute;
+    top: 8.25vw;
+    right: 9vw;
+    height: 24vw;
+}
+
+/* possible gradients:
+    linear-gradient(to bottom right, rgb(27, 59, 148), rgb(115, 185, 164))
+    linear-gradient(to bottom right, rgb(27, 59, 148), rgb(190, 88, 177))
+    linear-gradient(to bottom right, rgb(120, 151, 236), rgb(91, 52, 141))
+    linear-gradient(to bottom right, rgb(32, 79, 207), rgb(28, 219, 187))
+    linear-gradient(to bottom right, rgb(32, 79, 207), rgb(250, 185, 164))
+    linear-gradient(to bottom right, rgb(32, 79, 207), rgb(109, 207, 211))
+    linear-gradient(to bottom right, rgb(43, 57, 241), rgb(123, 83, 218))
+    linear-gradient(to bottom right, rgb(31, 79, 212) 20%, rgb(137, 183, 235))
+    linear-gradient(to bottom right, rgb(45, 85, 214) 30%, rgb(37, 197, 189))
+*/
+
+.startBox {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 37.5vw;
+    height: 18vw;
+    left: 13.5vw;
+    background-color: rgba(245, 218, 218, 0);
+    top: 6vw;
+    font-size: 20px;
+}
+
+.startText {
+    position: absolute;
+    font-size: 1.775vw;
+    color: white;
+    text-align: center;
+    line-height: 2.75vw;
+}
+
+.startSubText {
+    position: absolute;
+    top: 11.5vw;
+    font-size: 1.1vw;
+    color: white;
+    font-weight: 400;
+}
+
+.startButton {
+    position: absolute;
+    top: 14.7vw;
+    left: 13.5vw;
+    height: 2.85vw;
+    width: 10.45vw;
+    border: solid 0.1vw white;
+    background-color: transparent;
+    border-radius: 0.3vw;
+    font-size: 1.1vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    text-align: center;
+    outline: none;
+    z-index: 3;
+}
+
+.startButton:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.startButton:active {
+    top: calc(14.7vw + 0.4vw);
+    left: calc(13.5vw + 0.4vw);
+    -moz-transition: all .035s ease-out;
+    -o-transition: all .035s ease-out;
+    -webkit-transition: all .035s ease-out;
+    transition: all .035s ease-out;
+}
+
+.startButtonShadow {
+    position: absolute;
+    top: calc(14.7vw + 0.4vw);
+    left: calc(13.5vw + 0.4vw);
+    height: 2.85vw;
+    width: 10.45vw;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.4vw;
+}
+
+.informationButtonBox {
+    position: absolute;
+    top: 35vw;
+    left: 12.75vw;
+    right: 12.75vw;
+    height: 300px;
+    background-color: rgba(207, 121, 241, 0);
+}
+
+/* nationality amount button */
+.nationalityAmountButton {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 19.75vw;
+    height: 7.8vw;
+    outline: none;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(225, 225, 225);
+    color: rgb(63, 63, 63);
+    z-index: 3;
+    transition: all .065s ease-out;
+}
+
+.nationalityAmountButton:hover {
+    top: -0.6vw;
+    left: -0.6vw;
+    background-color: transparent;
+    border-color: rgb(200, 200, 200);
+    transition: all .065s ease-out;
+}
+
+.nationalityAmountText {
+    position: absolute;
+    font-size: 5vw;
+    top: -2.2vw;
+    left: 2.1vw;
+    display: inline-block;
+}
+
+.nationalityAmountExplaination {
+    position: absolute;
+    font-size: 1.4vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 10vw;
+    top: 1.3vw;
+    left: 9.25vw;
+    text-align: left;
+    font-weight: 400;
+}
+
+.shadowBox1 {
+    position: absolute;
+    left: 0px;
+    width: 19.75vw;
+    height: 7.8vw;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* model amount button */
+.modelAmountButton {
+    position: absolute;
+    top: 0px;
+    right: calc(50% - 9.75vw);
+    width: 19.75vw;
+    height: 7.8vw;
+    outline: none;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(225, 225, 225);
+    z-index: 3;
+    transition: all .065s ease-out;
+}
+
+.modelAmountButton:hover {
+    top: -0.6vw;
+    right: calc(50% - 9.75vw + 0.7vw);
+    background-color: rgba(68, 71, 255, 0.045);
+    background-color: transparent;
+    border-color: rgb(200, 200, 200);
+    transition: all .065s ease-out;
+}
+
+.modelAmountText {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 5vw;
+    top: -2.2vw;
+    left: 2.1vw;
+    display: inline-block;
+}
+
+.modelAmountExplaination {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-size: 1.4vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 10vw;
+    top: 1.3vw;
+    right: 1.5vw;
+    text-align: left;
+    font-weight: 400;
+}
+
+.shadowBox2 {
+    position: absolute;
+    right: calc(50% - 9.75vw);
+    width: 19.75vw;
+    height: 7.8vw;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* user models */
+.userStatsButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 19.75vw;
+    height: 7.8vw;
+    outline: none;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(225, 225, 225);
+    z-index: 3;
+    transition: all .065s ease-out;
+}
+
+.userStatsText {
+    position: absolute;
+    color: rgb(63, 63, 63);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vw;
+    top: -2.2vw;
+    left: 2.1vw;
+    display: inline-block;
+}
+
+.userStatsExplaination {
+    position: absolute;
+    font-size: 1.4vw;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 10vw;
+    top: 2.25vw;
+    right: 1vw;
+    text-align: left;
+    font-weight: 400;
+}
+
+.userStatsButton:hover {
+    top: -0.6vw;
+    right: 0.6vw;
+    background-color: rgba(68, 71, 255, 0.045);
+    background-color: transparent;
+    border-color: rgb(200, 200, 200);
+    transition: all .065s ease-out;
+}
+
+.shadowBox3 {
+    position: absolute;
+    right: 0px;
+    width: 19.75vw;
+    height: 7.8vw;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* buttons end */
+
+.aboutBox {
+    position: absolute;
+    top: 880px;
+    left: calc(50% - 725px);
+    right: 100px;
+    height: 700px;
+    width: 1435px;
+    background-color: transparent;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: rgb(235, 235, 235);
+}
+
+.slideBox {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    width: 100%;
+    height: 700px;
+}
+
+.slideInBottom {
+    grid-column: 1 / 4;
+    transform: translateY(25%);
+    opacity: 0;
+    transition: opacity 550ms ease-in, transform 550ms ease-in;
+}
+
+.slideInBottom.appear {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.slideInTop {
+    grid-column: 2 / 4;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 800ms ease-in, transform 800ms ease-in;
+}
+
+.slideInTop.appear {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.slideInRight {
+    transform: translateY(0%);
+    opacity: 0;
+    transition: opacity 800ms ease-in, transform 800ms ease-in;
+}
+
+.slideInRight.appear {
+    opacity: 1;
+}
+
+
+.aboutSectionTitle {
+    position: relative;
+    left: calc(50% - 80px);
+    padding-top: 50px;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(50, 50, 50);
+    display: inline-block;
+}
+
+
+.aboutMotivationBox {
+    position: absolute;
+    top: 200px;
+    left: calc(50% - 250px);
+    width: 450px;
+    height: 450px;
+    border: none;
+    border-radius: 5px;
+    border: solid rgb(226, 231, 255) 1px;
+    padding: 30px;
+    z-index: 3;
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.aboutMotivationBox:hover {
+    top: calc(200px - 15px);
+    left: calc(50% - 250px - 20px);
+    width: calc(450px + 40px);
+    height: calc(450px + 40px);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+
+.aboutProjectBox {
+    position: absolute;
+    top: 450px;
+    left: calc(50% - 250px - 550px);
+    width: 450px;
+    height: 450px;
+    border: none;
+    border-radius: 5px;
+    border: solid rgb(226, 231, 255) 1px;
+    padding: 30px;
+    z-index: 3;
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.aboutProjectBox:hover {
+    top: calc(450px - 15px);
+    left: calc(50% - 250px - 550px - 20px);
+    width: calc(450px + 40px);
+    height: calc(450px + 40px);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.aboutUsBox {
+    position: absolute;
+    top: 450px;
+    left: calc(50% - 250px + 550px);
+    width: 450px;
+    height: 450px;
+    border-radius: 5px;
+    border: solid rgb(226, 231, 255) 1px;
+    padding: 30px;
+    z-index: 3;
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.aboutUsBox:hover {
+    top: calc(450px - 15px);
+    left: calc(50% - 250px + 550px - 20px);
+    width: calc(450px + 40px);
+    height: calc(450px + 40px);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+
+.aboutSponsorButton {
+    position: absolute;
+    top: 200px;
+    height: 4px;
+}
+
+
+.aboutSubTitle {
+    position: relative;
+    color: rgb(56, 56, 56);
+    top: -25px;
+    left: 2%;
+}
+
+.aboutText {
+    position: relative;
+    top: -30px;
+    left: calc(50% - 225px);
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(56, 56, 56);
+    text-align: justify;
+    line-height: 35px;
+    width: 450px;
+}
+
+.aboutButtonBox {
+    position: absolute;
+    width: 200px;
+    left: calc(50% - 100px);
+    top: 750px;
+}
+
+.aboutButton {
+    position: absolute;
+    width: 144px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    left: calc(50% - 74px);
+    background-color: rgb(255, 255, 255);
+    color: rgb(115, 129, 211);
+    font-family: inherit;
+    font-size: 17px;
+    border: white;
+    outline: none;
+}
+
+.lowerAboutButton {
+    top: 50px;
+}
+
+.aboutButton:hover {
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    border: solid rgb(226, 231, 255) 1px;
+    border-radius: 4px;
+}
+
+.upperAboutButton:hover {
+    top: -1px;
+}
+
+.lowerAboutButton:hover {
+    top: 49px;
+}
+
+.aboutButton:active {
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.225);
+}
+
+.aboutPopupBox {
+    position: absolute;
+    top: 719px;
+    left: calc(50% - 250px);
+    width: 450px;
+    height: 150px;
+    border: none;
+    border-radius: 5px;
+    border: solid rgb(226, 231, 255) 1px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.closeAboutInfoButton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    outline: none;
+}
+
+.closeAboutBoxIcon {
+    border-radius: 50%;
+}
+
+.closeAboutBoxIcon:hover {
+    box-shadow: 0px 0px 10px -3px rgb(0, 89, 255);
+}
+
+
+.analyticsIllustration {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    right: 100px;
+    height: 240px;
+}
+
+.peopleIllustration {
+    position: absolute;
+    top: 165px;
+    left: 1120px;
+    right: 100px;
+    height: 225px;
+}
+
+
+.explainationBackground {
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    width: 600px;
+    height: 600px;
+    background-color: wheat;
+}
+
+.explainationBox {
+    position: relative;
+    top: 1300px;
+    left: calc(50% - 725px);
+    right: 100px;
+    height: 1000px;
+    width: 1435px;
+    border-top: 2px solid rgb(235, 235, 235);
+}
+
+.explainationBoxTitle {
+    position: relative;
+    left: calc(50% - 125px);
+    padding-top: 50px;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(50, 50, 50);
+    display: inline-block;
+}
+
+
+.publishIllustration {
+    position: absolute;
+    top: 200px;
+    right: 150px;
+    height: 300px;
+}
+
+.whenToUsePoints {
+    position: relative;
+    top: -15px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(56, 56, 56);
+    text-align: justify;
+    line-height: 30px;
+    width: 200px;
+}
+
+.howToClassifyBox {
+    position: absolute;
+    top: 600px;
+    left: 0px;
+    width: 718px;
+    height: 850px;
+    bottom: 30px;
+    border-right: 2px solid rgb(235, 235, 235);
+    z-index: 1;
+}
+
+.howToRequestBox {
+    position: absolute;
+    top: 600px;
+    left: 720px;
+    padding-left: 110px;
+    width: 600px;
+    height: 850px;
+    bottom: 30px;
+}
+
+.explainationTitle {
+    position: relative;
+    top: -20px;
+    left: 0px;
+    font-size: 23px;
+    color: rgb(50, 50, 50);
+}
+
+.explainationText {
+    position: relative;
+    top: -10px;
+    left: 0px;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(56, 56, 56);
+    text-align: justify;
+    line-height: 30px;
+    width: 600px;
+}
+
+.neuralNetworkImage {
+    position: absolute;
+    width: 12%;
+    top: 510px;
+    left: calc(50% - 84px);
+
+}
+
+.inputTableImage {
+    position: absolute;
+    top: 257px;
+    left: calc(50% - 250px);
+    border: solid rgb(215, 222, 255) 1px;
+    transition: all .15s ease-out;
+    /*box-shadow: 0px 0px 20px rgba(0, 89, 255, 0.25);*/
+}
+
+#outputTableExlaination {
+    top: 170px;
+}
+
+.outputTableImage {
+    position: absolute;
+    top: 502px;
+    left: calc(50% - 250px);
+    border: solid rgb(215, 222, 255) 1px;
+    /*box-shadow: 0px 0px 20px rgba(0, 89, 255, 0.25);*/
+    transition: all .15s ease-out;
+}
+
+.explainationPoint {
+    position: relative;
+    top: -10px;
+    left: 20px;
+    font-size: 16px;
+    width: 500px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid rgb(215, 222, 255);
+    transition: all .15s ease-out;
+    /*box-shadow: 0px 0px 10px rgba(0, 89, 255, 0.25);*/
+}
+
+
+.explainationSection1 {
+    position: absolute;
+    left: -30px;
+    top: 160px;
+    height: 500px;
+    width: 700px;
+    text-align: justify;
+}
+
+.explainationSection2 {
+    position: absolute;
+    left: 775px;
+    top: 160px;
+    height: 500px;
+    width: 700px;
+    text-align: justify;
+}
+
+.explainationSubBox {
+    position: absolute;
+    border: solid rgb(218, 223, 255) 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(9, 55, 139, 0.2);
+}
+
+#topLeft {
+    top: 75px;
+    left: 0px;
+    height: 200px;
+    width: 400px;
+}
+
+#topRight {
+    top: 75px;
+    left: 430px;
+    height: 300px;
+    width: 400px;
+}
+
+#bottomLeft {
+    top: 305px;
+    left: 0px;
+    height: 415px;
+    width: 400px;
+}
+
+#bottomRight {
+    top: 420px;
+    left: 430px;
+    height: 300px;
+    width: 400px;
+}
+
+
+

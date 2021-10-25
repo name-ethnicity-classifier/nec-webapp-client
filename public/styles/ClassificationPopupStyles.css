@@ -1,0 +1,137 @@
+
+.classificationPopup {
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% + 450px);
+    width: 550px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 20000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.classificationTitleBox {
+    position: absolute;
+    left: 00px;
+    right: 00px;
+    height: 55px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35);
+}
+
+/* cancel classification button */
+.cancelClassificationButton {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 30px);
+    outline: none;
+    font-family: inherit;
+    border: none;
+    font-size: 18px;
+    color: rgb(100, 100, 100);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.cancelClassificationButton:hover {
+    color: rgb(150, 150, 150);
+}
+
+.cancelClassificationButton:active {
+    bottom: 10px;
+    left: calc(50% - 29px);
+    font-size: 17px;
+}
+
+/* file name present title */
+.classificationProcessTitle {
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    font-size: 23px;
+    top: -2px;
+    font-weight: 600;
+    color: rgb(63, 63, 63);
+}
+
+/* classify button */
+.classifyButton, .downloadButton {
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 130px);
+    height: 115px;
+    width: 260px;
+    border: solid 6px rgb(79, 138, 255);
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 40px;
+    font-family: inherit;
+    color: rgb(79, 138, 255);
+    text-align: center;
+    font-weight: 600;
+    outline: none;
+    z-index: 30000;
+    -moz-transition: all .045s ease-out;
+    -o-transition: all .045s ease-out;
+    -webkit-transition: all .045s ease-out;
+    transition: all .045s ease-out;
+}
+
+.classifyButton:hover, .downloadButton:hover {
+    font-size: 41px;
+}
+
+.classifyButton:active, .downloadButton:active {
+    top: 108px;
+    left: calc(50% - 120px);
+    -moz-transition: all .045s ease-out;
+    -o-transition: all .045s ease-out;
+    -webkit-transition: all .045s ease-out;
+    transition: all .045s ease-out;
+}
+
+.downloadButton {
+    color: rgb(57, 226, 204);
+    border-color: rgb(57, 226, 204);
+}
+
+.clicked {
+    color: rgb(160, 160, 160) !important;
+    border-color: rgb(160, 160, 160) !important;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.clicked:hover {
+    font-size: 40px !important;
+
+}
+
+.clicked:active {
+    top: 100px !important;
+    left: calc(50% - 130px) !important;
+    height: 115px !important;
+    width: 260px !important;
+}
+
+.loadingGif {
+    position: absolute;
+    top: 77px;
+    height: 180px; 
+    left: calc(50% - 93px);
+}
+
+
+.buttonShadowBox {
+    position: absolute;
+    top: 114px;
+    left: calc(50% - 116px);
+    height: 110px;
+    width: 256px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.11);
+}
