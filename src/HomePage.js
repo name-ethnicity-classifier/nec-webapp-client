@@ -283,16 +283,13 @@ export default class HomePageBox extends React.Component {
                         <div className="aboutUsBox">
                             <h1 className="aboutSubTitle">... us</h1>
 
-                            <h1 className="aboutText">
+                            <h1 className="aboutText aboutPadding">
                                 <b>Lena Hafner</b> - Phd. student in social economics, Cambridge University
                             </h1>
-                            
-                            <br/><br/>
-                            <h1 className="aboutText">
+                            <h1 className="aboutText aboutPadding">
                                 <b>Franziska Hafner</b> - BSc. student in politics and computer science, University Of Scottland
                             </h1>
 
-                            <br/><br/>
                             <h1 className="aboutText">
                                 <b>Theodor Peifer</b> - BSc. student in data science and machine learning, Technical University Ingolstadt
                             </h1>

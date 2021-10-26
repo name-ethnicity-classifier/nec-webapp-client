@@ -46,18 +46,44 @@
     width: 37.5vw;
     height: 18vw;
     left: 13.5vw;
-    background-color: rgba(245, 218, 218, 0);
+    background-color: rgba(245, 218, 218, 0.274);
     top: 6vw;
-    font-size: 20px;
+    font-size: 1.775vw;
 }
 
 .startText {
     position: absolute;
-    font-size: 1.775vw;
+    font-size: 1em;
     color: white;
     text-align: center;
     line-height: 2.75vw;
 }
+
+
+@media (max-width: 1000px) {
+    .startBox {
+        width: 500px;
+        height: 200px;
+        top: 50px;
+        left: calc(50% - 250px);
+        margin: 0 auto;
+        font-size: 25px;
+    }
+
+    .startText {
+        top: -15px;
+        line-height: 40px;
+    }
+
+    .earthPinIllustration {
+        display: none;
+    }
+
+    .startBackground {
+        height: 360px;
+    }
+}
+
 
 .startSubText {
     position: absolute;
@@ -282,11 +308,10 @@
 
 .aboutBox {
     position: absolute;
-    top: 880px;
-    left: calc(50% - 725px);
-    right: 100px;
-    height: 700px;
-    width: 1435px;
+    top: 46vw;
+    left: 12.75vw;
+    right: 12.75vw;
+    height: 50px;
     background-color: transparent;
     border-top-style: solid;
     border-top-width: 2px;
@@ -338,8 +363,8 @@
 
 .aboutSectionTitle {
     position: relative;
-    left: calc(50% - 80px);
-    padding-top: 50px;
+    left: 32.5vw;
+    padding-top: 3vw;
     font-size: 50px;
     font-weight: 600;
     color: rgb(50, 50, 50);
@@ -349,16 +374,16 @@
 
 .aboutMotivationBox {
     position: absolute;
-    top: 200px;
-    left: calc(50% - 250px);
-    width: 450px;
-    height: 450px;
+    top: 11vw;
+    left: 23.15vw;
+    width: 24vw;
+    height: 24vw;
     border: none;
-    border-radius: 5px;
-    border: solid rgb(226, 231, 255) 1px;
-    padding: 30px;
+    border-radius: 0.3vw;
+    border: solid rgb(226, 231, 255) 0.1vw;
+    padding: 2vw;
     z-index: 3;
-    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    box-shadow: 0 0 2vw rgba(12, 64, 160, 0.15);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
@@ -366,10 +391,10 @@
 }
 
 .aboutMotivationBox:hover {
-    top: calc(200px - 15px);
-    left: calc(50% - 250px - 20px);
-    width: calc(450px + 40px);
-    height: calc(450px + 40px);
+    top: calc(11vw - 0.8vw);
+    left: calc(23.15vw - 0.8vw);
+    width: calc(24vw + 1.6vw);
+    height: calc(24vw + 1.6vw);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
@@ -379,16 +404,16 @@
 
 .aboutProjectBox {
     position: absolute;
-    top: 450px;
-    left: calc(50% - 250px - 550px);
-    width: 450px;
-    height: 450px;
+    top: 24vw;
+    left: -7vw;
+    width: 24vw;
+    height: 24vw;
     border: none;
-    border-radius: 5px;
-    border: solid rgb(226, 231, 255) 1px;
-    padding: 30px;
+    border-radius: 0.3vw;
+    border: solid rgb(226, 231, 255) 0.1vw;
+    padding: 2vw;
     z-index: 3;
-    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    box-shadow: 0 0 2vw rgba(12, 64, 160, 0.15);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
@@ -396,10 +421,10 @@
 }
 
 .aboutProjectBox:hover {
-    top: calc(450px - 15px);
-    left: calc(50% - 250px - 550px - 20px);
-    width: calc(450px + 40px);
-    height: calc(450px + 40px);
+    top: calc(24vw - 0.8vw);
+    left: calc(-7vw - 0.8vw);
+    width: calc(24vw + 1.6vw);
+    height: calc(24vw + 1.6vw);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
@@ -408,15 +433,16 @@
 
 .aboutUsBox {
     position: absolute;
-    top: 450px;
-    left: calc(50% - 250px + 550px);
-    width: 450px;
-    height: 450px;
-    border-radius: 5px;
-    border: solid rgb(226, 231, 255) 1px;
-    padding: 30px;
+    top: 24vw;
+    right: -7vw;
+    width: 24vw;
+    height: 24vw;
+    border: none;
+    border-radius: 0.3vw;
+    border: solid rgb(226, 231, 255) 0.1vw;
+    padding: 2vw;
     z-index: 3;
-    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    box-shadow: 0 0 2vw rgba(12, 64, 160, 0.15);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
@@ -424,10 +450,10 @@
 }
 
 .aboutUsBox:hover {
-    top: calc(450px - 15px);
-    left: calc(50% - 250px + 550px - 20px);
-    width: calc(450px + 40px);
-    height: calc(450px + 40px);
+    top: calc(24vw - 0.8vw);
+    right: calc(-7vw - 0.8vw);
+    width: calc(24vw + 1.6vw);
+    height: calc(24vw + 1.6vw);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
     -webkit-transition: all .15s ease-out;
@@ -445,20 +471,23 @@
 .aboutSubTitle {
     position: relative;
     color: rgb(56, 56, 56);
-    top: -25px;
-    left: 2%;
+    top: -2vw;
 }
 
 .aboutText {
     position: relative;
-    top: -30px;
-    left: calc(50% - 225px);
-    font-size: 17px;
+    top: -2.5vw;
+    left: calc(50% - 12.25vw);
+    font-size: 0.95vw;
     font-weight: 400;
     color: rgb(56, 56, 56);
     text-align: justify;
-    line-height: 35px;
-    width: 450px;
+    line-height: 1.8vw;
+    width: 24.5vw;
+}
+
+.aboutPadding {
+    padding-bottom: 4vw;
 }
 
 .aboutButtonBox {
@@ -544,18 +573,16 @@
 
 .analyticsIllustration {
     position: absolute;
-    top: 150px;
-    left: 20px;
-    right: 100px;
-    height: 240px;
+    top: 7.5vw;
+    left: -1vw;
+    height: 13vw;
 }
 
 .peopleIllustration {
     position: absolute;
-    top: 165px;
-    left: 1120px;
-    right: 100px;
-    height: 225px;
+    top: 8.3vw;
+    right: -1.15vw;
+    height: 12vw;
 }
 
 
