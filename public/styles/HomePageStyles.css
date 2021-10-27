@@ -10,9 +10,9 @@
 
 .startBackground {
     position: relative;
-    top: -2vw;
+    top: -27px;
     left: 0px;
-    height: 34.3vw;
+    height: 626px;
     right: 0px;
     margin: 0;
     padding: 0;
@@ -22,9 +22,9 @@
 
 .earthPinIllustration {
     position: absolute;
-    top: 8.25vw;
-    right: 9vw;
-    height: 24vw;
+    top: 159px;
+    height: 440px;
+    right: 10%;
 }
 
 /* possible gradients:
@@ -43,66 +43,44 @@
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 37.5vw;
-    height: 18vw;
-    left: 13.5vw;
-    background-color: rgba(245, 218, 218, 0.274);
-    top: 6vw;
-    font-size: 1.775vw;
+    width: 700px;
+    height: 350px;
+    left: 12vw;
+    background-color: rgba(245, 218, 218, 0);
+    top: 110px;
+    font-size: 25px;
+    line-height: 50px;
 }
 
 .startText {
     position: absolute;
-    font-size: 1em;
+    font-size: 1.325em;
     color: white;
+    top: 0px;
     text-align: center;
-    line-height: 2.75vw;
+    line-height: 1.55em;
+    z-index: 9999;
 }
-
-
-@media (max-width: 1000px) {
-    .startBox {
-        width: 500px;
-        height: 200px;
-        top: 50px;
-        left: calc(50% - 250px);
-        margin: 0 auto;
-        font-size: 25px;
-    }
-
-    .startText {
-        top: -15px;
-        line-height: 40px;
-    }
-
-    .earthPinIllustration {
-        display: none;
-    }
-
-    .startBackground {
-        height: 360px;
-    }
-}
-
 
 .startSubText {
     position: absolute;
-    top: 11.5vw;
-    font-size: 1.1vw;
+    top: 200px;
+    font-size: 0.7em;
     color: white;
     font-weight: 400;
 }
 
+
 .startButton {
     position: absolute;
-    top: 14.7vw;
-    left: 13.5vw;
-    height: 2.85vw;
-    width: 10.45vw;
-    border: solid 0.1vw white;
+    left: 249px;
+    top: 272px;
+    height: 55px;
+    width: 200px;
+    border: solid 1px white;
     background-color: transparent;
-    border-radius: 0.3vw;
-    font-size: 1.1vw;
+    border-radius: 5px;
+    font-size: 0.7em;
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
     text-align: center;
@@ -115,8 +93,8 @@
 }
 
 .startButton:active {
-    top: calc(14.7vw + 0.4vw);
-    left: calc(13.5vw + 0.4vw);
+    top: 280px;
+    left: 258px;
     -moz-transition: all .035s ease-out;
     -o-transition: all .035s ease-out;
     -webkit-transition: all .035s ease-out;
@@ -125,44 +103,59 @@
 
 .startButtonShadow {
     position: absolute;
-    top: calc(14.7vw + 0.4vw);
-    left: calc(13.5vw + 0.4vw);
-    height: 2.85vw;
-    width: 10.45vw;
+    left: 257px;
+    top: 280px;
+    height: 55px;
+    width: 201px;
     border: none;
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 0.4vw;
+    border-radius: 5px;
 }
+
 
 .informationButtonBox {
     position: absolute;
-    top: 35vw;
-    left: 12.75vw;
-    right: 12.75vw;
+    display: flex;
+    flex-direction: flow;
+    justify-content: space-between;
+    top: 650px;
+    left: 237px;
+    right: 237px;
     height: 300px;
-    background-color: rgba(207, 121, 241, 0);
+    background-color: rgba(28, 165, 119, 0);
 }
 
-/* nationality amount button */
-.nationalityAmountButton {
-    position: absolute;
+.informationButton {
+    position: relative;
     top: 0px;
-    left: 0px;
-    width: 19.75vw;
-    height: 7.8vw;
+    width: 380px;
+    height: 150px;
     outline: none;
     background-color: white;
     border-style: solid;
     border-width: 1px;
     border-color: rgb(225, 225, 225);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(225, 225, 225);
     color: rgb(63, 63, 63);
     z-index: 3;
-    transition: all .065s ease-out;
+    transition: all .08s ease-out;
+    border-radius: 4px;
 }
 
+.informationButton:hover {
+    transform: scale(1.01);
+    border-bottom-color: rgb(163, 163, 163);
+    box-shadow: 0 10px 25px -15px rgb(148, 148, 148);
+    transition: all .08s ease-out;
+}
+
+
+/* nationality amount button */
+
 .nationalityAmountButton:hover {
-    top: -0.6vw;
-    left: -0.6vw;
+    top: -10px;
+    left: calc(50% - 380px - 355px);
     background-color: transparent;
     border-color: rgb(200, 200, 200);
     transition: all .065s ease-out;
@@ -170,28 +163,28 @@
 
 .nationalityAmountText {
     position: absolute;
-    font-size: 5vw;
-    top: -2.2vw;
-    left: 2.1vw;
+    font-size: 95px;
+    top: -43px;
+    left: 40px;
     display: inline-block;
 }
 
 .nationalityAmountExplaination {
     position: absolute;
-    font-size: 1.4vw;
+    font-size: 27px;
     font-family: 'Source Sans Pro', sans-serif;
-    width: 10vw;
-    top: 1.3vw;
-    left: 9.25vw;
+    width: 200px;
+    top: 23px;
+    left: 180px;
     text-align: left;
     font-weight: 400;
 }
 
 .shadowBox1 {
     position: absolute;
-    left: 0px;
-    width: 19.75vw;
-    height: 7.8vw;
+    left: calc(50% - 380px - 345px);
+    width: 380px;
+    height: 150px;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -199,9 +192,9 @@
 .modelAmountButton {
     position: absolute;
     top: 0px;
-    right: calc(50% - 9.75vw);
-    width: 19.75vw;
-    height: 7.8vw;
+    left: calc(50% - 200px);
+    width: 380px;
+    height: 150px;
     outline: none;
     background-color: white;
     border-style: solid;
@@ -212,8 +205,8 @@
 }
 
 .modelAmountButton:hover {
-    top: -0.6vw;
-    right: calc(50% - 9.75vw + 0.7vw);
+    top: -10px;
+    left: calc(50% - 210px);
     background-color: rgba(68, 71, 255, 0.045);
     background-color: transparent;
     border-color: rgb(200, 200, 200);
@@ -223,39 +216,39 @@
 .modelAmountText {
     position: absolute;
     color: rgb(63, 63, 63);
-    font-size: 5vw;
-    top: -2.2vw;
-    left: 2.1vw;
+    font-size: 95px;
+    top: -43px;
+    left: 40px;
     display: inline-block;
 }
 
 .modelAmountExplaination {
     position: absolute;
     color: rgb(63, 63, 63);
-    font-size: 1.4vw;
+    font-size: 27px;
     font-family: 'Source Sans Pro', sans-serif;
-    width: 10vw;
-    top: 1.3vw;
-    right: 1.5vw;
+    width: 200px;
+    top: 23px;
+    left: 160px;
     text-align: left;
     font-weight: 400;
 }
 
 .shadowBox2 {
     position: absolute;
-    right: calc(50% - 9.75vw);
-    width: 19.75vw;
-    height: 7.8vw;
+    left: calc(50% - 200px);
+    width: 380px;
+    height: 150px;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* user models */
+
 .userStatsButton {
     position: absolute;
     top: 0px;
-    right: 0px;
-    width: 19.75vw;
-    height: 7.8vw;
+    left: calc(50% + 325px);
+    width: 380px;
+    height: 150px;
     outline: none;
     background-color: white;
     border-style: solid;
@@ -268,27 +261,27 @@
 .userStatsText {
     position: absolute;
     color: rgb(63, 63, 63);
+    font-size: 95px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 5vw;
-    top: -2.2vw;
-    left: 2.1vw;
+    top: -43px;
+    left: 40px;
     display: inline-block;
 }
 
 .userStatsExplaination {
     position: absolute;
-    font-size: 1.4vw;
-    font-family: 'Source Sans Pro', sans-serif;
-    width: 10vw;
-    top: 2.25vw;
-    right: 1vw;
+    color: rgb(63, 63, 63);
+    font-size: 25px;
+    width: 200px;
+    top: 43px;
+    left: 175px;
     text-align: left;
     font-weight: 400;
 }
 
 .userStatsButton:hover {
-    top: -0.6vw;
-    right: 0.6vw;
+    top: -10px;
+    left: calc(50% + 314px);
     background-color: rgba(68, 71, 255, 0.045);
     background-color: transparent;
     border-color: rgb(200, 200, 200);
@@ -297,9 +290,9 @@
 
 .shadowBox3 {
     position: absolute;
-    right: 0px;
-    width: 19.75vw;
-    height: 7.8vw;
+    left: calc(50% + 325px);
+    width: 380px;
+    height: 150px;
     background-color: rgba(0, 0, 0, 0.05);
 }
 

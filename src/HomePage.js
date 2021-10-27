@@ -198,41 +198,41 @@ export default class HomePageBox extends React.Component {
                 <img alt="github-icon" src="images\undraw_adventure_4hum.svg" className="earthPinIllustration"></img>
 
                 <div className="informationButtonBox">
-                    <button className="nationalityAmountButton" onClick={(e) => {
+                    <button className="informationButton" onClick={(e) => {
                                     this.setState({showDatasetTable: true});
                                     this.createPopup("datasetPresentBox");
                     }}>
                         <h1 className="nationalityAmountText">{this.state.amountNationalities < 10 ? <b>&nbsp;</b> : null}{this.state.amountNationalities}</h1>
                         <h1 className="nationalityAmountExplaination">nationalities to choose from</h1>
                     </button>
-                    <div className="shadowBox1"></div>
+                    {/*<div className="shadowBox1"></div>*/}
 
                     {this.state.showDatasetTable ? 
                                 <PresentBox propClassName={"datasetPresentBox"} type={"nationalityData"} boxTitle={"the dataset"} keys={["nationality", "amount"]} searchBar={true}/> 
                     : null}
 
 
-                    <button className="modelAmountButton" onClick={(e) => {
+                    <button className="informationButton" onClick={(e) => {
                                     this.setState({showModelTable: true});
                                     this.createPopup("modelPresentBox");
                     }}>
                         <h1 className="modelAmountText">{this.state.amountStandardModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountStandardModels}</h1>
                         <h1 className="modelAmountExplaination">already trained standard models</h1>
                     </button>
-                    <div className="shadowBox2"></div>
+                    {/*<div className="shadowBox2"></div>*/}
 
                     {this.state.showModelTable ? 
                                 <PresentBox propClassName={"modelPresentBox"} type={"modelData"} boxTitle={"standard models"} keys={["model name", "accuracy"]}/>
                     : null}
 
-                    <div className="userStatsButton" onClick={(e) => {
+                    <div className="informationButton" onClick={(e) => {
                                     this.setState({showCustomModelTable: true})
                                     this.createPopup("modelPresentBox");
                     }}>
                         <h1 className="userStatsText">{this.state.amountCustomModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountCustomModels}</h1>
                         <h1 className="userStatsExplaination">custom models</h1>
                     </div>
-                    <div className="shadowBox3"></div>
+                    {/*<div className="shadowBox3"></div>*/}
 
                     {this.state.showCustomModelTable ? 
                                 <PresentBox propClassName={"modelPresentBox"} type={"customModelData"} boxTitle={"custom models"} keys={["model name", "accuracy"]}/>

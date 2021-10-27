@@ -1,0 +1,87 @@
+
+@media (max-width: 1650px) {
+    .startBackground {
+        height: 550px;
+    }
+
+    .earthPinIllustration {
+        height: 380px;
+        top: 143px;
+        right: 5vw;
+    }
+    
+    .startBox {
+        width: 600px;
+        height: 325px;
+        font-size: 21.5px;
+    }
+
+    .startSubText {
+        top: 170px;
+    }
+
+    .startButton {
+        left: 217px;
+        top: 235px;
+        height: 40px;
+        width: 147px;
+    }
+
+    .startButton:active {
+        top: 243px;
+        left: 225px;
+    }
+    
+    .startButtonShadow {
+        left: 225px;
+        top: 243px;
+        height: 40px;
+        width: 147px;
+    }
+
+    .informationButtonBox {
+        left: calc(50% - 550px);
+        width: 1100px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .startBackground {
+        height: 475px;
+    }
+
+    .earthPinIllustration {
+        height: 320px;
+        top: 128px;
+        right: 5vw;
+    }
+    
+    .startBox {
+        width: 500px;
+        height: 300px;
+        font-size: 18px;
+    }
+
+    .startSubText {
+        top: 150px;
+    }
+
+    .startButton {
+        left: 180px;
+        top: 210px;
+        height: 37px;
+        width: 136px;
+    }
+
+    .startButton:active {
+        left: 188px;
+        top: 218px;
+    }
+    
+    .startButtonShadow {
+        left: 188px;
+        top: 218px;
+        height: 37px;
+        width: 136px;
+    }
+}
