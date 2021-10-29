@@ -12,16 +12,31 @@ export default class HomeBarBox extends React.Component {
 
         this.userSection = this.userSection.bind(this);
         this.closeUserSettingsSidebar = this.closeUserSettingsSidebar.bind(this);
+        this.checkWindowWidth = this.checkWindowWidth.bind(this);
+        this.showNavigationMenu = this.showNavigationMenu.bind(this);
 
         this.state = {
             loggedIn: true,
             redirectLogin: false,
             redirectSignup: false,
-            showUserSettingBox: false
+            showUserSettingBox: false,
+            hideNavigationLinks: false,
+            showNavigationMenu: false
         };
     }
 
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.checkWindowWidth);
+    }
+
+    checkWindowWidth() {
+        this.setState({ hideNavigationLinks: window.innerWidth < 1100 });
+    }
+
     componentDidMount() {
+        this.checkWindowWidth();
+        window.addEventListener("resize", this.checkWindowWidth);
+        
         axios.get(config.API_URL + "authentication-check", {
         headers: {
             Authorization: "Bearer " + Cookies.get("token"),
@@ -32,6 +47,40 @@ export default class HomeBarBox extends React.Component {
         }, (error) => {
             this.setState({loggedIn: false});
         });
+    }
+
+    showNavigationMenu() {
+        return (
+            <div className="navigationMenuBox">
+                <div className="navigationLinkDiv">
+                    <button className="navigationButton" onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href="/#aboutBox";
+                        this.setState({ showNavigationMenu: false });
+                    }}>about</button>
+                </div>
+
+                <div className="navigationLinkDiv">
+                    <button className="navigationButton" onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href="/classification";
+                        this.setState({ showNavigationMenu: false });
+                    }}>classify names</button>
+                </div>
+
+                <div className="navigationLinkDiv">
+                    <button className="navigationButton" onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href="/model-request";
+                        this.setState({ showNavigationMenu: false });
+                    }}>create custom model</button>
+                </div>
+                
+                <div className="navigationLinkDiv lastNavigationLinkDiv">
+                    {this.userSection()}
+                </div>
+            </div>
+        )
     }
 
     closeUserSettingsSidebar() {
@@ -63,14 +112,15 @@ export default class HomeBarBox extends React.Component {
                     <button className="loginButton" onClick={(e) => {
                         e.preventDefault();
                         window.location.href="/login";
+                        this.setState({ showNavigationMenu: false });
                     }}>log in</button>
 
                     <button className="signupButton"onClick={(e) => {
                         e.preventDefault();
                         window.location.href="/signup";
+                        this.setState({ showNavigationMenu: false });
                     }}>sign up</button>
 
-                    {/*<h1 className="authButtonSeperator">/</h1>*/}
                 </div>
             );
         }
@@ -78,13 +128,17 @@ export default class HomeBarBox extends React.Component {
         else {
             return (
                 <button className="userSettingsButton" onClick={(e) => {
-                    this.showUserSettingSidebar()
+                    this.showUserSettingSidebar();
+                    this.setState({ showNavigationMenu: false });
                 }}><img alt="compress-icon" className="userSettingsIcon" src="images/user-settings.svg"></img></button>
             );
         }
     }
 
     render() {
+
+        const hideNavigationLinks = this.state.hideNavigationLinks;
+
         return (
             <div className="homeBarBox">
 
@@ -95,36 +149,42 @@ export default class HomeBarBox extends React.Component {
                     }}>
                         <b>names to ethnicity</b>
                         <img alt="nec-logo" src="images/nec_final_logo.svg" className="logo"></img>
-
                     </button>
+                    
+                    { !hideNavigationLinks ?
+                        <div className="navigationBox">
+                            <div className="navigationLinkDiv">
+                                <button className="navigationButton" onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href="/#aboutBox";
+                                }}>about</button>
+                            </div>
 
-                    <div className="navigationBox">
+                            <div className="navigationLinkDiv">
+                                <button className="navigationButton" onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href="/classification";
+                                }}>classify names</button>
+                            </div>
 
-                        <div className="navigationLinkDiv">
-                            <button className="navigationButton" onClick={(e) => {
-                                e.preventDefault();
-                                window.location.href="/#aboutBox";
-                            }}>about</button>
+                            <div className="navigationLinkDiv">
+                                <button className="navigationButton" onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href="/model-request";
+                                }}>create custom model</button>
+                            </div>
+                            
+                            <div className="navigationLinkDiv lastNavigationLinkDiv">
+                                {this.userSection()}
+                            </div>
                         </div>
+                    : 
+                        <button className="navigationMenuButton" onClick={(e) => {
+                            this.setState({showNavigationMenu: !this.state.showNavigationMenu});
+                        }}><img alt="toggle-menu" className="toggleMenuIcon" src="images/toggle-menu-icon.svg"></img></button>
+                    }
 
-                        <div className="navigationLinkDiv">
-                            <button className="navigationButton" onClick={(e) => {
-                                e.preventDefault();
-                                window.location.href="/classification";
-                            }}>classify names</button>
-                        </div>
-
-                        <div className="navigationLinkDiv">
-                            <button className="navigationButton" onClick={(e) => {
-                                e.preventDefault();
-                                window.location.href="/model-request";
-                            }}>create custom model</button>
-                        </div>
-                        
-                        <div className="navigationLinkDiv lastNavigationLinkDiv">
-                            {this.userSection()}
-                        </div>
-                    </div>
+                    { this.state.showNavigationMenu ? this.showNavigationMenu() : null }
                 </div>
 
             </div>

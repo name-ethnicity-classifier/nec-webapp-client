@@ -2,8 +2,7 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Source Sans Pro', sans-serif;
-    left: 0px;
-    right: 0px;
+    width: 100%;
     top: 0px;
     bottom: 0px;
     background-color: white;
@@ -17,9 +16,9 @@ body {
     margin: 0;
     padding: 0;
     left: 0px;
-    width: 100vw;
+    width: 100%;
     top: 0px;
     height: 100vh;
-    overflow-x: hidden;
+    overflow-x: scroll;
     min-width: 1000px;
 }

@@ -21,20 +21,20 @@
     }
 
     .startButton {
-        left: 217px;
         top: 235px;
+        left: 217px;
         height: 40px;
         width: 147px;
     }
 
     .startButton:active {
-        top: 243px;
-        left: 225px;
+        top: 241px;
+        left: 223px;
     }
     
     .startButtonShadow {
-        left: 225px;
-        top: 243px;
+        top: 241px;
+        left: 223px;
         height: 40px;
         width: 147px;
     }
@@ -42,10 +42,42 @@
     .informationButtonBox {
         left: calc(50% - 550px);
         width: 1100px;
+        top: 565px;
+    }
+
+    .informationButton {
+        width: 300px;
+        height: 118px;
+    }
+
+    .informationButtonText {
+        font-size: 77px;
+        top: -37px;
+        left: 25px;
+    }
+    
+    .informationButtonExplaination {
+        font-size: 22px;
+        width: 200px;
+        top: 15px;
+        left: 150px;
+    }
+    
+    .nationalityAmountExplaination {
+        left: 135px;
+    }
+
+    .standardModelsExplaination {
+        left: 130px;
+    }
+    
+    .customModelsExplaination {
+        top: 30px;
+        left: 135px;
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
     .startBackground {
         height: 475px;
     }
@@ -74,14 +106,293 @@
     }
 
     .startButton:active {
-        left: 188px;
-        top: 218px;
+        left: 186px;
+        top: 216px;
     }
     
     .startButtonShadow {
-        left: 188px;
-        top: 218px;
+        left: 186px;
+        top: 216px;
         height: 37px;
         width: 136px;
+    }
+
+    .informationButtonBox {
+        display: flex;
+        flex-direction: flow;
+        justify-content: space-between;
+        left: 110px;
+        width: 80vw;
+        background-color: rgba(126, 28, 165, 0);
+        top: 490px;
+    }
+
+    .informationButton {
+        width: 275px;
+        height: 108px;
+    }
+
+    .informationButtonText {
+        font-size: 60px;
+        top: -20px;
+        left: 20px;
+    }
+    
+    .informationButtonExplaination {
+        font-size: 20px;
+        width: 150px;
+        top: 18px;
+    }
+    
+    .nationalityAmountExplaination {
+        top: 15px;
+        left: 115px;
+    }
+
+    .standardModelsExplaination {
+        top: 15px;
+        left: 110px;
+    }
+    
+    .customModelsExplaination {
+        top: 28px;
+        left: 115px;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    .startBackground {
+        height: 400px;
+    }
+
+    .startBox {
+        top: 55px;
+        left: 10vw;
+        margin: auto;
+    }
+
+    .startSubText {
+        font-size: 1.5em;
+    }
+
+    .startSubText {
+        font-size: 0.9em;
+    }
+
+    .earthPinIllustration {
+        height: 280px;
+        top: 93px;
+        right: 2vw;
+    }
+
+    .informationButtonBox {
+        width: 70vw;
+        height: 165px;
+        background-color: rgba(106, 165, 28, 0);
+        top: 410px;
+        left: 14vw;
+    }
+
+    .informationButton {
+        width: 165px;
+        height: 165px;
+    }
+
+    .informationButtonText {
+        font-size: 60px;
+        top: -20px;
+        left: calc(50% - 32px);
+    }
+    
+    .nationalityAmountExplaination {
+        top: 80px;
+        left: 9px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .standardModelsExplaination {
+        top: 80px;
+        left: 10px;
+        text-align: center;
+    }
+    
+    .customModelsExplaination {
+        top: 90px;
+        left: 10px;
+        text-align: center;
+    }
+
+    .navigationMenuButton {
+        position: absolute;
+        right: 0px;
+        top: 13px;
+        padding: 0px;
+        outline: none;
+        border: none;
+        height: 30px;
+        width: 40px;
+        background-color: transparent;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .toggleMenuIcon {
+        position: absolute;
+        height: 45px;
+        width: 45px;
+        top: calc(50% - 22px);
+        left: calc(50% - 22px);
+        transition: all .065s ease-out;
+    }
+
+    .toggleMenuIcon:hover {
+        transform: scale(1.075);
+        transition: all .065s ease-out;
+    }
+
+    .toggleMenuIcon:active {
+        transform: scale(1.0);
+        transition: all .065s ease-out;    
+    }
+
+    .startText {
+        z-index: 1;
+    }
+
+    .navigationMenuBox {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        right: -10px;
+        border-radius: 3px;
+        top: 60px;
+        width: 230px;
+        background-color: rgb(255, 255, 255);
+        z-index: 2;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .navigationLinkDiv {
+        background-color: white;
+        height: 40px;
+        top: 0px;
+        left: 10px;
+        width: 80%;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: none;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: rgb(224, 224, 224);
+    }
+
+    .lastNavigationLinkDiv {
+        border: none;
+    }
+
+    .authBox {
+        left: calc(50% - 70px);
+        border: none;
+    }
+
+    .userSettingsButton {
+        left: calc(50% - 37px);
+        border: none;
+    }
+
+    .loginButton {
+        left: -28px;
+        width: 100px;
+        padding: 0px;
+        background-color: transparent;
+    }
+    
+    .signupButton {
+        left: 73px;
+        padding: 0px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 725px) {
+    .earthPinIllustration {
+        display: none;
+    }
+
+    .startBackground {
+        height: 260px;
+    }
+
+    .startBox {
+        position: absolute;
+        top: 20px;
+        width: 330px;
+        left: calc(50vw - 165px);
+        height: 250px;
+        font-size: 11px;
+    }
+
+    .startSubText {
+        top: 85px;
+        font-size: 1.2em;
+    }
+
+    .startButton {
+        width: 120px;
+        height: 32px;
+        left: 103px;
+        top: 140px;
+        font-size: 1.2em;
+    }
+
+    .startButton:active {
+        left: 108px;
+        top: 145px;
+    }
+    
+    .startButtonShadow {
+        left: 108px;
+        top: 145px;
+        width: 120px;
+        height: 32px;
+    }
+
+    .informationButtonBox {
+        flex-direction: column;
+        width: 275px;
+        height: 290px;
+        background-color: rgba(106, 165, 28, 0);
+        top: 250px;
+        left: calc(50vw - 140px);
+    }
+
+    .informationButton {
+        width: 100%;
+        margin: 7px;
+    }
+
+   .informationButtonText {
+        font-size: 50px;
+        top: -20px;
+        left: 30px;
+    }
+
+    .nationalityAmountExplaination {
+        top: 3px;
+        left: 110px;
+    }
+
+    .standardModelsExplaination {
+        top: 3px;
+        left: 105px;
+    }
+
+    .customModelsExplaination {
+        top: 13px;
+        left: 110px;
     }
 }

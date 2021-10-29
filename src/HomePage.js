@@ -88,28 +88,6 @@ export default class HomePageBox extends React.Component {
         });
     }
 
-    createAboutInfoBox() {
-        var infoTitle;
-        var aboutText;
-        if (this.state.showAboutDatasetInfo) {
-            infoTitle = "... our dataset";
-            aboutText = "In order to train your models we use a private dataset that was provided by the government of the UK."
-        }
-        else if (this.state.showAboutModelInfo) {
-            infoTitle = "... our model";
-            aboutText = "We are using a Convolutional-LSTM neural network architecture. After a lot of experimenting, we found that it archieved the highest performance and accuracy."
-        }
-        return (
-            <div className="aboutPopupBox">
-                <button className="closeAboutInfoButton" onClick={(e) => {
-                    this.setState({showAboutInfoBox: false});
-                }}><img alt="close-icon" className="closeAboutBoxIcon" src="images/close-box-icon.svg"></img></button>
-                <h1 className="aboutSubTitle">{infoTitle}</h1>
-                <h1 className="aboutText">{aboutText}</h1>
-            </div>
-        );
-    }
-
     slideDivsOnScroll() {
         // code based on yt video: ...
         const sliders = document.querySelectorAll(".slideInBottom , .slideInTop");
@@ -186,8 +164,10 @@ export default class HomePageBox extends React.Component {
                 <div className="startBackground"></div>
 
                 <div id="startBox" className="startBox">
-                    <h1 className="startText slideInTop">request a custom classification model by choosing the exact nationalities you need and classify names for free</h1>
-                    <h1 className="startSubText slideInTop">to get started you should first check out...</h1>
+                    {/*<h1 className="startText slideInTop">request a custom classification model by choosing the exact nationalities you need and classify names for free</h1>
+                    <h1 className="startSubText slideInTop">to get started you should first check out...</h1>*/}
+                    <h1 className="startText slideInTop">costumized name to ethnicity classification - choose just the nationalities you need and we will train your custom model for free.</h1>
+                    <h1 className="startSubText slideInTop">to get started, check out...</h1>
                     <button className="startButton slideInTop" onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href="/#explainationBox";
@@ -202,8 +182,8 @@ export default class HomePageBox extends React.Component {
                                     this.setState({showDatasetTable: true});
                                     this.createPopup("datasetPresentBox");
                     }}>
-                        <h1 className="nationalityAmountText">{this.state.amountNationalities < 10 ? <b>&nbsp;</b> : null}{this.state.amountNationalities}</h1>
-                        <h1 className="nationalityAmountExplaination">nationalities to choose from</h1>
+                        <h1 className="informationButtonText">{this.state.amountNationalities < 10 ? <b>&nbsp;</b> : null}{this.state.amountNationalities}</h1>
+                        <h1 className="informationButtonExplaination nationalityAmountExplaination">nationalities to choose from</h1>
                     </button>
                     {/*<div className="shadowBox1"></div>*/}
 
@@ -216,8 +196,8 @@ export default class HomePageBox extends React.Component {
                                     this.setState({showModelTable: true});
                                     this.createPopup("modelPresentBox");
                     }}>
-                        <h1 className="modelAmountText">{this.state.amountStandardModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountStandardModels}</h1>
-                        <h1 className="modelAmountExplaination">already trained standard models</h1>
+                        <h1 className="informationButtonText">{this.state.amountStandardModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountStandardModels}</h1>
+                        <h1 className="informationButtonExplaination standardModelsExplaination">already trained standard models</h1>
                     </button>
                     {/*<div className="shadowBox2"></div>*/}
 
@@ -225,13 +205,13 @@ export default class HomePageBox extends React.Component {
                                 <PresentBox propClassName={"modelPresentBox"} type={"modelData"} boxTitle={"standard models"} keys={["model name", "accuracy"]}/>
                     : null}
 
-                    <div className="informationButton" onClick={(e) => {
+                    <button className="informationButton" onClick={(e) => {
                                     this.setState({showCustomModelTable: true})
                                     this.createPopup("modelPresentBox");
                     }}>
-                        <h1 className="userStatsText">{this.state.amountCustomModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountCustomModels}</h1>
-                        <h1 className="userStatsExplaination">custom models</h1>
-                    </div>
+                        <h1 className="informationButtonText">{this.state.amountCustomModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountCustomModels}</h1>
+                        <h1 className="informationButtonExplaination customModelsExplaination">custom models</h1>
+                    </button>
                     {/*<div className="shadowBox3"></div>*/}
 
                     {this.state.showCustomModelTable ? 
