@@ -1,0 +1,79 @@
+
+@media (max-width: 725px) {
+    .earthPinIllustration {
+        display: none;
+    }
+
+    .startBackground {
+        height: 260px;
+    }
+
+    .startBox {
+        position: absolute;
+        top: 35px;
+        width: 330px;
+        left: calc(50vw - 165px);
+        height: 250px;
+        font-size: 11px;
+    }
+
+    .startSubText {
+        top: 85px;
+        font-size: 1.2em;
+    }
+
+    .startButton {
+        width: 120px;
+        height: 32px;
+        left: 103px;
+        top: 140px;
+        font-size: 1.2em;
+    }
+
+    .startButton:active {
+        left: 108px;
+        top: 145px;
+    }
+    
+    .startButtonShadow {
+        left: 108px;
+        top: 145px;
+        width: 120px;
+        height: 32px;
+    }
+
+    .informationButtonBox {
+        flex-direction: column;
+        width: 275px;
+        height: 290px;
+        background-color: rgba(106, 165, 28, 0);
+        top: 250px;
+        left: calc(50vw - 140px);
+    }
+
+    .informationButton {
+        width: 100%;
+        margin: 7px;
+    }
+
+   .informationButtonText {
+        font-size: 50px;
+        top: -20px;
+        left: 30px;
+    }
+
+    .nationalityAmountExplaination {
+        top: 3px;
+        left: 110px;
+    }
+
+    .standardModelsExplaination {
+        top: 3px;
+        left: 105px;
+    }
+
+    .customModelsExplaination {
+        top: 13px;
+        left: 110px;
+    }
+}
