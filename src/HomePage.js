@@ -225,7 +225,7 @@ export default class HomePageBox extends React.Component {
                     <div className="slideBox slideInBottom">
                         <h1 className="aboutSectionTitle">About ...</h1>
                         
-                        <div className="aboutMotivationBox">
+                        <div className="aboutMotivationBox aboutSubBox">
                             <h1 className="aboutSubTitle">... our motivation</h1>
 
                             <h1 className="aboutText">
@@ -246,7 +246,7 @@ export default class HomePageBox extends React.Component {
                             </h1>
                         </div>
 
-                        <div className="aboutProjectBox">
+                        <div className="aboutProjectBox aboutSubBox">
                             <h1 className="aboutSubTitle">... this project</h1>
                             <h1 className="aboutText">
                                 Using this website you are able to request models which are trained just on the nationalities you want them to be able to classify.
@@ -260,7 +260,7 @@ export default class HomePageBox extends React.Component {
                             </h1>
                         </div>
 
-                        <div className="aboutUsBox">
+                        <div className="aboutUsBox aboutSubBox">
                             <h1 className="aboutSubTitle">... us</h1>
 
                             <h1 className="aboutText aboutPadding">

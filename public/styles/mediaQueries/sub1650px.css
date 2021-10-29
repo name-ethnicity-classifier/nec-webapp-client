@@ -127,15 +127,6 @@
         transition: all .15s ease-out;
     }
     
-    .aboutMotivationBox:hover {
-        transform: scale(1.05);
-        -moz-transition: all .15s ease-out;
-        -o-transition: all .15s ease-out;
-        -webkit-transition: all .15s ease-out;
-        transition: all .15s ease-out;
-    }
-    
-    
     .aboutProjectBox {
         position: absolute;
         top: 450px;
@@ -153,15 +144,7 @@
         -webkit-transition: all .15s ease-out;
         transition: all .15s ease-out;
     }
-    
-    .aboutProjectBox:hover {
-        transform: scale(1.05);
-        -moz-transition: all .15s ease-out;
-        -o-transition: all .15s ease-out;
-        -webkit-transition: all .15s ease-out;
-        transition: all .15s ease-out;
-    }
-    
+
     .aboutUsBox {
         position: absolute;
         top: 450px;
@@ -178,15 +161,6 @@
         -webkit-transition: all .15s ease-out;
         transition: all .15s ease-out;
     }
-    
-    .aboutUsBox:hover {
-        transform: scale(1.05);
-        -moz-transition: all .15s ease-out;
-        -o-transition: all .15s ease-out;
-        -webkit-transition: all .15s ease-out;
-        transition: all .15s ease-out;
-    }
-    
     
     .aboutSponsorButton {
         position: absolute;
