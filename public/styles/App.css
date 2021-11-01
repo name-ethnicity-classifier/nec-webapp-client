@@ -12,7 +12,7 @@ html {
 
 
 body {
-    overflow-x: scroll;
+    overflow-x: hidden;
     position: absolute;
     width: 100%;
     padding: 0px;

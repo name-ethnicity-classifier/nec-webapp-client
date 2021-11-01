@@ -42,6 +42,8 @@
         height: 32px;
     }
 
+    /* INFORMATION BOX */
+
     .informationButtonBox {
         flex-direction: column;
         width: 275px;
@@ -75,5 +77,157 @@
     .customModelsExplaination {
         top: 13px;
         left: 110px;
+    }
+
+    .aboutBox {
+        top: 565px;
+    }
+
+    .aboutSubTitle {
+        font-size: 27px;
+    }
+
+    /* ABOUT BOX */
+    .aboutText {
+        position: relative;
+        top: -30px;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgb(56, 56, 56);
+        text-align: justify;
+        line-height: 30px;
+    }
+
+    /* MODEL & NATIONALITY PRESENT BOX */
+    .datasetPresentBox {
+        position: fixed;
+        background-color: white;
+        border-radius: 0.5vw;
+        width: 79vw;
+        height: 79vw;
+        top: 50vh;
+        left: -9.5vw;
+        box-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.4);
+        z-index: 12000;
+        background-color: white;
+    }
+    
+    .modelPresentBox {
+        position: fixed;
+        background-color: white;
+        border-radius: 0.5vw;
+        width: 79vw;
+        height: 79vw;
+        top: 50vh;
+        left: -9.5vw;
+        box-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.4);
+        z-index: 12000;
+        background-color: white;
+    }
+
+        
+    .presentTitle {
+        position: relative;
+        color: rgb(63, 63, 63);
+        font-size: 6vw;
+        left: 3.5vw;
+        top: -2.5vw;
+        display: inline-block;    
+    }
+
+    .searchIcon {
+        position: absolute;
+        left: 4vw;
+        height: 3.5vw;
+        width: 3.5vw;
+        top: 10.5vw;
+    }
+
+    .searchBar {
+        position: absolute;
+        left: 8.5vw;
+        top: 10vw;
+        border-style: none;
+        background-color: rgba(238, 130, 238, 0);
+        width: 60vw;
+        height: 4vw;
+        outline: none;
+        font-weight: 7;
+        font-size: 2.6vw;
+        color: rgb(63, 63, 63); 
+    }
+
+    .searchBar::placeholder {
+        color:rgb(197, 197, 197);
+    }
+
+    .searchBar:hover {
+        border-bottom-style: solid;
+        border-bottom-color: rgb(224, 224, 224);
+        border-bottom-width: 0.4vw;
+    }
+
+    .sortButton {
+        position: absolute;
+        left: 51vw;
+        top: 3.5vw;
+        height: 3vw;
+        width: 3vw;
+        padding-top: 0.2vw;
+        border-radius: 50%;
+        z-index: 1000;
+        outline: none;
+    }
+
+    .sortButton:hover {
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .sortButton:active {
+        background-color: rgb(240, 240, 240);
+    }
+
+    .scrollDiv {
+        position: absolute;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        top: 15.5vw;
+        left: 3.5vw;
+        height: 60vw;
+        width: 70.25vw;
+        border-top: solid;
+        border-width: 2px;
+        border-color: rgb(224, 224, 224);
+    }
+
+    .jsonTable {
+        position: relative;
+        color: rgb(63, 63, 63);
+        padding: 1.25vw;
+        table-layout: fixed;
+        border-spacing: 1vw;
+        top: -1vw;
+        left: 0.55vw;
+        width: 70vw;
+    }
+
+    th {
+        position: relative;
+        padding-top: 1.5vw;
+        padding-bottom: 2vw;
+        font-size: 3.5vw;
+        text-align: left;
+    }
+
+    .tdJsonTable {
+        border-bottom: solid;
+        border-width: 0.325vw;
+        border-color: rgb(224, 224, 224);
+        padding-top: 1vw;
+        padding-bottom: 1.85vw;
+        overflow-x: hidden;
+        font-weight: 7;
+        font-size: 2.5vw;
+        text-align: left;   
     }
 }

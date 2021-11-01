@@ -42,7 +42,7 @@
         display: flex;
         flex-direction: flow;
         justify-content: space-between;
-        left: 110px;
+        left: calc(50% - 40.5vw);
         width: 80vw;
         background-color: rgba(126, 28, 165, 0);
         top: 495px;
@@ -81,14 +81,20 @@
     }
 
     /* ABOUT SECTION */
-
     .aboutBox {
-        position: absolute;
-        left: 110px;
-        width: 80vw;
         top: 655px;
+    }
+}
+
+
+@media (max-width: 1265px) {
+    .aboutBox {
+        position: relative;    
+        left: calc(50% - 40.5vw);
+        width: 80vw;
+        top: 175px;
         height: 1175px;
-        background-color: rgba(245, 218, 218, 0);
+        background-color: rgba(212, 231, 243, 0);
         border-top-style: solid;
         border-top-width: 2px;
         border-top-color: rgb(235, 235, 235);
@@ -105,7 +111,7 @@
     .aboutSectionTitle {
         position: relative;
         left: calc(50% - 80px);
-        padding-top: 50px;
+        padding-top: 40px;
         font-size: 50px;
         font-weight: 600;
         color: rgb(50, 50, 50);
@@ -114,11 +120,13 @@
     
     
     .aboutMotivationBox {
-        position: absolute;
-        top: 180px;
-        width: 800px;
-        height: 260px;
-        left: calc(50% - 430px);
+        position: relative;
+        box-sizing: border-box;
+        margin-bottom: -420px;
+        top: 0px;
+        width: 100%;
+        height: auto;
+        left: 0px;
         border: none;
         border-radius: 5px;
         border: solid rgb(226, 231, 255) 1px;
@@ -132,11 +140,12 @@
     }
     
     .aboutProjectBox {
-        position: absolute;
-        top: 525px;
-        width: 800px;
-        height: 260px;
-        left: calc(50% - 430px);
+        position: relative;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        width: 100%;
+        height: auto;
+        left: 0px;
         border: none;
         border-radius: 5px;
         border: solid rgb(226, 231, 255) 1px;
@@ -150,11 +159,11 @@
     }
     
     .aboutUsBox {
-        position: absolute;
-        top: 870px;
-        width: 800px;
-        height: 260px;
-        left: calc(50% - 430px);
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        left: 0px;
         border-radius: 5px;
         border: solid rgb(226, 231, 255) 1px;
         padding: 30px;
@@ -196,5 +205,10 @@
     
     .peopleIllustration {
         display: none;
+    }
+
+    .explainationBox {
+        position: relative;
+        top: 310px;
     }
 }

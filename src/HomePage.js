@@ -4,6 +4,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import FooterBox from "./FooterBox";
 import config from "./config";
+import ShadowButton from "./ShadowButton";
 
 
 export default class HomePageBox extends React.Component {
@@ -20,9 +21,6 @@ export default class HomePageBox extends React.Component {
             amountNationalities: 0,
             amountStandardModels: 0,
             amountCustomModels: 0,
-            showAboutInfoBox: false,
-            showAboutModelInfo: false,
-            showAboutDatasetInfo: false
         };
     }
 
@@ -34,8 +32,7 @@ export default class HomePageBox extends React.Component {
         });
 
         // get standard/default model amount
-        axios.get(config.API_URL + "standard-models",  {
-        }).then((response) => {
+        axios.get(config.API_URL + "standard-models").then((response) => {
             this.setState({amountStandardModels: Object.keys(response.data).length})
         });
         
@@ -166,7 +163,7 @@ export default class HomePageBox extends React.Component {
                 <div id="startBox" className="startBox">
                     {/*<h1 className="startText slideInTop">request a custom classification model by choosing the exact nationalities you need and classify names for free</h1>
                     <h1 className="startSubText slideInTop">to get started you should first check out...</h1>*/}
-                    <h1 className="startText slideInTop">costumized name to ethnicity classification - choose just the nationalities you need and we will train your custom model for free.</h1>
+                    <h1 className="startText slideInTop">customized name to ethnicity classification:<br/>choose just the nationalities you need and we will train your custom model for free.</h1>
                     <h1 className="startSubText slideInTop">to get started, check out...</h1>
                     <button className="startButton slideInTop" onClick={(e) => {
                                 e.preventDefault();
@@ -229,34 +226,30 @@ export default class HomePageBox extends React.Component {
                             <h1 className="aboutSubTitle">... our motivation</h1>
 
                             <h1 className="aboutText">
-                                This website has been built as a part of a social science research project that focuses on name-ethnicity classification using machine learning.
+                                Without knowledge about ethnic inequalities we have no basis for combatting them. Therefore, we embrace the recent shift within the social sciences away from a ‘colour-blind’ towards a ‘colour-conscious’ concept of justice
                             </h1>
 
                             <h1 className="aboutText">
-                                Why nationality information is important:
+                                However, trying to adopt this mindset in our research we faced a challenge: Most datasets are relics from the ‘colour-blind’ age. Information about ethnicity? Nowhere to be found. 
                             </h1>
 
                             <h1 className="aboutText">
-                                Interpreting findings in a dataset containing the name and other information about persons but not their nationalities can lead to potential biases
-                                and to the fact that existing coherences based on their background are not recognized.
-                            </h1>
-
-                            <h1 className="aboutText">
-                                Therefore, we want to enable a not-color-blind approach when in comes to research about people in general.
+                                To infuse the data with ‘colour-consciousness’, we have developed a machine learning tool that can infer ethnicity from names. If you are a like-minded scholar we hope that sharing our tool with you on this website will enable us to collectively open our eyes to the coloured inequalities of our times. 
                             </h1>
                         </div>
 
                         <div className="aboutProjectBox aboutSubBox">
                             <h1 className="aboutSubTitle">... this project</h1>
                             <h1 className="aboutText">
-                                Using this website you are able to request models which are trained just on the nationalities you want them to be able to classify.
-                                By doing so we can maximize the accuracy.
+                                Ethnic inequalities come in many shades. Therefore, research to uncover them needs to be just as versatile
                             </h1>
 
                             <h1 className="aboutText">
-                                We have made this application because it is not possible for you to train custom models using just our GitHub repository since the dataset is private.
-                                We also want to enable people with less technical knowledge the possibility to train custom models.
-                                Feel free to check out our GitHub repository to see how we build this project and to classify names using our simple console interface!
+                                This is why using our name-ethnicity classification tool on this website is not only easy and free - but customised to your research. Choose the nationalities that are relevant in your project and we train your tailor-made machine learning classifier for you.
+                            </h1>
+
+                            <h1 className="aboutText">
+                                The classifiers are trained on a dataset from the UK government agency CompaniesHouse, which contains roughly 7,3 million names from across the globe. Feel free to check out our GitHub repository to see how we built this tool.
                             </h1>
                         </div>
 
@@ -264,72 +257,71 @@ export default class HomePageBox extends React.Component {
                             <h1 className="aboutSubTitle">... us</h1>
 
                             <h1 className="aboutText aboutPadding">
-                                <b>Lena Hafner</b> - Phd. student in social economics, Cambridge University
+                                <b>Lena Hafner</b> - Phd. Candidate in Politics and International Studies, University of Cambridge
                             </h1>
                             <h1 className="aboutText aboutPadding">
-                                <b>Franziska Hafner</b> - BSc. student in politics and computer science, University Of Scottland
+                                <b>Theodor Peifer</b> - BSc. Student in Data Science and Machine Learning, Technical University Ingolstadt
                             </h1>
 
                             <h1 className="aboutText">
-                                <b>Theodor Peifer</b> - BSc. student in data science and machine learning, Technical University Ingolstadt
+                                <b>Franziska Hafner</b> - MA Student in Computer Science and Public Policy, University of Glasgow
                             </h1>
                         </div>
                         
                     </div>
-                    <img alt="github-icon" src="images\undraw_connected_world_wuay.svg" className="analyticsIllustration slideInBottom"></img>
-                    <img alt="github-icon" src="images\undraw_celebration_0jvk.svg" className="peopleIllustration slideInBottom"></img>
+                    <img alt="undraw-illustration" src="images\undraw_connected_world_wuay.svg" className="analyticsIllustration slideInBottom"></img>
+                    <img alt="undraw-illustration" src="images\undraw_celebration_0jvk.svg" className="peopleIllustration slideInBottom"></img>
                 </div>
 
                 <div id="explainationBox" className="explainationBox">
                     <div className="slideBox slideInBottom">
-                        <h1 className="explainationBoxTitle">how it works</h1>
+                        <h1 className="explainationBoxTitle">How to...</h1>
 
+
+                        {/*
                         <img alt="github-icon" src="images\undraw_Publish_article_re_3x8h.svg" className="publishIllustration slideInBottom"></img>
 
                         <div className="whenToUseBox">
-                            <h1 className="explainationTitle">When to use this classifier:</h1>
-                            <h1 className="explainationText">If you have a name dataset of which you either</h1>
-                            <pre className="whenToUsePoints">    . . . already know which nationalities are represented in it, or<br/>    . . . want to detect names of specific ethnicities,</pre>
+                            <h1 className="explainationTitle">... know when to use this classifier:</h1>
+                            <h1 className="explainationText">If you have a dataset containing names and you want to</h1>
+                            <pre className="whenToUsePoints">    . . . infer information about the distribution of ethnicities within your data<br/>    . . . correlate other variables in your data with ethnicity</pre>
                             <h1 className="explainationText">then this classifier is for you.</h1>
-                            <h1 className="explainationText">
-                                In the “create custom model” section you can select just the nationalities you need. We will then train a model on your selected nationalities, in order to maximize accuracy.
-                                You can use all your custom and our standard models in the “classify names” section.
-                            </h1>
-                        </div>
+                        </div>*/}
 
                         <div className="howToClassifyBox">
-                            <h1 className="explainationTitle">How to classify names:</h1>
+                            <h1 className="explainationTitle">... classify names:</h1>
 
                             <h1 className="explainationText">
-                                First, take a look at our already trained models to see if one of them already fits your use case and directly start classifying. 
-                                If not, you can request a custom model which will be automatically trained (this can take a few hours).<br/>
-                                For every model, we inform you how good it learned each nationality by plotting scores ranging from 0 to 1.
+                                In the ‘classify names’ section you can access our pretrained and your custom models. For every trained model, we display the overall accuracy as well as individual accuracies for the chosen nationalities.
                             </h1>
-                            <h1 className="explainationText">To classify names, you have to put them into a .csv file with the following format:</h1>
+                            <h1 className="explainationText">To classify names, upload them in a .csv file in the following format:</h1>
                             <img alt="names-csv-exp" src="images\input-example-csv.png" className="inputTableImage"></img>
-                            <h1 className="explainationText" id="outputTableExlaination">
-                                After your file got classified, you will be able to download a new .csv file that looks like this:
+                            <h1 className="explainationText">
+                                After your file has been classified, you will be able to download a new .csv file containing the ethnicity predictions:
                             </h1>
                             <img alt="names-csv-exp" src="images\output-example-csv.png" className="outputTableImage"></img>
+                            <img alt="undraw-illustration" src="images\undraw_Publish_article_re_3x8h.svg" className="publishIllustration slideInBottom"></img>
+
+                            <ShadowButton class="getStartedButton" text="get started!" onClickFunction={() => {window.location.href="/classification"}} styles={{
+                                width: "180px", height:"50px", color: "rgb(63, 124, 247)", borderWidth: "4px", borderRadius: "5px", fontSize: "17px", fontFamily: "inherit"
+                            }}/> 
+
                         </div>
 
                         <div className="howToRequestBox">
-                            <h1 className="explainationTitle">How to create a custom model:</h1>
+                            <h1 className="explainationTitle">... create a custom model:</h1>
 
                             <h1 className="explainationText">
-                                You can request a custom model which is trained just on the nationalities you need.
-                                To do that, go to the “create model” section, choose the nationalities you need, give it a name and hit request!
-                                There is also a nationality called "else" which represents every other nationality you haven't chosen (note: by selecting "else" the accuracy of the model will decrease).
+                                In the ‘create custom model’ section you are able to create a model which gets trained on just the nationalities you need (this can take a few hours). All you have to do is to give the model a descriptive name and select the nationalities you require (including the option ‘else’, which represents all nationalities you didn’t pick). <br/>We will display the number of names your model will be trained on. This will be an equal amount of names for every chosen nationality – to assure a minimum of data selection bias.
                             </h1>
                             <h1 className="explainationText">
-                                Here are some things to keep in mind when choosing nationalities:
+                                While creating a custom model you should keep in mind, that...
                             </h1>
 
-                            <h1 className="explainationText explainationPoint">1. You should compare your chosen nationality configuration with those of our already trained "standard models" to estimate how good your model will perform.</h1>
-                            <h1 className="explainationText explainationPoint">2. English speaking nationalities have similar names and will therefore be mixed up by the classifier more often than other nationalities.</h1>
-                            <h1 className="explainationText explainationPoint">3. The amount of names on which your model will be trained equals n-times the amount of names of the nationality which has the least occurrences in the dataset, where n is the amount of nationalities you have chosen. This ensures that there are an equal amounts of names of every nationality in the dataset. Therefore, try to pick as fewer nationalities with fewer names, i.e    <span>&lt;</span> 2000.</h1>
-                            <h1 className="explainationText explainationPoint">4. The more nationalities the worse the classifier will perform (5 nationalities ~ 90% accuracy, 20 nationalities ~ 80% accuracy, 50 nationalities ~ 50% accuracy) 
-                            (we will inform you about the amount of names per nationality in the model creation process)</h1>
+                            <h1 className="explainationText explainationPoint">... to assess whether the accuracy is high enough for your use case you can first compare your nationality configuration with those of our pre-trained models. This might help you estimate how good your model will perform.</h1>
+                            <h1 className="explainationText explainationPoint">... English speaking nationalities have similar names and will therefore be mixed up by the classifier more often than other nationalities.</h1>
+                            <h1 className="explainationText explainationPoint">... machine learning is prone to bias. To keep bias to a minimum, it is important to have an equal amount of training data for all your chosen nationalities. Thus, if you choose a nationality with only few occurrences in our dataset (i.e <span>&lt;</span> 10000.), we reduce the amount of names for other chosen nationalities to be equal to this small nationality. This can lead to lower overall accuracy. You will see the amount of names available for training so you can take this into account when choosing which nationalities to include in your model.</h1>
+                            <h1 className="explainationText explainationPoint">... as a general rule: The more nationalities you choose, the lower the overall accuracy. With only five nationalities, accuracy might be as high as 90%. When classifying up to 20 nationalities, this figure might drop to 80%. When classifying 50 or more nationalities, you can’t expect the accuracy to be more than 50%. Depth over breadth might be the way to go.</h1>
                         </div>
                     </div>
                 </div>

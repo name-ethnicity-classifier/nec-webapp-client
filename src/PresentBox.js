@@ -46,7 +46,6 @@ export default class PresentBox extends React.Component {
                     }
                 }
             }
-            console.log(responseData);
             this.setState({tableData: responseData});
         }, (error) => {
             if (error.response.status === 401) {

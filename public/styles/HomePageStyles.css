@@ -2,7 +2,7 @@
 .homePageBox {
     position: absolute;
     height: 3800px;
-    background-color: rgba(241, 232, 207, 0);
+    background-color: rgba(240, 240, 240, 0);
     width: 100vw;
     top: 40px;
 }
@@ -24,6 +24,13 @@
     height: 440px;
     right: 10%;
 }
+
+/*.earthPinIllustration {
+    position: absolute;
+    top: 90px;
+    height: 600px;
+    right: 14%;
+}*/
 
 /* possible gradients:
     linear-gradient(to bottom right, rgb(27, 59, 148), rgb(115, 185, 164))
@@ -118,7 +125,7 @@
     justify-content: space-between;
     top: 665px;
     width: 1500px;
-    left: calc(50% - 750px);
+    left: calc(50% - 755px);
     background-color: rgba(28, 165, 119, 0);
 }
 
@@ -326,7 +333,7 @@
 .aboutBox {
     position: absolute;
     top: 880px;
-    left: calc(50vw - 750px);
+    left: calc(50vw - 760px);
     height: 920px;
     width: 1500px;
     background-color: rgba(233, 252, 236, 0);
@@ -344,10 +351,10 @@
 }
 
 .slideInBottom {
-    grid-column: 1 / 4;
+    grid-column: 1 / 2;
     transform: translateY(25%);
     opacity: 0;
-    transition: opacity 550ms ease-in, transform 550ms ease-in;
+    transition: opacity 650ms ease-in, transform 650ms ease-in;
 }
 
 .slideInBottom.appear {
@@ -475,6 +482,9 @@
     line-height: 30px;
 }
 
+.aboutPadding {
+    padding-bottom: 40px;
+}
 
 .aboutButtonBox {
     position: absolute;
@@ -573,30 +583,21 @@
     height: 200px;
 }
 
-
-.explainationBackground {
-    position: absolute;
-    top: 300px;
-    left: 0px;
-    width: 600px;
-    height: 600px;
-    background-color: wheat;
-}
-
 .explainationBox {
     position: relative;
-    top: 1300px;
+    top: 1250px;
     left: calc(50% - 725px);
     right: 100px;
     height: 1000px;
-    width: 1435px;
+    left: calc(50vw - 760px);
+    width: 1500px;
     border-top: 2px solid rgb(235, 235, 235);
 }
 
 .explainationBoxTitle {
     position: relative;
-    left: calc(50% - 125px);
-    padding-top: 50px;
+    left: calc(50% - 75px);
+    padding-top: 40px;
     font-size: 50px;
     font-weight: 600;
     color: rgb(50, 50, 50);
@@ -604,11 +605,10 @@
 }
 
 
-.publishIllustration {
-    position: absolute;
-    top: 200px;
-    right: 150px;
-    height: 300px;
+.whenToUseBox {
+    position: relative;
+    top: 10px;
+    left: 30px;
 }
 
 .whenToUsePoints {
@@ -625,10 +625,10 @@
 
 .howToClassifyBox {
     position: absolute;
-    top: 600px;
-    left: 0px;
+    top: 225px;
+    left: 30px;
     width: 718px;
-    height: 850px;
+    height: 1025px;
     bottom: 30px;
     border-right: 2px solid rgb(235, 235, 235);
     z-index: 1;
@@ -636,11 +636,11 @@
 
 .howToRequestBox {
     position: absolute;
-    top: 600px;
-    left: 720px;
+    top: 225px;
+    right: 30px;
     padding-left: 110px;
     width: 600px;
-    height: 850px;
+    height: 1025px;
     bottom: 30px;
 }
 
@@ -664,33 +664,21 @@
     width: 600px;
 }
 
-.neuralNetworkImage {
-    position: absolute;
-    width: 12%;
-    top: 510px;
-    left: calc(50% - 84px);
-
-}
-
 .inputTableImage {
-    position: absolute;
-    top: 257px;
+    position: relative;
     left: calc(50% - 250px);
     border: solid rgb(215, 222, 255) 1px;
     transition: all .15s ease-out;
-    /*box-shadow: 0px 0px 20px rgba(0, 89, 255, 0.25);*/
+    margin-bottom: 35px;
+    margin-top: 20px;
 }
 
-#outputTableExlaination {
-    top: 170px;
-}
 
 .outputTableImage {
-    position: absolute;
-    top: 502px;
+    position: relative;
     left: calc(50% - 250px);
     border: solid rgb(215, 222, 255) 1px;
-    /*box-shadow: 0px 0px 20px rgba(0, 89, 255, 0.25);*/
+    margin-top: 20px;
     transition: all .15s ease-out;
 }
 
@@ -704,62 +692,19 @@
     margin-top: 20px;
     border: 1px solid rgb(215, 222, 255);
     transition: all .15s ease-out;
-    /*box-shadow: 0px 0px 10px rgba(0, 89, 255, 0.25);*/
 }
 
+.getStartedButton {
+    position: relative;
+    top: 100px;
+    left: 220px;
+}
 
-.explainationSection1 {
+.publishIllustration {
     position: absolute;
-    left: -30px;
-    top: 160px;
-    height: 500px;
-    width: 700px;
-    text-align: justify;
-}
-
-.explainationSection2 {
-    position: absolute;
-    left: 775px;
-    top: 160px;
-    height: 500px;
-    width: 700px;
-    text-align: justify;
-}
-
-.explainationSubBox {
-    position: absolute;
-    border: solid rgb(218, 223, 255) 1px;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(9, 55, 139, 0.2);
-}
-
-#topLeft {
-    top: 75px;
-    left: 0px;
-    height: 200px;
-    width: 400px;
-}
-
-#topRight {
-    top: 75px;
-    left: 430px;
+    top: 700px;
+    left: 150px;
     height: 300px;
-    width: 400px;
 }
-
-#bottomLeft {
-    top: 305px;
-    left: 0px;
-    height: 415px;
-    width: 400px;
-}
-
-#bottomRight {
-    top: 420px;
-    left: 430px;
-    height: 300px;
-    width: 400px;
-}
-
 
 
