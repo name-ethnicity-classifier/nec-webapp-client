@@ -25,34 +25,13 @@
      showgrid="false"
      inkscape:zoom="0.49288362"
      inkscape:cx="401.71755"
-     inkscape:cy="435.19401"
-     inkscape:window-width="1858"
-     inkscape:window-height="1057"
-     inkscape:window-x="54"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:cy="597.50413"
+     inkscape:window-width="1342"
+     inkscape:window-height="1041"
+     inkscape:window-x="434"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
      inkscape:current-layer="ad38fc70-8020-4243-af0b-1d7dc942eb8a" />
-  <circle
-     id="b8863a4f-d6d1-45f4-aeb2-54ce0fc41c58"
-     data-name="Ellipse 194"
-     cx="50.43802"
-     cy="16.1168"
-     r="5.35947"
-     fill="#fff" />
-  <circle
-     id="bbe8bb57-e8a1-4ebb-9530-09dc8d102d8f"
-     data-name="Ellipse 195"
-     cx="70.78166"
-     cy="16.1168"
-     r="5.35947"
-     fill="#fff" />
-  <circle
-     id="e8afff7b-3b6f-4dbf-9548-6e45ece64f65"
-     data-name="Ellipse 246"
-     cx="30.04157"
-     cy="16.1168"
-     r="5.35947"
-     fill="#fff" />
   <polygon
      points="531.231 529.365 518.972 529.364 513.139 482.076 531.234 482.077 531.231 529.365"
      fill="#9f616a"
@@ -109,7 +88,8 @@
      d="M913.47588,720.18781h-193a1,1,0,0,1,0-2h193a1,1,0,0,1,0,2Z"
      transform="translate(-285.52412 -179.62562)"
      fill="#3f3d56"
-     id="path903" />
+     id="path903"
+     style="fill:#cccccc" />
   <path
      d="M861.01455,418.76893q-.64014-.46-1.30517-.90332a32.36092,32.36092,0,0,0-7.59571-3.72418v-6.45362h-19v5.98767a33.31967,33.31967,0,0,0-24.16308,27.68622l-12.9375,96.05078a4.47759,4.47759,0,0,0,.93066,3.40137,4.41909,4.41909,0,0,0,3.05371,1.67285c4.48291.44727,13.78028,2.18457,25.67969,8.7959a38.12545,38.12545,0,0,0,18.70557,4.77441,45.08927,45.08927,0,0,0,15.22607-2.71093,4.46654,4.46654,0,0,0,2.918-4.00489c.46582-10.33691,3.19043-63.54394,11.124-95.999A33.17758,33.17758,0,0,0,861.01455,418.76893Z"
      transform="translate(-285.52412 -179.62562)"

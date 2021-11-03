@@ -1,9 +1,9 @@
 
 .homePageBox {
     position: absolute;
-    height: 3800px;
-    background-color: rgba(240, 240, 240, 0);
-    width: 100vw;
+    height: 3500px;
+    background-color: rgba(235, 150, 150, 0);
+    width: 100%;
     top: 40px;
 }
 
@@ -125,7 +125,7 @@
     justify-content: space-between;
     top: 665px;
     width: 1500px;
-    left: calc(50% - 755px);
+    left: calc(50% - 760px);
     background-color: rgba(28, 165, 119, 0);
 }
 
@@ -385,7 +385,7 @@
 }
 
 
-.aboutSectionTitle {
+.aboutBoxTitle {
     position: relative;
     left: calc(50% - 70px);
     padding-top: 40px;

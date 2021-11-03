@@ -1,20 +1,11 @@
 
-html {
+html, body {
     scroll-behavior: smooth;
     font-family: 'Source Sans Pro', sans-serif;
-    width: auto;
+    width: 100%;
     top: 0px;
     bottom: 0px;
-    background-color: rgb(255, 255, 255);
     padding: 0px;
     margin: 0px;
-}
-
-
-body {
     overflow-x: hidden;
-    position: absolute;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
 }

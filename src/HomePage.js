@@ -217,10 +217,9 @@ export default class HomePageBox extends React.Component {
 
                 </div>
 
-                <div className="aboutSectionBackground"></div>
                 <div id="aboutBox" className="aboutBox">
-                    <div className="slideBox slideInBottom">
-                        <h1 className="aboutSectionTitle">About ...</h1>
+                    <div className="slideBox">
+                        <h1 className="aboutBoxTitle">About ...</h1>
                         
                         <div className="aboutMotivationBox aboutSubBox">
                             <h1 className="aboutSubTitle">... our motivation</h1>
@@ -255,7 +254,7 @@ export default class HomePageBox extends React.Component {
 
                         <div className="aboutUsBox aboutSubBox">
                             <h1 className="aboutSubTitle">... us</h1>
-
+ 
                             <h1 className="aboutText aboutPadding">
                                 <b>Lena Hafner</b> - Phd. Candidate in Politics and International Studies, University of Cambridge
                             </h1>
@@ -274,7 +273,7 @@ export default class HomePageBox extends React.Component {
                 </div>
 
                 <div id="explainationBox" className="explainationBox">
-                    <div className="slideBox slideInBottom">
+                    <div className="slideBox">
                         <h1 className="explainationBoxTitle">How to...</h1>
 
 

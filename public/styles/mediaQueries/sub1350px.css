@@ -42,7 +42,7 @@
         display: flex;
         flex-direction: flow;
         justify-content: space-between;
-        left: calc(50% - 40.5vw);
+        left: calc(50% - 41vw);
         width: 80vw;
         background-color: rgba(126, 28, 165, 0);
         top: 495px;
@@ -83,18 +83,24 @@
     /* ABOUT SECTION */
     .aboutBox {
         top: 655px;
+        width: 80vw;
+        left: calc(50% - 41vw);
+    }
+
+    .homePageBox {
+        height: 3275px;
     }
 }
 
 
 @media (max-width: 1265px) {
     .aboutBox {
-        position: relative;    
-        left: calc(50% - 40.5vw);
+        position: absolute;
+        left: calc(50% - 41vw);
         width: 80vw;
-        top: 175px;
-        height: 1175px;
-        background-color: rgba(212, 231, 243, 0);
+        top: 647px;
+        height:800px;
+        margin-bottom: 100px;
         border-top-style: solid;
         border-top-width: 2px;
         border-top-color: rgb(235, 235, 235);
@@ -108,7 +114,7 @@
         height: 700px;
     }
 
-    .aboutSectionTitle {
+    .aboutBoxTitle {
         position: relative;
         left: calc(50% - 80px);
         padding-top: 40px;
@@ -118,61 +124,32 @@
         display: inline-block;
     }
     
-    
     .aboutMotivationBox {
         position: relative;
-        box-sizing: border-box;
-        margin-bottom: -420px;
         top: 0px;
-        width: 100%;
-        height: auto;
-        left: 0px;
-        border: none;
-        border-radius: 5px;
-        border: solid rgb(226, 231, 255) 1px;
-        padding: 30px;
-        z-index: 3;
-        box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
-        -moz-transition: all .15s ease-out;
-        -o-transition: all .15s ease-out;
-        -webkit-transition: all .15s ease-out;
-        transition: all .15s ease-out;
+        width: 580px;
+        height: 340px;
+        left: calc(50% - 320px);
     }
     
     .aboutProjectBox {
         position: relative;
-        box-sizing: border-box;
-        margin-bottom: 30px;
-        width: 100%;
-        height: auto;
-        left: 0px;
-        border: none;
-        border-radius: 5px;
-        border: solid rgb(226, 231, 255) 1px;
-        padding: 30px;
-        z-index: 3;
-        box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
-        -moz-transition: all .15s ease-out;
-        -o-transition: all .15s ease-out;
-        -webkit-transition: all .15s ease-out;
-        transition: all .15s ease-out;
+        top: 30px;
+        width: 580px;
+        height: 340px;
+        left: calc(50% - 320px);
     }
     
     .aboutUsBox {
         position: relative;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        left: 0px;
-        border-radius: 5px;
-        border: solid rgb(226, 231, 255) 1px;
-        padding: 30px;
-        z-index: 3;
-        box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
-        -moz-transition: all .15s ease-out;
-        -o-transition: all .15s ease-out;
-        -webkit-transition: all .15s ease-out;
-        transition: all .15s ease-out;
+        top: 60px;
+        width: 580px;
+        height: 340px;
+        left: calc(50% - 320px);
+    }
+
+    .aboutPadding {
+        padding-bottom: 55px;
     }
     
     .aboutSponsorButton {
@@ -200,15 +177,120 @@
     }
 
     .analyticsIllustration {
+        width: 0px;
+        height: 0px;
         display: none;
     }
     
     .peopleIllustration {
+        width: 0px;
+        height: 0px;
         display: none;
     }
 
+    /* HOW IT WORKS BOX */
     .explainationBox {
+        position: absolute;
+        margin: 10px;
+        width: 80vw;
+        left: calc(50% - 41.5vw);
+        height: auto;
+        top: 2085px;
+        border-top: 2px solid rgb(235, 235, 235);
+    }
+    
+    .explainationBoxTitle {
         position: relative;
-        top: 310px;
+        left: calc(50% - 75px);
+        padding-top: 60px;
+        font-size: 50px;
+        font-weight: 600;
+        color: rgb(50, 50, 50);
+        display: inline-block;
+    }
+
+    .explainationText {
+        position: relative;
+        top: -10px;
+        left: 0px;
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(56, 56, 56);
+        text-align: justify;
+        line-height: 30px;
+        width: 100%;
+    }
+
+    .howToClassifyBox {
+        position: relative;
+        top: 0px;
+        width: 630px;
+        left: calc(50% - 320px);
+        background-color: rgba(179, 121, 121, 0);
+        height: 700px;
+        bottom: 30px;
+        padding-right: 0px;
+        border-right: none;
+        border-bottom: 0px solid rgb(235, 235, 235);
+        z-index: 1;
+    }
+    
+    .howToRequestBox {
+        position: relative;
+        top: 50px;
+        width: 630px;
+        left: calc(50% - 320px);
+        background-color: rgba(179, 121, 121, 0);
+        height: 975px;
+        bottom: 30px;
+        padding: 0px;
+        border-right: none;
+        border-bottom: 0px solid rgb(235, 235, 235);
+        z-index: 1;
+    }
+    
+    .inputTableImage {
+        position: relative;
+        left: calc(50% - 200px);
+        border: solid rgb(215, 222, 255) 1px;
+        transition: all .15s ease-out;
+        margin-bottom: 35px;
+        margin-top: 20px;
+    }
+    
+    .outputTableImage {
+        position: relative;
+        left: calc(50% - 200px);
+        border: solid rgb(215, 222, 255) 1px;
+        margin-top: 20px;
+        transition: all .15s ease-out;
+    }
+    
+    .getStartedButton {
+        height: 0px;
+        width: 0px;
+        display: none;
+    }
+    
+    .publishIllustration {
+        height: 0px;
+        width: 0px;
+        display: none;
+    }
+
+    .explainationPoint {
+        position: relative;
+        top: -10px;
+        font-size: 14px;
+        width: 500px;
+        left: calc(50% - 265px);
+        padding: 10px;
+        margin-top: 20px;
+        border: 1px solid rgb(215, 222, 255);
+        transition: all .15s ease-out;
+    }
+
+    .homePageBox {
+        height: 4300px;
     }
 }

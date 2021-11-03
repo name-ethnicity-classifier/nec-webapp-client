@@ -26,40 +26,41 @@
     }
 
     .informationButtonBox {
-        width: 70vw;
-        height: 165px;
+        width: 80vw;
+        height: 130px;
         background-color: rgba(106, 165, 28, 0);
         top: 415px;
-        left: 14vw;
+        left: calc(50% - 41vw);
     }
 
     .informationButton {
-        width: 165px;
-        height: 165px;
+        width: 200px;
+        height: 130px;
+        left: 0px;
     }
 
     .informationButtonText {
-        font-size: 60px;
-        top: -20px;
+        font-size: 55px;
+        top: -27px;
         left: calc(50% - 32px);
     }
     
     .nationalityAmountExplaination {
-        top: 80px;
-        left: 9px;
+        top: 57px;
+        left: 23px;
         font-size: 20px;
         text-align: center;
     }
 
     .standardModelsExplaination {
-        top: 80px;
-        left: 10px;
+        top: 57px;
+        left: 23px;
         text-align: center;
     }
     
     .customModelsExplaination {
-        top: 90px;
-        left: 10px;
+        top: 70px;
+        left: 23px;
         text-align: center;
     }
 
@@ -157,7 +158,31 @@
     }
 
     .aboutBox {
-        top: 222px;
+        top: 585px;
+    }
+
+    .explainationText {
+        line-height: 25px;
+    }
+
+    .explainationBox {
+        top: 2025px;
+    }
+
+    .explainationBoxTitle {
+        padding-top: 30px;
+    }
+
+    .howToClassifyBox {
+        height: 660px;
+    }
+
+    .howToRequestBox {
+        height: 850px;
+    }
+
+    .homePageBox {
+        height: 4075px;
     }
 }
 

@@ -98,7 +98,7 @@
         height: 700px;
     }
 
-    .aboutSectionTitle {
+    .aboutBoxTitle {
         position: relative;
         left: calc(50% - 80px);
         padding-top: 20px;
