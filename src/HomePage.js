@@ -172,7 +172,7 @@ export default class HomePageBox extends React.Component {
                     <div className="startButtonShadow slideInTop"></div>
                 </div>
 
-                <img alt="github-icon" src="images\undraw_adventure_4hum.svg" className="earthPinIllustration"></img>
+                <img alt="undraw-illustration" src="images\undraw_world_pins.svg" className="earthPinIllustration2"></img>
 
                 <div className="informationButtonBox">
                     <button className="informationButton" onClick={(e) => {
@@ -218,7 +218,7 @@ export default class HomePageBox extends React.Component {
                 </div>
 
                 <div id="aboutBox" className="aboutBox">
-                    <div className="slideBox">
+                    <div className="slideBox slideInBottom">
                         <h1 className="aboutBoxTitle">About ...</h1>
                         
                         <div className="aboutMotivationBox aboutSubBox">
@@ -273,7 +273,7 @@ export default class HomePageBox extends React.Component {
                 </div>
 
                 <div id="explainationBox" className="explainationBox">
-                    <div className="slideBox">
+                    <div className="slideBox slideInBottom">
                         <h1 className="explainationBoxTitle">How to...</h1>
 
 

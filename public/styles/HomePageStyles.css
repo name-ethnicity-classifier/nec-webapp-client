@@ -25,12 +25,12 @@
     right: 10%;
 }
 
-/*.earthPinIllustration {
+.earthPinIllustration2 {
     position: absolute;
     top: 90px;
     height: 600px;
     right: 14%;
-}*/
+}
 
 /* possible gradients:
     linear-gradient(to bottom right, rgb(27, 59, 148), rgb(115, 185, 164))
@@ -64,7 +64,6 @@
     top: 0px;
     text-align: center;
     line-height: 1.55em;
-    z-index: 9998;
 }
 
 .startSubText {
@@ -407,6 +406,7 @@
     border: solid rgb(226, 231, 255) 1px;
     padding: 30px;
     z-index: 3;
+    line-height: 20px;
     box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
@@ -425,6 +425,7 @@
     border: solid rgb(226, 231, 255) 1px;
     padding: 30px;
     z-index: 3;
+    line-height: 20px;
     box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;
@@ -442,6 +443,7 @@
     border: solid rgb(226, 231, 255) 1px;
     padding: 30px;
     z-index: 3;
+    line-height: 20px;
     box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
     -moz-transition: all .15s ease-out;
     -o-transition: all .15s ease-out;

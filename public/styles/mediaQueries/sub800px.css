@@ -1,7 +1,15 @@
 
 @media (max-width: 800px) {
     .earthPinIllustration {
+        width: 0px;
+        height: 0px;
         display: none;
+    }
+
+    .earthPinIllustration2 {
+        width: 0px;
+        height: 0px;
+        display: none;    
     }
 
     .startBackground {
@@ -314,13 +322,13 @@
     }
 
     .inputTableImage {
-        width: 60vw;
-        left: calc(50% - 30vw);
+        width: 100%;
+        left: 0px;
     }
     
     .outputTableImage {
-        width: 60vw;
-        left: calc(50% - 30vw);
+        width: 100%;
+        left: 0px;
     }
 
     .explainationPoint {

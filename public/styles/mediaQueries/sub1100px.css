@@ -25,6 +25,12 @@
         right: 2vw;
     }
 
+    .earthPinIllustration2 {
+        height: 350px;
+        top:75px;
+        right: 5vw;
+    }
+
     .informationButtonBox {
         width: 80vw;
         height: 130px;
@@ -194,3 +200,16 @@
         right: 2vw;
     }
 }
+
+@media (max-width: 850px) {
+    .earthPinIllustration2 {
+        height: 0px;
+        top: 0px;
+        display: none;
+    }
+
+    .startBox {
+        left: 18vw;
+    }
+}
+
