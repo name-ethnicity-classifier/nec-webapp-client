@@ -163,7 +163,7 @@ export default class HomePageBox extends React.Component {
                 <div id="startBox" className="startBox">
                     {/*<h1 className="startText slideInTop">request a custom classification model by choosing the exact nationalities you need and classify names for free</h1>
                     <h1 className="startSubText slideInTop">to get started you should first check out...</h1>*/}
-                    <h1 className="startText slideInTop">customized name to ethnicity classification:<br/>choose just the nationalities you need and we will train your custom model for free.</h1>
+                    <h1 className="startText slideInTop">customised name-ethnicity classification:<br/>you choose just the nationalities you need - we train your custom model for free.</h1>
                     <h1 className="startSubText slideInTop">to get started, check out...</h1>
                     <button className="startButton slideInTop" onClick={(e) => {
                                 e.preventDefault();
@@ -225,7 +225,7 @@ export default class HomePageBox extends React.Component {
                             <h1 className="aboutSubTitle">... our motivation</h1>
 
                             <h1 className="aboutText">
-                                Without knowledge about ethnic inequalities we have no basis for combatting them. Therefore, we embrace the recent shift within the social sciences away from a ‘colour-blind’ towards a ‘colour-conscious’ concept of justice
+                                Without knowledge about ethnic inequalities we have no basis for combatting them. Therefore, we embrace the recent shift within the social sciences away from a ‘colour-blind’ towards a ‘colour-conscious’ concept of justice.
                             </h1>
 
                             <h1 className="aboutText">
@@ -240,7 +240,7 @@ export default class HomePageBox extends React.Component {
                         <div className="aboutProjectBox aboutSubBox">
                             <h1 className="aboutSubTitle">... this project</h1>
                             <h1 className="aboutText">
-                                Ethnic inequalities come in many shades. Therefore, research to uncover them needs to be just as versatile
+                                Ethnic inequalities come in many shades. Therefore, research to uncover them needs to be just as versatile.
                             </h1>
 
                             <h1 className="aboutText">
@@ -311,14 +311,17 @@ export default class HomePageBox extends React.Component {
                             <h1 className="explainationTitle">... create a custom model:</h1>
 
                             <h1 className="explainationText">
-                                In the ‘create custom model’ section you are able to create a model which gets trained on just the nationalities you need (this can take a few hours). All you have to do is to give the model a descriptive name and select the nationalities you require (including the option ‘else’, which represents all nationalities you didn’t pick). <br/>We will display the number of names your model will be trained on. This will be an equal amount of names for every chosen nationality – to assure a minimum of data selection bias.
+                                In the ‘create custom model’ section you are able to create a model which gets trained on just the nationalities you need (this can take a few hours). 
+                                All you have to do is to give the model a descriptive name and select the nationalities you require (including the option ‘else’, which represents all nationalities you didn’t pick). <br/>
+                                We will display the number of names your model will be trained on. This will be an equal amount for every chosen nationality – 
+                                to assure a minimum of data selection bias.
                             </h1>
                             <h1 className="explainationText">
                                 While creating a custom model you should keep in mind, that...
                             </h1>
 
-                            <h1 className="explainationText explainationPoint">... to assess whether the accuracy is high enough for your use case you can first compare your nationality configuration with those of our pre-trained models. This might help you estimate how good your model will perform.</h1>
-                            <h1 className="explainationText explainationPoint">... English speaking nationalities have similar names and will therefore be mixed up by the classifier more often than other nationalities.</h1>
+                            <h1 className="explainationText explainationPoint">... Ethnicity estimation is probabilistic. To assess whether the accuracy is high enough for your use case you can first compare your nationality configuration with those of our pre-trained models. This might help you estimate how good your model will perform.</h1>
+                            <h1 className="explainationText explainationPoint">... English speaking nationalities have similar names. Therefore, they will be mixed up by the classifier more often than other nationalities.</h1>
                             <h1 className="explainationText explainationPoint">... machine learning is prone to bias. To keep bias to a minimum, it is important to have an equal amount of training data for all your chosen nationalities. Thus, if you choose a nationality with only few occurrences in our dataset (i.e <span>&lt;</span> 10000.), we reduce the amount of names for other chosen nationalities to be equal to this small nationality. This can lead to lower overall accuracy. You will see the amount of names available for training so you can take this into account when choosing which nationalities to include in your model.</h1>
                             <h1 className="explainationText explainationPoint">... as a general rule: The more nationalities you choose, the lower the overall accuracy. With only five nationalities, accuracy might be as high as 90%. When classifying up to 20 nationalities, this figure might drop to 80%. When classifying 50 or more nationalities, you can’t expect the accuracy to be more than 50%. Depth over breadth might be the way to go.</h1>
                         </div>

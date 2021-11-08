@@ -307,6 +307,202 @@
 
     .homePageBox {
         height: 3350px;
+    }   
+}
+
+
+@media (max-width: 1475px) {
+    .inner {
+        background-color: rgb(255, 255, 255);
+        width: calc(1437px - 100px);
+        left: calc(50% - 620px);
+    }
+
+    /* CLASSIFICATION BOX */
+    .classificationTitle {
+        width: calc(1417px - 190px);
+    }
+
+    .modelBox {
+        position: absolute;
+        left: 25px;
+        top: 88px;
+        height: 768px;
+        width: 250px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(202, 202, 202);
+        border-radius: 3px;
+        background-color: rgb(250, 250, 250);
     }
     
+    .modelBoxTitle {
+        width: 233px;
+    }
+    
+    .customModelBox {
+        width: 233px;
+    }
+    
+    .standardModelBox {
+        width: 233px;
+    }
+    
+    .modelScrollDiv {
+        width: 233px;
+    }
+
+    .modelInformationBox {
+        position: absolute;
+        top: 88px;
+        left: 300px;
+        height: 770px;
+        width: 947px;
+    }
+
+    .modelInformationTable {
+        width: 60vw;
+        left: 20px;
+    }
+
+    .scorePlotBox {
+        width: 60vw;
+        left: 22px;
+    }
+
+    .fileDropArea {
+        width: 60vw;
+    }
+
+    .chosenModelInformationBox {
+        width: 64vw;
+    }
+
+    .uploadBox {
+        width: 62vw;
+    }
+
+    .fileDropArea {
+        width: 59vw;
+        left: 32px;
+    }
+
+    .uploadExplanation {
+        left: 35px;
+    }
+
+    .scoreExplanationLink {
+        width: 125px;
+        left: calc(80.5%);
+    }
+
+    .modelInformationBox {
+        width: 64vw;
+    }
+
+    /* MODEL SUBMISSION BOX */
+    .modelSubmissionTitle {
+        width: calc(1417px - 190px);
+    }
+
+    .helpBox {
+        width: 0px;
+        height: 0px;
+        display: none;
+    }
+
+    .requestModelBox {
+        width: 72.5vw;
+        left: calc(50% - 520px);
+    }
+
+    .modelNameBox {
+        width: 67.5vw;
+    }
+
+    .modelNameField {
+        width: 64vw;
+    }
+
+    .modelNameField:hover, .modelNameField:focus {
+        width: 64vw;
+    }
+
+    .customDatasetBox {
+        width: 67.5vw;
+    }
+
+    .customDatasetPresentBox {
+        width: 64.5vw;
+    }
+
+    .datasetInformationBox {
+        width: 67.5vw;
+    }
+    
+}
+
+@media (max-width: 1265px) {
+    .inner {
+        left: 1.2vw;
+    }
+}
+
+@media (max-width: 1075px) {
+    .modelInformationTable {
+        width: 640px;
+    }
+
+    .scorePlotBox {
+        width: 640px;
+    }
+
+    .fileDropArea {
+        width: 640px;
+    }
+
+    .chosenModelInformationBox {
+        width: 690px;
+    }
+
+    .uploadBox {
+        width: 690px;
+    }
+
+    .fileDropArea {
+        width: 640px;
+    }
+
+    .modelInformationBox {
+        width: 720px;
+    }
+
+    /* MODEL SUBMISSION BOX */
+    .requestModelBox {
+        width: 780px;
+    }
+
+    .modelNameBox {
+        width: 727px;
+    }
+
+    .modelNameField {
+        width: 688px;
+    }
+
+    .modelNameField:hover, .modelNameField:focus {
+        width: 689px;
+    }
+
+    .customDatasetBox {
+        width: 727px;
+    }
+
+    .customDatasetPresentBox {
+        width: 695px;
+    }
+
+    .datasetInformationBox {
+        width: 727px;
+    }
 }

@@ -332,7 +332,7 @@
 .aboutBox {
     position: absolute;
     top: 880px;
-    left: calc(50vw - 760px);
+    left: calc(50vw - 770px);
     height: 920px;
     width: 1500px;
     background-color: rgba(233, 252, 236, 0);

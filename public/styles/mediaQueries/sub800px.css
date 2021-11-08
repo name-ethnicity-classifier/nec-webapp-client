@@ -34,7 +34,7 @@
     .startButton {
         width: 120px;
         height: 32px;
-        left: 110px;
+        left: 103px;
         top: 140px;
         font-size: 1.2em;
     }
@@ -338,6 +338,13 @@
 
     .homePageBox {
         height: 4300px;
+    }
+
+    /* SETTING BOX */
+    .settingsBox {
+        width: 330px;
+        top: 4vw;
+        bottom: 4vw;
     }
 
 }

@@ -2,8 +2,10 @@
 .settingsBox {
     position: fixed;
     right: 19px;
-    top: 15px;
-    height: 946px;
+    top: 1.15vw;
+    bottom: 1.15vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 368px;
     background-color: white;
     z-index: 20;
