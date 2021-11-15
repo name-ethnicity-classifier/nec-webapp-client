@@ -3,6 +3,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import ShadowButton from "./ShadowButton";
 import config from "./config";
+import { Portal } from 'react-portal';
 
 
 export default class SettingsBox extends React.Component {
@@ -105,35 +106,37 @@ export default class SettingsBox extends React.Component {
 
     changePasswordPopup() {
         return (
-            <div className="settingPopup">
-                <h1 className="settingPopupTitle">change password</h1>
-                
-                <label className="authLabel oldPasswordLabel">password</label>
-                <input type="password" placeholder="enter your password" value={this.state.password} onChange={(e) => {
-                    this.setState({password: e.target.value})
-                }} className="authField oldPasswordField"/>
+            <Portal node={document && document.getElementById("root")}>
+                <div className="settingPopup">
+                    <h1 className="settingPopupTitle">change password</h1>
+                    
+                    <label className="authLabel oldPasswordLabel">password</label>
+                    <input type="password" placeholder="enter your password" value={this.state.password} onChange={(e) => {
+                        this.setState({password: e.target.value})
+                    }} className="authField oldPasswordField"/>
 
-                <label className="authLabel newPasswordLabel">new password</label>
-                <input type="password" placeholder="min 10 characters, at least 1 number" value={this.state.newPassword} onChange={(e) => {
-                    this.setState({newPassword: e.target.value})
-                }} className="authField newPasswordField"/>
+                    <label className="authLabel newPasswordLabel">new password</label>
+                    <input type="password" placeholder="min 10 characters, at least 1 number" value={this.state.newPassword} onChange={(e) => {
+                        this.setState({newPassword: e.target.value})
+                    }} className="authField newPasswordField"/>
 
-                <label className="authLabel newRepeatedPasswordLabel">repeat new password</label>
-                <input type="password" placeholder="min 10 characters, at least 1 number" value={this.state.newRepeatedPassword} onChange={(e) => {
-                    this.setState({newRepeatedPassword: e.target.value})
-                }} className="authField newRepeatedPasswordField"/>
+                    <label className="authLabel newRepeatedPasswordLabel">repeat new password</label>
+                    <input type="password" placeholder="min 10 characters, at least 1 number" value={this.state.newRepeatedPassword} onChange={(e) => {
+                        this.setState({newRepeatedPassword: e.target.value})
+                    }} className="authField newRepeatedPasswordField"/>
 
-                <ShadowButton class="submitNewPasswordButton" text="change" onClickFunction={this.submitPasswordChange} styles={{
-                    width: "120px",
-                    height: "47px",
-                    fontSize: "20px",
-                    fontFamily: "inherit",
-                    color: "rgb(44, 107, 231)",
-                    borderRadius: "5px",
-                    borderWidth: "4px",
-                    opacity: ".15"
-                }}/>
-            </div>
+                    <ShadowButton class="submitNewPasswordButton" text="change" onClickFunction={this.submitPasswordChange} styles={{
+                        width: "120px",
+                        height: "47px",
+                        fontSize: "20px",
+                        fontFamily: "inherit",
+                        color: "rgb(44, 107, 231)",
+                        borderRadius: "5px",
+                        borderWidth: "4px",
+                        opacity: ".15"
+                    }}/>
+                </div>
+            </Portal>
         );
     }
 
@@ -176,27 +179,37 @@ export default class SettingsBox extends React.Component {
     }
 
     deleteUserPopup() {
-        return ( 
-            <div className="settingPopup">
-                <h1 className="settingPopupTitle">delete user</h1>
+        return (
+            <Portal node={document && document.getElementById("root")}>
+                <div className="settingPopup">
+                    <h1 className="settingPopupTitle">delete user</h1>
 
-                <label className="authLabel confirmationPasswordLabel">confirm with your password</label>
-                <input type="password" placeholder="enter your password" value={this.state.password} onChange={(e) => {
-                    this.setState({password: e.target.value})
-                }} className="authField confirmationPasswordField"/>
+                    <label className="authLabel confirmationPasswordLabel">confirm with your password</label>
+                    <input type="password" placeholder="enter your password" value={this.state.password} onChange={(e) => {
+                        this.setState({password: e.target.value})
+                    }} className="authField confirmationPasswordField"/>
 
-                <b><p className="confirmDeletionText">Are you sure you want to delete your account?</p></b>
-                <button className="confirmDeletionButton" onClick={() => {
-                    this.submitUserDeletion();
-                }}>yes</button>
-                <button className="cancelDeletionButton" onClick={() => {
-                    this.setState({showDeleteUserSetting: false});
-                }}>cancel</button>
-            </div>
+                    <b><p className="confirmDeletionText">Are you sure you want to delete your account?</p></b>
+                    <button className="confirmDeletionButton" onClick={() => {
+                        this.submitUserDeletion();
+                    }}>yes</button>
+                    <button className="cancelDeletionButton" onClick={() => {
+                        this.setState({showDeleteUserSetting: false});
+                    }}>cancel</button>
+                </div>
+            </Portal>
         );
     }
 
     unmount() {
+        try {
+            var settingPopup = document.getElementsByClassName("settingPopup")[0]
+            document.getElementById("root").removeChild(settingPopup)
+        }
+        catch {
+            ;
+        }
+
         this.props.stopRenderingHandler();
     }
 

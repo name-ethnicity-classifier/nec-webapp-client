@@ -112,12 +112,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        right: -10px;
+        right: -25px;
         border-radius: 3px;
-        top: 60px;
+        top: 61px;
         width: 230px;
         background-color: rgb(255, 255, 255);
-        z-index: 2;
+        z-index: 16;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
 
@@ -190,6 +190,7 @@
     .homePageBox {
         height: 4075px;
     }
+
 }
 
 
@@ -199,6 +200,77 @@
         top: 143px;
         right: 2vw;
     }
+   
+    .settingPopup {
+        /* TODO maybe make that responsive */
+        background-color: white;
+    }
+
+    /* DATASET CHOOSING BOX */
+
+    .dataChoosingBox {
+        position: fixed;
+        top: calc(50% - 375px);
+        left: calc(50% - 300px);
+        background-color: white;
+        border-radius: 7px;
+        width: 600px;
+        height: 750px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+        z-index: 12000;
+    }
+
+    .availableNationalities {
+        position: absolute;
+        top: 85px;
+        left: 10px;
+        width: 580px;
+        height: 292px;
+        background-color: rgb(238, 238, 238);
+        border-radius: 10px;
+    }
+
+    .chosenNationalities {
+        position: absolute;
+        top: 388px;
+        left: 10px;
+        width: 580px;
+        height: 292px;
+        background-color: rgb(238, 238, 238);
+        border-radius: 10px;
+    }
+
+    .availableScrollDiv {
+        width: 560px;
+        height: 247px;
+    }
+
+    .chosenScrollDiv {
+        width: 560px;
+        height: 247px;
+    }
+    
+    .submitNationalitiesBox {
+        position: relative;
+        border-top-style: solid;
+        border-top-width: 2px;
+        border-top-color: rgb(224, 224, 224);
+        top: 585px;
+    }
+
+    .errorMessageBox {
+        left: 20px;
+        width: 450px;
+        height: 25px;
+    }
+    
+    .errorMessage {
+        left: 5px;
+        top: -7px;
+        padding-right: 11px;
+    }
+    
+
 }
 
 @media (max-width: 850px) {

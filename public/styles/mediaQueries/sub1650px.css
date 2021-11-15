@@ -370,10 +370,6 @@
         left: 22px;
     }
 
-    .fileDropArea {
-        width: 60vw;
-    }
-
     .chosenModelInformationBox {
         width: 64vw;
     }
@@ -385,6 +381,12 @@
     .fileDropArea {
         width: 59vw;
         left: 32px;
+    }
+
+    .fileDropArea:active {
+        width: 59vw;
+        left: calc(32px - 1px);
+        top: 79px;
     }
 
     .uploadExplanation {
@@ -406,14 +408,20 @@
     }
 
     .helpBox {
-        width: 0px;
-        height: 0px;
-        display: none;
+        width: 275px;
+    }
+
+    .subHelpBox {
+        left: 15px;
+    }
+
+    .helpText {
+        font-size: 16px;
     }
 
     .requestModelBox {
         width: 72.5vw;
-        left: calc(50% - 520px);
+        left: calc(50% - 350px);
     }
 
     .modelNameBox {
@@ -437,7 +445,7 @@
     }
 
     .datasetInformationBox {
-        width: 67.5vw;
+        width: 65.85vw;
     }
     
 }
@@ -446,6 +454,7 @@
     .inner {
         left: 1.2vw;
     }
+
 }
 
 @media (max-width: 1075px) {
@@ -454,10 +463,6 @@
     }
 
     .scorePlotBox {
-        width: 640px;
-    }
-
-    .fileDropArea {
         width: 640px;
     }
 
@@ -470,6 +475,10 @@
     }
 
     .fileDropArea {
+        width: 640px;
+    }
+
+    .fileDropArea:hover {
         width: 640px;
     }
 
@@ -505,4 +514,5 @@
     .datasetInformationBox {
         width: 727px;
     }
+
 }

@@ -31,6 +31,10 @@ export default class HomeBarBox extends React.Component {
 
     checkWindowWidth() {
         this.setState({ hideNavigationLinks: window.innerWidth < 1100 });
+        if ( !this.state.hideNavigationLinks ) {
+            this.setState({ showNavigationMenu: false });
+        }
+        
     }
 
     componentDidMount() {

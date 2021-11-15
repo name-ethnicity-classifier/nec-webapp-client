@@ -2,11 +2,9 @@
 
 /* nationality dataset choosing box */
 .dataChoosingBox {
-    position: absolute;
-    top: -90px;
-    left: calc(50% - 600px);
-    width: 560px;
-    height: 300px;
+    position: fixed;
+    top: calc(50% - 311px);
+    left: calc(50% - 400px);
     background-color: white;
     border-radius: 7px;
     width: 800px;

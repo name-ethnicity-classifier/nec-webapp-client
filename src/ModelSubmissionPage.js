@@ -171,6 +171,7 @@ export default class ModelSubmissionBox extends React.Component {
     }
 
     toggleHelpMinimizer() {
+        // currently not in use
         if (!this.state.helpMinimized) {
             try {
                 var helpBox = document.getElementsByClassName("helpBox")[0];
@@ -202,6 +203,8 @@ export default class ModelSubmissionBox extends React.Component {
             try {
                 var helpBox = document.getElementsByClassName("helpBox")[0];
                 var requestModelBox = document.getElementsByClassName("requestModelBox")[0];
+
+                // var isFirstMediaQuery = window.matchMedia('(max-width: 1475px)').matches;
 
                 helpBox.style.width = "375px";
                 helpBox.style.borderColor = "rgb(224, 224, 224)"
@@ -309,6 +312,7 @@ export default class ModelSubmissionBox extends React.Component {
     }
 
     render() {
+
         return (
             <div className="modelSubmissionBox">
                 <div className="inner">
@@ -316,9 +320,9 @@ export default class ModelSubmissionBox extends React.Component {
 
                     <div className="helpBox">
                         <h1 className="helpTitle">to help you choose:</h1>
-                        <button className="minimizeHelpBoxButton" onClick={() => {
+                        {/*<button className="minimizeHelpBoxButton" onClick={() => {
                             this.toggleHelpMinimizer()
-                        }}><img alt="compress-icon" className="toggleMinIcon" src="images/minimize-icon.svg"></img></button>
+                        }}><img alt="compress-icon" className="toggleMinIcon" src="images/minimize-icon.svg"></img></button>*/}
 
                         <div className="subHelpBox">
                             <p className="helpText">Take a look at all the existing nationalities in the dataset and how many names there are.</p>
@@ -339,12 +343,10 @@ export default class ModelSubmissionBox extends React.Component {
                             }}>inspect models</button>
                         </div>
 
-                        <div className="subSmallHelpBox">
-                            <button className="smallHelpButton" onClick={() => {
-                                this.setState({showDatasetInfo: true, showModelInfo: true})
-                                this.showHelpPopup("both");
-                            }}>inspect both</button>
-                        </div>
+                        <button className="smallHelpButton" onClick={() => {
+                            this.setState({showDatasetInfo: true, showModelInfo: true})
+                            this.showHelpPopup("both");
+                        }}>inspect both</button>
 
                         { 
                             this.state.showDatasetInfo && !this.state.showModelInfo ? 
