@@ -45,11 +45,18 @@ export default class ClassificationPopup extends React.Component {
                 Cookies.remove("token");
                 window.location.href = "/login";
             }
-        });
-    }
+            else if (error.response.status === 400) {
+                var classificationTitle = document.getElementsByClassName("classificationProcessTitle")[0];
+                classificationTitle.innerText = "classification failed!";
 
-    getFile() {
-        ;
+                var statusImage = document.getElementsByClassName("loadingGif")[0];
+                statusImage.src = "images/red-cross.png";
+
+                setTimeout(() => {
+                    this.unmount();
+                }, 3000);
+            }
+        });
     }
 
     renderClassifyButton() {
