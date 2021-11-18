@@ -16,6 +16,7 @@ export default class ClassificationBox extends React.Component {
         this.createModelInformationBox = this.createModelInformationBox.bind(this);
         this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
         this.closeClassificationPopup = this.closeClassificationPopup.bind(this);
+        this.showModelDeletionButton = this.showModelDeletionButton.bind(this);
 
         this.state = {
             totalModels: {},
@@ -24,7 +25,8 @@ export default class ClassificationBox extends React.Component {
             chosenModel: null,
             selectedFile: null,
             showClassificationPopup: false,
-            showNationalityPopup: true
+            showNationalityPopup: true,
+            showModelDeletionButton: false
         };
     }
 
@@ -209,6 +211,56 @@ export default class ClassificationBox extends React.Component {
         });
     }
 
+    showModelDeletionButton() {
+        if (this.state.showModelDeletionButton) {
+            var modelDeletionButton = document.getElementsByClassName("deleteModelButton")[0];
+            modelDeletionButton.classList.add("deleteModelButtonClicked");
+
+            var deletionConfirmationText = document.createElement("p");
+            deletionConfirmationText.classList.add("deletionConfirmationText");
+            deletionConfirmationText.innerText = "You are about to delete this model! Are you sure you want to do that? Click again to confirm, click outside to abort.";
+            modelDeletionButton.appendChild(deletionConfirmationText);
+
+            var deleteModelIcon = document.getElementsByClassName("deleteModelIcon")[0];
+            deleteModelIcon.classList.add("deleteModelIconClicked");
+
+            document.addEventListener("mouseup", (e) => {
+                if (modelDeletionButton.contains(e.target)) {
+                    var modelId = this.state.customModels[this.state.chosenModel]["model_id"]
+
+                    axios.post(config.API_URL + "delete-model", { modelId }, {
+                        headers: {
+                            Authorization: "Bearer " + Cookies.get("token"),
+                            Email: Cookies.get("email")
+                        },
+                    }).then((response) => {
+                        setTimeout((e) => {
+                            window.location.reload();
+                        }, 500);
+                    }, (error) => {
+                        ;
+                    });
+                    
+                }
+                else {
+                    modelDeletionButton.classList.remove("deleteModelButtonClicked");
+
+                    var modelDeletionIcon = document.getElementsByClassName("deleteModelIcon")[0];
+                    modelDeletionIcon.classList.remove("deleteModelIconClicked");
+
+                    [].forEach.call(document.querySelectorAll(".deletionConfirmationText"), function(e) {
+                        e.parentNode.removeChild(e);
+                    });
+                    this.setState({showModelDeletionButton: false});
+                }
+            }, { once: true });
+
+        }
+        else {
+            ;
+        } 
+    }
+
     createModelInformationBox() {
         var chosenModelName = this.state.chosenModel;
         var chosenModelObject = this.state.totalModels[chosenModelName];
@@ -377,11 +429,22 @@ export default class ClassificationBox extends React.Component {
                     <div className="modelInformationBox">
                         {this.createModelInformationBox()}
                     </div>
+                    {
+                        this.state.customModels.hasOwnProperty(this.state.chosenModel) ?
+                            <button className="deleteModelButton" title="delete model" onClick={() => { 
+                                this.setState({showModelDeletionButton: true});                        
+                            }}>
+                                <img className="deleteModelIcon" alt="trash-icon" src="images/trash-icon.svg"></img>
+                            </button>
+                    : null}
+                    
 
+                    {this.state.showModelDeletionButton ? this.showModelDeletionButton() : null}
                     {this.state.showClassificationPopup ? <ClassificationPopup modelName={this.state.chosenModel} submittedFile={this.state.selectedFile} stopRenderingHandler={this.closeClassificationPopup}/> : null}
                 </div>
                 <FooterBox/>
             </div>
+
         );
     }
 }

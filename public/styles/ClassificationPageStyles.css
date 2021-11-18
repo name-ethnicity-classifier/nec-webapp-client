@@ -131,6 +131,58 @@
     background-color: rgb(240, 240, 240);
 }
 
+.deleteModelButton {
+    position: absolute;
+    background-color: transparent;
+    top: 100px;
+    padding: 0px;
+    padding-top: 2px;
+    right: 50px;
+    height: 31px;
+    width: 31px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+}
+
+.deleteModelButton:hover {
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 1);
+}
+
+.deleteModelIcon {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+.deleteModelButtonClicked {
+    width: 500px;
+    height: 45px;
+    box-shadow: 0px 0px 11px -3px rgba(255, 0, 0, 1);
+    border-radius: 15px;
+}
+
+.deleteModelButtonClicked:hover {
+    box-shadow: 0px 0px 13px -3px rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.deleteModelIconClicked {
+    display: none;
+}
+
+.deletionConfirmationText {
+    position: absolute;
+    top: -13px;
+    left: 10px;
+    right: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: red;
+}
+
+
 /* chosen model information */
 .modelInformationBox {
     position: absolute;
