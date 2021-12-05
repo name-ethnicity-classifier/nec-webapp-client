@@ -25,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "echo 'no tests'",
     "eject": "react-scripts eject",
     "serve": "npm run build && serve -s build"
   },
