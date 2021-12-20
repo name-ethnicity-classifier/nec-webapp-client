@@ -237,7 +237,6 @@ export default class LoginBox extends React.Component {
                                 this.createFieldErrorStyle("roleField", null, null, true);
                             }
                             else if (error.response.data.error === "invalidSignupEmail") {
-                                console.log("no")
                                 this.createFieldErrorStyle("signupEmailField", "please enter a valid email address!", "example@mail.com");
                             }
                             else if (error.response.data.error === "emailDuplicateExists") {
