@@ -22,6 +22,8 @@ export default class LoginBox extends React.Component {
             signupEmail: "",
             signupPassword: "",
             repeatedPassword: "",
+            showTermsOfServicePopup: false,
+            termsOfServiceConsent: false,
             verificationMessage: null,
         }
     }
@@ -81,7 +83,7 @@ export default class LoginBox extends React.Component {
                     this.setState({loginPassword: e.target.value})
                 }} className="passwordField loginPasswordField"/>
 
-                <button className="submitAuthButton" onClick={(e) => {
+                <button className="submitAuthButton loginSubmitButton" onClick={(e) => {
                     if (this.state.loginEmail.length < 3) {
                         this.createFieldErrorStyle("loginEmailField", "please enter a valid email address!", "enter your email");
                         return null;
@@ -119,7 +121,7 @@ export default class LoginBox extends React.Component {
                         });
                 }}>log in</button>
 
-                <div className="authButtonShadow"></div>
+                <div className="authButtonShadow loginShadow"></div>
             </div>
         );
     }
@@ -142,7 +144,7 @@ export default class LoginBox extends React.Component {
                     if (e.target.value == "none") {
                         roleField.classList.remove("roleSelected");
                     }
-                }}class="roleField">
+                }}className="roleField">
                     <option value="none" class="roleOption">select role</option>
                     <option value="researcher" class="roleOption">researcher</option>
                     <option value="student" class="roleOption">student</option>
@@ -164,8 +166,27 @@ export default class LoginBox extends React.Component {
                     this.setState({repeatedPassword: e.target.value})
                 }} className="repeatPasswordField"/>
 
-                <button className="submitAuthButton" onClick={() => {
+                <input type="checkbox" onChange={(e) => {
+                    this.setState({ termsOfServiceConsent: !this.state.termsOfServiceConsent });
+                    if (!this.state.termsOfServiceConsent) {
+                        var checkMarkDiv = document.getElementsByClassName("checkMark")[0];
+                        checkMarkDiv.classList.add("checkMarkChecked");
+                    }
+                    else {
+                        var checkMarkDiv = document.getElementsByClassName("checkMark")[0];
+                        checkMarkDiv.classList.remove("checkMarkChecked");
+                    }
                     
+                }} className="consentCheckBox"/>
+                <div className="checkMark"></div>
+
+                <p className="termsOfServiceDescription">I've read and consent to the</p>
+                <button className="termsOfServiceButton" onClick={() => {
+                    this.setState({ showTermsOfServicePopup: true });
+                }}>terms of service</button>
+                <p className="termsOfServiceDescription termsOfServicePeriod">.</p>
+
+                <button className="submitAuthButton signupSubmitButton" onClick={() => {
                     /* potential client side validations:
 
                     if (this.state.role == "none") {
@@ -213,6 +234,7 @@ export default class LoginBox extends React.Component {
                         role: this.state.role,
                         email: this.state.signupEmail,
                         password: this.state.signupPassword,
+                        consented: this.state.termsOfServiceConsent
                     }
                     axios.post(config.API_URL + "signup", data)
                         .then((response) => {
@@ -225,7 +247,7 @@ export default class LoginBox extends React.Component {
 
                         }, (error) => {
                             if (error.response.data.error === "invalidSignupNameTooShort") {
-                                this.createFieldErrorStyle("nameField", "please provide full name!", "first and last name");
+                                this.createFieldErrorStyle("nameField", "please enter your name!", "first and last name");
                             }
                             else if (error.response.data.error === "invalidSignupNameTooLong") {
                                 this.createFieldErrorStyle("nameField", "please shorten name!", "first and last name");
@@ -245,13 +267,47 @@ export default class LoginBox extends React.Component {
                             else if (error.response.data.error === "invalidSignupPassword") {
                                 this.createFieldErrorStyle("signupPasswordField", "minimum of 10 characters, at least 1 number!", "minimum of 10 characters, at least 1 number");
                             }
+                            else if (error.response.data.error === "noTermsOfServiceConsent") {
+                                this.createFieldErrorStyle("consentCheckBox", "", "", true);
+                            }
                             else {
                                 ;
                             }
                         });
 
                 }}>sign up</button>
-                <div className="authButtonShadow"></div>
+                <div className="authButtonShadow signupShadow"></div>
+            </div>
+        )
+    }
+
+    showTermsOfServicePopup() {
+        return (
+            <div className="termsOfServicePopup">
+                <button className="closeTermsOfServiceButton" onClick={(e) => {
+                    this.setState({ showTermsOfServicePopup: false });
+                }}>
+                    <img alt="close-terms-of-service-icon" src="images\close-box-icon.svg" className="closeTermsOfServiceImage"></img>
+                </button>
+                <div className="termsOfServiceTextSection">
+                    <p className="termsOfServiceText">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur 
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.   
+                        em vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at.
+                    </p>
+                </div>
             </div>
         )
     }
@@ -268,13 +324,14 @@ export default class LoginBox extends React.Component {
 
                     <div className="authFieldBox">
                         <div className="authTitleBox">
-                            <h1 className="authTitleText">name-ethnicity-classifier</h1>
+                            <h1 className="authTitleText">name-to-ethnicity</h1>
                         </div>
 
                         <button className="authChoiceButton" id="loginChoice" onClick={(e) => {
                             this.setState({verificationMessage: null});
                             this.colorChoiceBar("login");
                             this.setState({authState: "login"});
+                            this.setState({ showTermsOfServicePopup: false })
                         }}>log in</button>
 
                         <button className="authChoiceButton" id="signupChoice" onClick={(e) => {
@@ -292,6 +349,11 @@ export default class LoginBox extends React.Component {
                         }
                         {
                             this.state.authState === "signup" ? this.createSignupBox() :
+                            null
+                        }
+
+                        {
+                            this.state.showTermsOfServicePopup ? this.showTermsOfServicePopup() :
                             null
                         }
 

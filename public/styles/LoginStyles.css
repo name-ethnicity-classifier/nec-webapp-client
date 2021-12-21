@@ -12,12 +12,11 @@
 .authFieldBox {
     position: absolute;
     width: 400px;
-    height: 510px;
+    height: 130px;
     left: calc(50% - 200px);
     top: 200px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255);
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 .authTitleBox {
@@ -91,64 +90,19 @@
 
 .loginSectionBox {
     position: absolute;
-    left: 30px;
-    right: 30px;
-    top: 120px;
-    height: 360px;
-    background-color: rgb(255, 255, 255);
-}
-
-.nameField {
-    position: absolute;
-    top: 20px;
     left: 0px;
-    border-radius: 5px;
-    border: solid 1px rgb(195, 195, 195);
-    height: 35px;
-    width: 170px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
-    font-family: inherit;
-    font-size: 16px;
-    padding-left: 12px;
-    outline: none;
-}
-
-.roleField {
-    position: absolute;
-    top: 20px;
     right: 0px;
-    border-radius: 5px;
-    border: solid 1px rgb(195, 195, 195);
-    height: 39px;
-    width: 135px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
-    font-family: inherit;
-    font-size: 16px;
-    padding-left: 12px;
-    outline: none;
-}
-
-.nameLabel {
-    position: absolute;
-    top: -4px;
-    left: 0px;
-    font-weight: 600;
-    font-size: 17px;
-    color: rgb(50, 50, 50);
-}
-
-.roleLabel {
-    position: absolute;
-    top: -4px;
-    left: 205px;
-    font-weight: 600;
-    font-size: 17px;
-    color: rgb(50, 50, 50);
+    top: 115px;
+    width: 400px;
+    height: 275px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
 }
 
 .emailLabel {
     position: absolute;
-    left: 0px;
+    left: 30px;
     font-weight: 600;
     font-size: 17px;
     color: rgb(50, 50, 50);
@@ -166,11 +120,12 @@
 .emailField {
     position: absolute;
     top: 30px;
-    left: 0px;
+    left: 30px;
+    right: 30px;
+    width: 320px;
     border-radius: 5px;
     border: solid 1px rgb(195, 195, 195);
     height: 35px;
-    width: 322px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     font-family: inherit;
     font-size: 16px;
@@ -189,7 +144,7 @@
 
 .passwordLabel {
     position: absolute;
-    left: 0px;
+    left: 30px;
     font-weight: 600;
     font-size: 17px;
     color: rgb(50, 50, 50);
@@ -200,7 +155,7 @@
 }
 
 .signupPasswordLabel {
-    top: 155px;
+    top: 150px;
 }
 
 .passwordField {
@@ -208,12 +163,12 @@
     border-radius: 5px;
     border: solid 1px rgb(195, 195, 195);
     height: 35px;
-    width: 322px;
+    width: 320px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     font-family: inherit;
     font-size: 16px;
     padding-left: 12px;
-    left: 0px;
+    left: 30px;
     outline: none;
 }
 
@@ -222,37 +177,87 @@
 }
 
 .signupPasswordField {
-    top: 180px;
+    top: 175px;
 }
 
 /* signup section */
 
 .signupSectionBox {
     position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 115px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
+}
+
+.nameField {
+    position: absolute;
+    top: 20px;
     left: 30px;
+    border-radius: 5px;
+    border: solid 1px rgb(195, 195, 195);
+    height: 35px;
+    width: 170px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    font-family: inherit;
+    font-size: 16px;
+    padding-left: 12px;
+    outline: none;
+}
+
+.roleField {
+    position: absolute;
+    top: 20px;
     right: 30px;
-    top: 120px;
-    height: 360px;
-    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: solid 1px rgb(195, 195, 195);
+    height: 39px;
+    width: 135px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    font-family: inherit;
+    font-size: 16px;
+    padding-left: 12px;
+    outline: none;
+}
+
+.nameLabel {
+    position: absolute;
+    top: -4px;
+    left: 30px;
+    font-weight: 600;
+    font-size: 17px;
+    color: rgb(50, 50, 50);
+}
+
+.roleLabel {
+    position: absolute;
+    top: -4px;
+    left: 235px;
+    font-weight: 600;
+    font-size: 17px;
+    color: rgb(50, 50, 50);
 }
 
 .repeatPasswordLabel {
     position: absolute;
-    left: 0px;
+    left: 30px;
     font-weight: 600;
     font-size: 17px;
     color: rgb(50, 50, 50);
-    top: 235px;
+    top: 230px;
 }
 
 .repeatPasswordField {
     position: absolute;
-    top: 260px;
-    left: 0px;
+    top: 255px;
+    left: 30px;
     border-radius: 5px;
     border: solid 1px rgb(195, 195, 195);
     height: 35px;
-    width: 322px;
+    width: 320px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     font-family: inherit;
     font-size: 16px;
@@ -290,7 +295,7 @@
 .submitAuthButton {
     position: absolute;
     left: calc(50% - 80px);
-    top: 320px;
+    top: 370px;
     width: 160px;
     height: 50px;
     outline: none;
@@ -301,15 +306,32 @@
     font-size: 18px;
     font-weight: 600;
     color: rgb(63, 124, 247);
-    z-index: 30000;
+    z-index: 15;
     -moz-transition: all .045s ease-out;
     -o-transition: all .045s ease-out;
     -webkit-transition: all .045s ease-out;
     transition: all .045s ease-out;
 }
 
+.loginSubmitButton {
+    top: 205px;
+}
+
+.loginSubmitButton:active {
+    top: 213px;
+}
+
+.signupSubmitButton {
+    top: 370px;
+}
+
+.signupSubmitButton:active {
+    top: 378px;
+}
+
 .submitAuthButton:hover {
     font-size: 19px;
+    color: rgb(63, 124, 247);
     -moz-transition: all .07s ease-out;
     -o-transition: all .07s ease-out;
     -webkit-transition: all .07s ease-out;
@@ -317,7 +339,6 @@
 }
 
 .submitAuthButton:active {
-    top: 328px;
     left: calc(50% - 72px);
     -moz-transition: all .045s ease-out;
     -o-transition: all .045s ease-out;
@@ -325,9 +346,16 @@
     transition: all .045s ease-out;
 }
 
+.loginShadow {
+    top: 214px;
+}
+
+.signupShadow {
+    top: 379px;
+}
+
 .authButtonShadow {
     position: absolute;
-    top: 329px;
     left: calc(50% - 71px);
     width: 158px;
     height: 48px;
@@ -337,7 +365,7 @@
 
 .verificationMessageBox {
     position: absolute;
-    top: 735px;
+    top: 785px;
     left: calc(50% - 247px);
     width: 500px;
     height: 25px;
@@ -349,4 +377,120 @@
     font-family: inherit;
     font-size: 22px;
     color: white;
+}
+
+/* terms of serive consent check and popup box */
+
+.consentCheckBox {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -o-appearance:none;
+    position: absolute;
+    top: 324px;
+    left: 38px;
+    height: 17px;
+    width: 17px;
+    border: solid 1px rgb(126, 126, 126);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.checkMark {
+    position: absolute;
+    top: 331px;
+    left: 46px;
+    height: 9px;
+    width: 9px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.checkMarkChecked {
+    background-color: rgb(76, 131, 241);
+}
+
+.termsOfServiceDescription {
+    position: absolute;
+    top: 311px;
+    font-family: inherit;
+    left: 70px;
+    font-size: 15px;
+}
+
+.termsOfServicePeriod {
+    left: 347px;
+}
+
+.termsOfServiceButton {
+    position: absolute;
+    top: 325px;
+    font-family: inherit;
+    left: 241px;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: rgb(63, 124, 247);
+    font-weight: bold;
+}
+
+.termsOfServiceButton:hover {
+    color: rgb(135, 152, 250);
+}
+
+.termsOfServicePopup {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 105px;
+    width: 400px;
+    height: 450px;
+    background-color: rgb(255, 255, 255);
+    z-index: 20;
+}
+
+.termsOfServiceTextSection {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    width: 395px;
+    height: 420px;
+    overflow-y: scroll;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset -10px 0 10px rgb(143, 143, 143);
+}
+
+.termsOfServiceText {
+    position: absolute;
+    top: -10px;
+    padding-bottom: 10px;
+    left: 10px;
+    right: 12px;
+    text-align: justify;
+}
+
+.closeTermsOfServiceButton {
+    position: absolute;
+    right: 5px;
+    height: 26px;
+    width: 26px;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    top: 0px;
+    z-index: 25;
+}
+
+.closeTermsOfServiceButton:hover {
+    transition: all .1s ease-out;
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 1);}
+
+.closeTermsOfServiceImage {
+    position: absolute;
+    top: 1px;
+    height: 25px;
+    left: 1px;
+    color: black;
 }

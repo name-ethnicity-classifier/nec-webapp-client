@@ -151,7 +151,7 @@ export default class HomeBarBox extends React.Component {
                                 e.preventDefault();
                                 window.location.href="/";
                     }}>
-                        <b>names to ethnicity</b>
+                        <b>name to ethnicity</b>
                         <img alt="nec-logo" src="images/nec_final_logo.svg" className="logo"></img>
                     </button>
                     

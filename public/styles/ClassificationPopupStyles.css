@@ -8,7 +8,7 @@
     background-color: white;
     border-radius: 10px;
     z-index: 20000;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
     font-family: 'Source Sans Pro', sans-serif;
 }
 

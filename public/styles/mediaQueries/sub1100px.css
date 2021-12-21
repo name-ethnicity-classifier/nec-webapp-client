@@ -216,7 +216,7 @@
         border-radius: 7px;
         width: 600px;
         height: 750px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
         z-index: 12000;
     }
 
