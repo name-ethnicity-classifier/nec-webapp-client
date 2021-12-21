@@ -4,6 +4,7 @@ import ModelSubmissionBox from "./ModelSubmissionPage";
 import NavBarBox from "./NavBarBox";
 import HomePageBox from './HomePage';
 import ClassificationBox from "./ClassificationPage";
+import PrivacyPolicyPage from "./PrivacyPolicy";
 import LoginBox from "./LoginBox";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -61,6 +62,9 @@ export default function App() {
                         <Redirect to="/login"/> 
                     } 
                 }}></Route>
+
+                <Route path="/privacy-policy" exact component={PrivacyPolicyPage}></Route>
+
             </div>
         </Router>
     );

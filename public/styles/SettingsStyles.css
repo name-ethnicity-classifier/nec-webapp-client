@@ -325,3 +325,26 @@
     left: calc(50% - 29px);
     font-size: 17px;
 }
+
+.showPrivacyPolicyButton {
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(63, 124, 247);
+    left: 12px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.showPrivacyPolicyButton:hover {
+    color: rgb(135, 152, 250);
+}
+
+.privacyPolicyBox {
+    position: absolute;
+    top: 65px;
+    left: 50px;
+    right: 50px;
+    padding-bottom: 30px;
+}

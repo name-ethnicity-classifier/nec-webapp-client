@@ -269,6 +269,11 @@ export default class SettingsBox extends React.Component {
                         <a className="contactSectionText" id="linkText" href="https://github.com/hollowcodes/nec-webapp">on Github</a>
                     </div>
 
+                    <div className="contactSection">
+                        <b><p className="contactSectionTitle">privacy policy:</p></b>
+                        <a className="contactSectionText" id="linkText" href="/privacy-policy">here</a>
+                    </div>
+
                     <div className="contactInquirySection">
                         <b><p className="contactSectionTitle">Please contact us if you ...</p></b>
                         <p className="contactInquiryText">... have any questions or problems.</p>
@@ -276,6 +281,8 @@ export default class SettingsBox extends React.Component {
                         <p className="contactInquiryText">... have suggestions for improvement.</p>
                         <p className="contactInquiryText">... want to contribute to this project.</p>
                     </div>
+
+                    
                 </div>
 
             </div>
