@@ -112,7 +112,7 @@ export default class LoginBox extends React.Component {
 
                         }, (error) => {
                             if (error.response.data.error === "userNotVerified") {
-                                this.setState({verificationMessage: "This account exists but is not verified. We sent you a verification mail!"});
+                                this.setState({verificationMessage: "This account exists but is not verified yet. We sent you a verification mail!"});
                             }
                             else {
                                 this.createFieldErrorStyle("loginEmailField", "email or password does not exist!", "enter your email");
@@ -318,7 +318,7 @@ export default class LoginBox extends React.Component {
 
                     { this.state.verificationMessage !== null ? 
                         <div className="verificationMessageBox">
-                            <h1 className="verificationMessage">{this.state.verificationMessage}</h1>
+                            <p className="verificationMessage">{this.state.verificationMessage}</p>
                         </div>
                     : null }
 

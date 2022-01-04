@@ -183,21 +183,18 @@
     border: solid 1px rgb(224, 224, 224);
     outline: none;
     background-color: white;
-
-
 }
 
 .userSettingsIcon {
     border-radius: 50%;
     height: 30px;
+    transition: all .1s ease-out;
 }
 
 .userSettingsButton:hover {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    -moz-transition: all .045s ease-out;
-    -o-transition: all .045s ease-out;
-    -webkit-transition: all .045s ease-out;
-    transition: all .045s ease-out;
+    border: solid 1px rgba(90, 140, 255, 0.5);
+    box-shadow: 0 0 7px rgba(90, 156, 255, 0.5);
+    transition: all .1s ease-out;
 }
 
 .userSettingsButton:active {

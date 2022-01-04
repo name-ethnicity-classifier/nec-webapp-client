@@ -28,7 +28,7 @@ export default class HomePageBox extends React.Component {
         // get nationality amount
         axios.get(config.API_URL + "nationalities")
         .then((response) => {
-            this.setState({amountNationalities: Object.keys(response.data).length});
+            this.setState({amountNationalities: Object.keys(response.data["nationalities"]).length});
         });
 
         // get standard/default model amount
@@ -225,15 +225,15 @@ export default class HomePageBox extends React.Component {
                             <h1 className="aboutSubTitle">... our motivation</h1>
 
                             <h1 className="aboutText">
-                                Without knowledge about ethnic inequalities we have no basis for combatting them. Therefore, we embrace the recent shift within the social sciences away from a ‘colour-blind’ towards a ‘colour-conscious’ concept of justice.
+                                Without knowledge about ethnic inequalities we have no basis for combatting them. Therefore, we embrace the recent shift within the social sciences away from a 'colour-blind' towards a 'colour-conscious' concept of justice.
                             </h1>
 
                             <h1 className="aboutText">
-                                However, trying to adopt this mindset in our research we faced a challenge: Most datasets are relics from the ‘colour-blind’ age. Information about ethnicity? Nowhere to be found. 
+                                However, trying to adopt this mindset in our research we faced a challenge: Most datasets are relics from the 'colour-blind' age. Information about ethnicity? Nowhere to be found. 
                             </h1>
 
                             <h1 className="aboutText">
-                                To infuse the data with ‘colour-consciousness’, we have developed a machine learning tool that can infer ethnicity from names. If you are a like-minded scholar we hope that sharing our tool with you on this website will enable us to collectively open our eyes to the coloured inequalities of our times. 
+                                To infuse the data with 'colour-consciousness', we have developed a machine learning tool that can infer ethnicity from names. If you are a like-minded scholar we hope that sharing our tool with you on this website will enable us to collectively open our eyes to the coloured inequalities of our times. 
                             </h1>
                         </div>
 
@@ -276,22 +276,10 @@ export default class HomePageBox extends React.Component {
                     <div className="slideBox slideInBottom">
                         <h1 className="explainationBoxTitle">How to...</h1>
 
-
-                        {/*
-                        <img alt="github-icon" src="images\undraw_Publish_article_re_3x8h.svg" className="publishIllustration slideInBottom"></img>
-
-                        <div className="whenToUseBox">
-                            <h1 className="explainationTitle">... know when to use this classifier:</h1>
-                            <h1 className="explainationText">If you have a dataset containing names and you want to</h1>
-                            <pre className="whenToUsePoints">    . . . infer information about the distribution of ethnicities within your data<br/>    . . . correlate other variables in your data with ethnicity</pre>
-                            <h1 className="explainationText">then this classifier is for you.</h1>
-                        </div>*/}
-
                         <div className="howToClassifyBox">
                             <h1 className="explainationTitle">... classify names:</h1>
-
                             <h1 className="explainationText">
-                                In the ‘classify names’ section you can access our pretrained and your custom models. For every trained model, we display the overall accuracy as well as individual accuracies for the chosen nationalities.
+                                In the 'classify names' section you can access our pretrained and your custom models. For every trained model, we display the overall accuracy as well as individual accuracies for the chosen nationalities.
                             </h1>
                             <h1 className="explainationText">To classify names, upload them in a .csv file in the following format:</h1>
                             <img alt="names-csv-exp" src="images\input-example-csv.png" className="inputTableImage"></img>
@@ -304,15 +292,14 @@ export default class HomePageBox extends React.Component {
                             <ShadowButton class="getStartedButton" text="get started!" onClickFunction={() => {window.location.href="/classification"}} styles={{
                                 width: "180px", height:"50px", color: "rgb(63, 124, 247)", borderWidth: "4px", borderRadius: "5px", fontSize: "17px", fontFamily: "inherit"
                             }}/> 
-
                         </div>
 
                         <div className="howToRequestBox">
                             <h1 className="explainationTitle">... create a custom model:</h1>
 
                             <h1 className="explainationText">
-                                In the ‘create custom model’ section you are able to create a model which gets trained on just the nationalities you need (this can take a few hours). 
-                                All you have to do is to give the model a descriptive name and select the nationalities you require (including the option ‘else’, which represents all nationalities you didn’t pick). <br/>
+                                In the 'create custom model' section you are able to create a model which gets trained on just the nationalities you need (this can take a few hours). 
+                                All you have to do is to give the model a descriptive name and select the nationalities you require (including the option 'else', which represents all nationalities you didn't pick). <br/>
                                 We will display the number of names your model will be trained on. This will be an equal amount for every chosen nationality – 
                                 to assure a minimum of data selection bias.
                             </h1>
@@ -320,10 +307,10 @@ export default class HomePageBox extends React.Component {
                                 While creating a custom model you should keep in mind, that...
                             </h1>
 
-                            <h1 className="explainationText explainationPoint">... Ethnicity estimation is probabilistic. To assess whether the accuracy is high enough for your use case you can first compare your nationality configuration with those of our pre-trained models. This might help you estimate how good your model will perform.</h1>
+                            <h1 className="explainationText explainationPoint">... ethnicity estimation is probabilistic. To assess whether the accuracy is high enough for your use case you can first compare your nationality configuration with those of our pre-trained models. This might help you estimate how good your model will perform.</h1>
                             <h1 className="explainationText explainationPoint">... English speaking nationalities have similar names. Therefore, they will be mixed up by the classifier more often than other nationalities.</h1>
                             <h1 className="explainationText explainationPoint">... machine learning is prone to bias. To keep bias to a minimum, it is important to have an equal amount of training data for all your chosen nationalities. Thus, if you choose a nationality with only few occurrences in our dataset (i.e <span>&lt;</span> 10000.), we reduce the amount of names for other chosen nationalities to be equal to this small nationality. This can lead to lower overall accuracy. You will see the amount of names available for training so you can take this into account when choosing which nationalities to include in your model.</h1>
-                            <h1 className="explainationText explainationPoint">... as a general rule: The more nationalities you choose, the lower the overall accuracy. With only five nationalities, accuracy might be as high as 90%. When classifying up to 20 nationalities, this figure might drop to 80%. When classifying 50 or more nationalities, you can’t expect the accuracy to be more than 50%. Depth over breadth might be the way to go.</h1>
+                            <h1 className="explainationText explainationPoint">... the more nationalities you choose, the lower the overall accuracy. With only five nationalities, accuracy might be as high as 90%. When classifying up to 20 nationalities, this figure might drop to 80%. When classifying 50 or more nationalities, you can't expect the accuracy to be more than 50%. Depth over breadth might be the way to go.</h1>
                         </div>
                     </div>
                 </div>

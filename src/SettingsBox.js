@@ -82,8 +82,7 @@ export default class SettingsBox extends React.Component {
                 newPassword: this.state.newPassword
             }
 
-            axios.post(config.API_URL + "change-password", 
-                data,
+            axios.post(config.API_URL + "change-password", data,
                 {
                     headers: {
                         Authorization: "Bearer " + Cookies.get("token"),

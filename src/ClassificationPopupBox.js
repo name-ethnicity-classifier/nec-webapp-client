@@ -50,7 +50,7 @@ export default class ClassificationPopup extends React.Component {
                 classificationTitle.innerText = "classification failed!";
 
                 var statusImage = document.getElementsByClassName("loadingGif")[0];
-                statusImage.src = "images/red-cross.png";
+                statusImage.src = "images/failed.svg";
 
                 setTimeout(() => {
                     this.unmount();

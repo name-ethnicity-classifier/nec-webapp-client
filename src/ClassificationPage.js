@@ -167,7 +167,8 @@ export default class ClassificationBox extends React.Component {
         // create format explanation paragraphs
         var explanationText = ["- one column named 'names' containing the names",
                                "- name parts are separated by space", 
-                               "- lower- /upper case doesn't matter", 
+                               "- lower and upper case doesn't matter", 
+                               "- maximum amount of names: 1024",
                                "- example (left: formatted, right: raw):"]
 
         explanationText.forEach(text => {

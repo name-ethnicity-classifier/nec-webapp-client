@@ -14,7 +14,8 @@ export default class DatasetChoosingBox extends React.Component {
 
         this.state = {
             availableNationalityList: [],
-            chosenNationalityList: []
+            chosenNationalityList: [],
+            chosenDatasetType: this.props.datasetType,
         }
     }
 
@@ -88,8 +89,20 @@ export default class DatasetChoosingBox extends React.Component {
     }
 
     componentDidMount() {
-        // set nationality selection to props from parent component
-        this.setState({availableNationalityList: this.props.resumeAvailableList, chosenNationalityList: this.props.resumeChosenList});
+        this.setState({ chosenDatasetType: this.props.datasetType });
+
+        var datasetTypeSelection = document.getElementsByClassName("datasetChoosingField")[0];
+        datasetTypeSelection.value = this.state.chosenDatasetType;
+
+        var datasetChoosingField = document.getElementsByClassName("datasetChoosingField")[0];
+        if (this.props.datasetType == "nationalities") { 
+            datasetChoosingField.style.width = "220px";
+            this.setState({ availableNationalityList: this.props.availableNationalityList, chosenNationalityList: this.props.chosenNationalityList });
+        }
+        else { 
+            datasetChoosingField.style.width = "305px";
+            this.setState({ availableNationalityList: this.props.availableNationalityGroupList, chosenNationalityList: this.props.chosenNationalityGroupList });
+        }
     }
 
     componentDidUpdate() {
@@ -133,7 +146,7 @@ export default class DatasetChoosingBox extends React.Component {
             
         }
         else {
-            this.props.datasetStateHandler(this.state.availableNationalityList, this.state.chosenNationalityList);
+            this.props.datasetStateHandler(this.state.availableNationalityList, this.state.chosenNationalityList, this.state.chosenDatasetType);
             [].forEach.call(document.querySelectorAll(".popupOverlay"), function(e) {
                 e.parentNode.removeChild(e);
             });
@@ -144,7 +157,29 @@ export default class DatasetChoosingBox extends React.Component {
         return (
             <div className="dataChoosingBox">
 
-                <h1 className="dataChoosingTitle">choose nationalities</h1>
+                <h1 className="dataChoosingTitle">choose</h1>
+                <select name="datasetType" onChange={(e) => {
+
+                    const datasetChoosingField = document.getElementsByClassName("datasetChoosingField")[0];
+                    if (this.state.chosenDatasetType == "nationalities") { 
+                        datasetChoosingField.style.width = "305px";
+                    }
+                    else { 
+                        datasetChoosingField.style.width = "220px";
+                    }
+                    this.setState({chosenDatasetType: e.target.value});
+
+                    if (this.state.chosenDatasetType !== "nationalities") {
+                        this.setState({ availableNationalityList: this.props.initialNationalityList, chosenNationalityList: [["else", 1]] });
+                    }
+                    else {
+                        this.setState({ availableNationalityList: this.props.initialNationalityGroupList, chosenNationalityList: [["else", 1]] });
+                    }
+
+                }}className="datasetChoosingField">
+                    <option value="nationalities" className="datasetTypeOption">nationalities</option>
+                    <option value="nationality groups" className="datasetTypeOption">nationality groups</option>
+                </select>
 
                 <div className="availableNationalities">
                     <h1 className="availableTitle">available:</h1>

@@ -33,7 +33,6 @@
     -o-transition: all .25s ease-in;
     -webkit-transition: all .25s ease-in;
     transition: all .25s ease-in;
-    background-color: rgb(242, 242, 242);
 }
 
 .helpText {
@@ -99,9 +98,7 @@
     -o-transition: all .05s ease-in;
     -webkit-transition: all .05s ease-in;
     transition: all .05s ease-in;
-    background: linear-gradient(to bottom right, rgb(72, 83, 235) 30%, rgb(138, 65, 255));
-    color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    color: rgb(72, 83, 235);
 }
 
 .smallHelpButton:active {

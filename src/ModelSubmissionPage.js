@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import PresentBox from "./PresentBox";
 import DatasetChoosingBox from "./DatasetChoosingBox";
-import { v4 as uuidv4 } from "uuid";
 import Cookies from "js-cookie";
 import FooterBox from "./FooterBox";
 import ShadowButton from "./ShadowButton";
@@ -28,14 +27,18 @@ export default class ModelSubmissionBox extends React.Component {
             showDatasetInfo: false,
             showModelInfo: false,
             showDatasetSelection: false,
+            initialNationalities: [],
+            initialNationalityGroups: [],
+            availableNationalityGroups: [],
+            chosenNationalityGroups: [],
             availableNationalities: [],
             chosenNationalities: [],
+            datasetType: "nationalities",
             // dataset information states
             modelName: null,
             nationalityAmount: 0,
             namesPerNationality: 0,
             totalNames: 0,
-            helpMinimized: false,
             showConfirmationBox: false
         }
     }
@@ -44,15 +47,22 @@ export default class ModelSubmissionBox extends React.Component {
         axios.get(config.API_URL + "nationalities")
         .then((response) => {
             // convert nationality json object to list
+            var nationalityData = response.data["nationalities"];
             var dataList = [];
-            for(let key in response.data) {
-                dataList.push([key, response.data[key]]);
+            for(let key in nationalityData) {
+                dataList.push([key, nationalityData[key]]);
             }
-            // remove "else" from avaiable-list and init- state
-            dataList.pop();
-            this.setState({availableNationalities: dataList, chosenNationalities: [["else", 1]]});
-        }, (error) => {
-            console.log(error);
+            this.setState({availableNationalities: dataList, chosenNationalities: [["else", 1]], initialNationalities: dataList });
+
+            var nationalityGroupData = response.data["nationalityGroups"];
+            var dataList = [];
+            for(let key in nationalityGroupData) {
+                dataList.push([key, nationalityGroupData[key]]);
+            }
+            this.setState({availableNationalityGroups: dataList, chosenNationalityGroups: [["else", 1]], initialNationalityGroups: dataList });
+
+        }, (err) => {
+            ;
         });
 
         axios.get(config.API_URL + "my-models",  {
@@ -62,8 +72,8 @@ export default class ModelSubmissionBox extends React.Component {
             }
         }).then((response) => {
             this.setState({totalUserModels: response.data})
-        }, (error) => {
-            console.log(error);
+        }, (err) => {
+            ;
         });
     }
 
@@ -118,9 +128,15 @@ export default class ModelSubmissionBox extends React.Component {
         });
     }
 
-    handleDatasetState(availableNationalityList, chosenNationalityList) {
-        this.setState({availableNationalities: availableNationalityList, chosenNationalities: chosenNationalityList});
-        this.setState({showDatasetSelection: false});
+    handleDatasetState(availableNationalityList, chosenNationalityList, currentDatasetType) {
+        if (currentDatasetType === "nationalities") {
+            this.setState({ availableNationalities: availableNationalityList, chosenNationalities: chosenNationalityList });
+        }
+        else if (currentDatasetType === "nationality groups") {
+            this.setState({ availableNationalityGroups: availableNationalityList, chosenNationalityGroups: chosenNationalityList });
+        }
+        this.setState({ datasetType: currentDatasetType });
+        this.setState({ showDatasetSelection: false });
 
         [].forEach.call(document.querySelectorAll(".chosenNationalityText"), function(e) {
             e.parentNode.removeChild(e);
@@ -170,63 +186,6 @@ export default class ModelSubmissionBox extends React.Component {
         }
     }
 
-    toggleHelpMinimizer() {
-        // currently not in use
-        if (!this.state.helpMinimized) {
-            try {
-                var helpBox = document.getElementsByClassName("helpBox")[0];
-                var requestModelBox = document.getElementsByClassName("requestModelBox")[0];
-
-                helpBox.style.width = "30px";
-                helpBox.style.borderColor = "rgb(245, 245, 245)"
-                requestModelBox.style.left = "250px";
-
-                document.getElementsByClassName("toggleMinIcon")[0].src = "images/maximize-icon.svg"
-
-                var helpChildren = helpBox.childNodes;
-                for (let i=0; i<=helpChildren.length; i++) {
-                    if (helpChildren[i].className != "minimizeHelpBoxButton") {
-                            helpChildren[i].style.display = "none";
-                    }
-                    else {
-                        ;
-                    }
-                }
-                this.setState({helpMinimized: true});
-            }
-            catch {
-                this.setState({helpMinimized: true});
-            }
-            
-        }
-        else {
-            try {
-                var helpBox = document.getElementsByClassName("helpBox")[0];
-                var requestModelBox = document.getElementsByClassName("requestModelBox")[0];
-
-                // var isFirstMediaQuery = window.matchMedia('(max-width: 1475px)').matches;
-
-                helpBox.style.width = "375px";
-                helpBox.style.borderColor = "rgb(224, 224, 224)"
-                requestModelBox.style.left = "440px";
-
-                document.getElementsByClassName("toggleMinIcon")[0].src = "images/minimize-icon.svg"
-
-                var helpChildren = helpBox.childNodes;
-                    for (let i=0; i<=helpChildren.length; i++) {
-                        if (helpChildren[i].className != "minimizeHelpBoxButton") {
-                                helpChildren[i].style.display = "inline";
-                        }
-                    }
-
-                this.setState({helpMinimized: false});
-            }
-            catch {
-                this.setState({helpMinimized: false});
-            }
-        }
-    }
-
     checkModelNameDuplicate() {
         var modelData = this.state.totalUserModels;
     
@@ -239,7 +198,7 @@ export default class ModelSubmissionBox extends React.Component {
     }
 
     checkRequest() {
-        if (this.state.modelName === null || this.state.modelName.length <= 1 || this.state.modelName.length > 40) {
+        if (this.state.modelName === null || this.state.modelName.length <= 1 || this.state.modelName.length > 50) {
             var modelNameField = document.getElementsByClassName("modelNameField")[0];
             modelNameField.style.borderColor = "rgb(247, 148, 148)";
             modelNameField.placeholder = "invalid dataset name (min: 2, max: 40)";
@@ -252,11 +211,11 @@ export default class ModelSubmissionBox extends React.Component {
         }
         else if (this.checkModelNameDuplicate()) {
             var modelNameField = document.getElementsByClassName("modelNameField")[0];
-            modelNameField.style.borderColor = "rgb(212, 72, 72)";
+            modelNameField.style.borderColor = "rgb(247, 148, 148)";
             modelNameField.placeholder = "name already exists!";
     
             document.addEventListener("mouseup", function handler(e) {
-                modelNameField.style.borderColor = "rgb(182, 182, 182)";
+                modelNameField.style.borderColor = "rgb(224, 224, 224)";
                 modelNameField.placeholder = "enter your dataset name here...";
                 e.currentTarget.removeEventListener(e.type, handler)
             });
@@ -267,7 +226,6 @@ export default class ModelSubmissionBox extends React.Component {
             datasetInstructionText.style.color = "rgb(218, 134, 134)";
         }
         else {
-            console.log(this.state.modelName);
             this.setState({showConfirmationBox: true});
         }
     }
@@ -295,7 +253,15 @@ export default class ModelSubmissionBox extends React.Component {
                     });
                      
                     this.setState({showConfirmationBox: false});
-                    submitModelRequest(this.state.chosenNationalities, this.state.modelName);
+                    if (this.state.datasetType === "nationalities") {
+                        submitModelRequest(this.state.chosenNationalities, this.state.modelName);
+                    }
+                    else {
+                        console.log(this.state.chosenNationalityGroups)
+                        this.setState({ chosenNationalityGroups: this.state.chosenNationalityGroups.push(["areNationalityGroups", 0]) })
+                        console.log(this.state.chosenNationalityGroups)
+                        submitModelRequest(this.state.chosenNationalityGroups, this.state.modelName);
+                    }
                 }}>request</button>
 
                 <button className="cancelRequestButton" onClick={() => {
@@ -320,18 +286,13 @@ export default class ModelSubmissionBox extends React.Component {
 
                     <div className="helpBox">
                         <h1 className="helpTitle">to help you choose:</h1>
-                        {/*<button className="minimizeHelpBoxButton" onClick={() => {
-                            this.toggleHelpMinimizer()
-                        }}><img alt="compress-icon" className="toggleMinIcon" src="images/minimize-icon.svg"></img></button>*/}
-
                         <div className="subHelpBox">
                             <p className="helpText">Take a look at all the existing nationalities in the dataset and how many names there are.</p>
                             <p className="helpText">Keep in mind that in the end, the amount of names per nationality in your custom dataset will be equal to the amount of names of the nationality with the fewest names in the dataset.</p>
                             <button className="helpButton" onClick={() => {
                                 this.setState({showDatasetInfo: true});
                                 this.showHelpPopup("dataset");
-                            }}>inspect dataset</button> 
-
+                            }}>inspect dataset</button>
                         </div>
 
                         <div className="subHelpBox">
@@ -390,14 +351,23 @@ export default class ModelSubmissionBox extends React.Component {
 
                             {
                                 this.state.showDatasetSelection ? 
-                                    <DatasetChoosingBox jsonDataFile={"nationalityData.json"} datasetStateHandler={this.handleDatasetState} 
-                                                        resumeAvailableList={this.state.availableNationalities} resumeChosenList={this.state.chosenNationalities}/>
+                                    <DatasetChoosingBox datasetStateHandler={this.handleDatasetState}
+                                        datasetType={this.state.datasetType}
+
+                                        initialNationalityList={this.state.initialNationalities}
+                                        availableNationalityList={this.state.availableNationalities}
+                                        chosenNationalityList={this.state.chosenNationalities}
+
+                                        initialNationalityGroupList={this.state.initialNationalityGroups}
+                                        availableNationalityGroupList={this.state.availableNationalityGroups}
+                                        chosenNationalityGroupList={this.state.chosenNationalityGroups}
+                                    />
                                 : null
                                 
                             }
 
                             <div className="customDatasetPresentBox">
-                                {this.state.chosenNationalities.length === 1 ? <p className="datasetInstructionText">click on "choose" to select nationalities</p> : null}
+                                {this.state.chosenNationalities.length === 1 && this.state.chosenNationalityGroups.length === 1 ? <p className="datasetInstructionText">click on "choose" to select nationalities</p> : null}
                             </div>
 
                         </div>
@@ -458,14 +428,9 @@ function submitModelRequest(chosenNationalities, modelName) {
     // TODO: add submission to API server
     var modelInformation = {
         "email": Cookies.get("email"),
-        "modelId": uuidv4().split("-").slice(-1)[0],
         "name": modelName,
-        "accuracy": 0.0,
         "description": "-",
         "nationalities": nationalityString,
-        "scores": '{}',
-        "type": 0,
-        "mode": 0
     };
 
     axios.post(config.API_URL + "create-model", 
@@ -481,7 +446,7 @@ function submitModelRequest(chosenNationalities, modelName) {
         
         setTimeout((e) => {
             window.location.reload();
-        }, 1500);
+        }, 2000);
 
     }, (error) => {
         if (error.response.data.error === "tooManyModelCreations") {

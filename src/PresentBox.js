@@ -46,6 +46,10 @@ export default class PresentBox extends React.Component {
                     }
                 }
             }
+            if (this.props.type === "nationalityData") {
+                responseData = responseData["nationalities"];
+                console.log(responseData)
+            }
             this.setState({tableData: responseData});
         }, (error) => {
             if (error.response.status === 401) {
