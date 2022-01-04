@@ -1,9 +1,0 @@
-Theodor Peifer
-teddypeifer@gmail.com
-Munich, Germany
-
-We store the following information about you in our database:
-Your name, role (researcher, student, else), email, SHA256 encrypted password, sign up time, custom models, number of classifications.
-We do not store the names which you are uploading for classification.
-We log your IP address and your activity on this website.
-We use two essential cookies: One for your email and one for your user verification token.
