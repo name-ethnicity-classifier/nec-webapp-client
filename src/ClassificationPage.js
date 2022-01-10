@@ -169,6 +169,7 @@ export default class ClassificationBox extends React.Component {
                                "- name parts are separated by space", 
                                "- lower and upper case doesn't matter", 
                                "- maximum amount of names: 1024",
+                               "- only latin letters (a-z , A-Z) and spaces",
                                "- example (left: formatted, right: raw):"]
 
         explanationText.forEach(text => {

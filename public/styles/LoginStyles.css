@@ -30,10 +30,17 @@
     z-index: 10;
 }
 
+.authBoxlogo {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    height: 30px;
+}
+
 .authTitleText {
     position: absolute;
-    top: -7px;
-    left: 15px;
+    top: -8px;
+    left: 47px;
     font-size: 22px;
     color: white;
     font-weight: 600;

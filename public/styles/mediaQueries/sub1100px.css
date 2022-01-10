@@ -213,7 +213,6 @@
         top: calc(50% - 375px);
         left: calc(50% - 300px);
         background-color: white;
-        border-radius: 7px;
         width: 600px;
         height: 750px;
         z-index: 12000;

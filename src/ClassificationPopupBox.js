@@ -48,13 +48,30 @@ export default class ClassificationPopup extends React.Component {
             else if (error.response.status === 400) {
                 var classificationTitle = document.getElementsByClassName("classificationProcessTitle")[0];
                 classificationTitle.innerText = "classification failed!";
+                
+                var classificationPopup = document.getElementsByClassName("classificationPopup")[0];
+                classificationPopup.removeChild(document.getElementsByClassName("loadingGif")[0]);
 
-                var statusImage = document.getElementsByClassName("loadingGif")[0];
-                statusImage.src = "images/failed.svg";
+                var classificationErrorText = document.createElement("p")
+                classificationErrorText.classList.add("classificationErrorText");
+                classificationErrorText.innerText = "There has been an error! Please make sure you submitted a valid csv file:"
+                classificationPopup.appendChild(classificationErrorText)
 
-                setTimeout(() => {
+                const fileFormatExplanations = ["one column named 'names',",
+                                                "name parts are separated by space,",
+                                                "maximum amount of names: 1024,",
+                                                "only latin letters (a-z , A-Z) and spaces"]
+                
+                fileFormatExplanations.forEach(text => {
+                    var pText = document.createElement("p");
+                    pText.classList.add("classificationFormatErrorText");
+                    pText.innerText = text;
+                    classificationPopup.appendChild(pText);
+                })
+
+                /*setTimeout(() => {
                     this.unmount();
-                }, 3000);
+                }, 3000);*/
             }
         });
     }

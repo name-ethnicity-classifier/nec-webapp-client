@@ -247,7 +247,7 @@ export default class ModelSubmissionBox extends React.Component {
                 <p className="confirmationText">If you click on "request", the model will be automatically trained for you. 
                 Please check the "classify names" section in the next few hours to see if it's ready to use!</p>
 
-                <button className="confirmRequestButton" onClick={() => {
+                <ShadowButton class="confirmRequestButton" text="request" onClickFunction={() => {
                     [].forEach.call(document.querySelectorAll(".confirmationPopupOverlay"), function(e) {
                         e.parentNode.removeChild(e);
                     });
@@ -257,21 +257,34 @@ export default class ModelSubmissionBox extends React.Component {
                         submitModelRequest(this.state.chosenNationalities, this.state.modelName);
                     }
                     else {
-                        console.log(this.state.chosenNationalityGroups)
                         this.setState({ chosenNationalityGroups: this.state.chosenNationalityGroups.push(["areNationalityGroups", 0]) })
                         console.log(this.state.chosenNationalityGroups)
                         submitModelRequest(this.state.chosenNationalityGroups, this.state.modelName);
                     }
-                }}>request</button>
+                }} styles={{
+                    width: "130px", 
+                    height:"50px", 
+                    color: "rgb(63, 124, 247)", 
+                    borderWidth: "4px", 
+                    borderRadius: "5px", 
+                    fontSize: "21px", 
+                    fontFamily: "inherit"
+                }}/> 
 
-                <button className="cancelRequestButton" onClick={() => {
+                <ShadowButton class="cancelRequestButton" text="cancel" onClickFunction={() => {
                     [].forEach.call(document.querySelectorAll(".confirmationPopupOverlay"), function(e) {
                         e.parentNode.removeChild(e);
                     });
-
                     this.setState({showConfirmationBox: false});
-
-                }}>go back</button>
+                }} styles={{
+                    width: "130px", 
+                    height:"50px", 
+                    color: "rgb(255, 77, 77)", 
+                    borderWidth: "4px", 
+                    borderRadius: "5px", 
+                    fontSize: "21px", 
+                    fontFamily: "inherit"
+                }}/> 
 
             </div>
         )
@@ -461,3 +474,25 @@ function submitModelRequest(chosenNationalities, modelName) {
         
     });
 }
+
+
+/*
+old request confirmation button:
+
+<button className="confirmRequestButton" onClick={() => {
+    [].forEach.call(document.querySelectorAll(".confirmationPopupOverlay"), function(e) {
+        e.parentNode.removeChild(e);
+    });
+        
+    this.setState({showConfirmationBox: false});
+    if (this.state.datasetType === "nationalities") {
+        submitModelRequest(this.state.chosenNationalities, this.state.modelName);
+    }
+    else {
+        console.log(this.state.chosenNationalityGroups)
+        this.setState({ chosenNationalityGroups: this.state.chosenNationalityGroups.push(["areNationalityGroups", 0]) })
+        console.log(this.state.chosenNationalityGroups)
+        submitModelRequest(this.state.chosenNationalityGroups, this.state.modelName);
+    }
+}}>request</button>
+*/

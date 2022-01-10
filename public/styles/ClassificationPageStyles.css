@@ -294,7 +294,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: rgb(227, 227, 227);
-    border-radius: 7px;
+    border-radius: 4px;
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
@@ -389,7 +389,7 @@
 .fileFormatBox {
     position: fixed;
     background-color: white;
-    border-radius: 7px;
+    border-radius: 4px;
     width: 570px;
     height: 570px;
     top: 53%;
@@ -420,15 +420,15 @@
     font-weight: 100;
     color: rgb(63, 63, 63);
     width: 85%;
-    padding-top: 5px;
+    padding-top: 0px;
     padding-bottom: 0px;
     white-space: 5px;
 }
 
 .formatExampleImage {
     position: absolute;
-    top: 355px;
-    left: 60px;
+    top: 365px;
+    left: 55px;
     border: solid rgb(215, 222, 255) 1px;
     transition: all .15s ease-out;
 }
@@ -440,8 +440,8 @@
 
 .formatExampleImageRaw {
     position: absolute;
-    top: 355px;
-    right: 60px;
+    top: 365px;
+    right: 55px;
     border: solid rgb(215, 222, 255) 1px;
     transition: all .15s ease-out;
 }

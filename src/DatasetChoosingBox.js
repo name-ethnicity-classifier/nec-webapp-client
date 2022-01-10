@@ -36,7 +36,7 @@ export default class DatasetChoosingBox extends React.Component {
 
             // create new button, assign class and text
             var buttonElement = document.createElement("button");
-            buttonElement.innerHTML = key;
+            buttonElement.innerText = key;
             buttonElement.classList.add("nationalityButton");
             buttonElement.title = key + ": " + val;
             

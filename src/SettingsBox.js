@@ -127,12 +127,13 @@ export default class SettingsBox extends React.Component {
                     <ShadowButton class="submitNewPasswordButton" text="change" onClickFunction={this.submitPasswordChange} styles={{
                         width: "120px",
                         height: "47px",
-                        fontSize: "20px",
+                        fontSize: "21px",
                         fontFamily: "inherit",
-                        color: "rgb(44, 107, 231)",
+                        color: "rgb(63, 124, 247)",
                         borderRadius: "5px",
                         borderWidth: "4px",
                         opacity: ".15"
+                        
                     }}/>
                 </div>
             </Portal>
@@ -159,11 +160,9 @@ export default class SettingsBox extends React.Component {
                     }
                 }
             ).then((response) => {
-                console.log(response);
-                var confirmButton = document.getElementsByClassName("confirmDeletionButton")[0];
-                confirmButton.disabled = true;
+                var confirmButton = document.getElementsByClassName("s-button-confirmDeletionButton")[0];
                 confirmButton.textContent = "deleted";
-                
+                confirmButton.disabled = true;
                 setTimeout(() => {
                     this.setState({showDeleteUserSetting: false});
                     Cookies.remove("email");
@@ -189,9 +188,19 @@ export default class SettingsBox extends React.Component {
                     }} className="authField confirmationPasswordField"/>
 
                     <b><p className="confirmDeletionText">Are you sure you want to delete your account?</p></b>
-                    <button className="confirmDeletionButton" onClick={() => {
+                    
+                    <ShadowButton class="confirmDeletionButton" text="yes" onClickFunction={() => {
                         this.submitUserDeletion();
-                    }}>yes</button>
+                    }} styles={{
+                        width: "130px", 
+                        height:"50px", 
+                        color: "rgb(255, 77, 77)", 
+                        borderWidth: "4px", 
+                        borderRadius: "5px", 
+                        fontSize: "21px", 
+                        fontFamily: "inherit"
+                    }}/> 
+
                     <button className="cancelDeletionButton" onClick={() => {
                         this.setState({showDeleteUserSetting: false});
                     }}>cancel</button>

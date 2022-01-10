@@ -300,7 +300,7 @@
 .confirmationBox {
     position: fixed;
     background-color: white;
-    border-radius: 7px;
+    border-radius: 4px;
     width: 650px;
     height: 340px;
     top: 300px;
@@ -332,7 +332,7 @@
 
 }
 
-.confirmRequestButton, .cancelRequestButton {
+/*.confirmRequestButton, .cancelRequestButton {
     position: absolute;
     top: 248px;
     width: 130px;
@@ -355,6 +355,22 @@
 .cancelRequestButton {
     right: 120px;
     background-color: rgb(238, 79, 79);
+}
+
+.confirmRequestButton {
+    display: none;
+}*/
+
+.confirmRequestButton {
+    position: absolute;
+    top: 248px;
+    left: 130px;
+}
+
+.cancelRequestButton {
+    position: absolute;
+    top: 248px;
+    left: 390px;
 }
 
 .confirmRequestButton:hover, .cancelRequestButton:hover {
