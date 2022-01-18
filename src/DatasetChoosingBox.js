@@ -95,7 +95,7 @@ export default class DatasetChoosingBox extends React.Component {
         datasetTypeSelection.value = this.state.chosenDatasetType;
 
         var datasetChoosingField = document.getElementsByClassName("datasetChoosingField")[0];
-        if (this.props.datasetType == "nationalities") { 
+        if (this.props.datasetType === "nationalities") { 
             datasetChoosingField.style.width = "220px";
             this.setState({ availableNationalityList: this.props.availableNationalityList, chosenNationalityList: this.props.chosenNationalityList });
         }
@@ -161,7 +161,7 @@ export default class DatasetChoosingBox extends React.Component {
                 <select name="datasetType" onChange={(e) => {
 
                     const datasetChoosingField = document.getElementsByClassName("datasetChoosingField")[0];
-                    if (this.state.chosenDatasetType == "nationalities") { 
+                    if (this.state.chosenDatasetType === "nationalities") { 
                         datasetChoosingField.style.width = "305px";
                     }
                     else { 

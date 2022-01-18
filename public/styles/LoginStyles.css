@@ -14,7 +14,7 @@
     width: 400px;
     height: 130px;
     left: calc(50% - 200px);
-    top: 200px;
+    top: calc(50% - 300px);
     border-radius: 5px;
     background-color: rgba(255, 255, 255);
 }
@@ -28,6 +28,12 @@
     background-color: rgb(63, 63, 63);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     z-index: 10;
+    transition: all .1s ease-out;
+}
+
+.authTitleBox:hover {
+    background-color: rgb(57, 57, 57);
+    transition: all .1s ease-out;
 }
 
 .authBoxlogo {
@@ -36,6 +42,7 @@
     left: 7px;
     height: 30px;
 }
+
 
 .authTitleText {
     position: absolute;

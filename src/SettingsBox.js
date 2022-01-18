@@ -133,7 +133,6 @@ export default class SettingsBox extends React.Component {
                         borderRadius: "5px",
                         borderWidth: "4px",
                         opacity: ".15"
-                        
                     }}/>
                 </div>
             </Portal>
@@ -223,7 +222,7 @@ export default class SettingsBox extends React.Component {
 
     render() {
         return (
-            <div className="settingsBox slideInRight">
+            <div className="settingsBox">
                 <button className="closeSettingsButton" onClick={() => {
                     this.unmount();
                 }}><img alt="close-icon" className="closeIcon" src="images/maximize-icon.svg"></img></button>
@@ -231,12 +230,18 @@ export default class SettingsBox extends React.Component {
                 <div className="userSettingsBox">
                     <h1 className="settingsTitle">user settings</h1>
 
-                    <button className="settingButton"  id="firstBox" onClick={() => {
+                    <div className="currentAccountBox" id="firstBox">
+                        <b><p className="currentAccountLabel">logged in as:</p></b>
+                        <p className="currentAccountEmail">{Cookies.get("email")}</p>
+                    </div>
+
+
+                    {/*<button className="settingButton" id="firstBox" onClick={() => {
                         this.setState({showChangePasswordSetting: true, showDeleteUserSetting: false});
                     }}>
                         <img alt="email-icon" className="settingsIcon" src="images/password-icon.svg"></img>
                         <b><pre className="settingText">               change password</pre></b>
-                    </button>
+                    </button>*/}
 
                     <button className="settingButton" onClick={() => {
                         this.setState({showChangePasswordSetting: false, showDeleteUserSetting: true});
@@ -259,38 +264,46 @@ export default class SettingsBox extends React.Component {
 
                 </div>
 
+                <div className="legalBox">
+                    <h1 className="settingsTitle">legal</h1>
+
+                    <div className="informationSection" id="firstBox">
+                        <b><p className="informationSectionTitle">privacy policy:</p></b>
+                        <a className="informationSectionText" id="linkText" href="/privacy-policy">here</a>
+                    </div>
+
+                    <div className="informationSection">
+                        <b><p className="informationSectionTitle">terms of service:</p></b>
+                        <a className="informationSectionText" id="linkText" href="/terms-of-service">here</a>
+                    </div>
+                </div>
+
                 <div className="contactBox">
                     <h1 className="settingsTitle">contact</h1>
 
-                    <div className="contactSection" id="firstBox">
-                        <b><p className="contactSectionTitle">creator:</p></b>
-                        <p className="contactSectionText">Theodor Peifer</p>
+                    <div className="informationSection" id="firstBox">
+                        <b><p className="informationSectionTitle">creator:</p></b>
+                        <p className="informationSectionText">Theodor Peifer</p>
                     </div>
 
-                    <div className="contactSection">
-                        <b><p className="contactSectionTitle">email:</p></b>
-                        <p className="contactSectionText">teddypeifer@gmail.com</p>                    
+                    <div className="informationSection">
+                        <b><p className="informationSectionTitle">email:</p></b>
+                        <p className="informationSectionText">teddypeifer@gmail.com</p>                    
                     </div>
 
-                    <div className="contactSection">
-                        <b><p className="contactSectionTitle">source code:</p></b>
-                        <a className="contactSectionText" id="linkText" href="https://github.com/hollowcodes/nec-webapp">on Github</a>
-                    </div>
-
-                    <div className="contactSection">
-                        <b><p className="contactSectionTitle">privacy policy:</p></b>
-                        <a className="contactSectionText" id="linkText" href="/privacy-policy">here</a>
+                    <div className="informationSection">
+                        <b><p className="informationSectionTitle">source code:</p></b>
+                        <a className="informationSectionText" id="linkText" href="https://github.com/hollowcodes/nec-webapp">on Github</a>
                     </div>
 
                     <div className="contactInquirySection">
-                        <b><p className="contactSectionTitle">Please contact us if you ...</p></b>
+                        <b><p className="informationSectionTitle">Please contact us if you ...</p></b>
                         <p className="contactInquiryText">... have any questions or problems.</p>
                         <p className="contactInquiryText">... found a bug.</p>
                         <p className="contactInquiryText">... have suggestions for improvement.</p>
                         <p className="contactInquiryText">... want to contribute to this project.</p>
                     </div>
 
-                    
                 </div>
 
             </div>

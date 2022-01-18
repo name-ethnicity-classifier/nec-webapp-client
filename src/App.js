@@ -4,7 +4,9 @@ import ModelSubmissionBox from "./ModelSubmissionPage";
 import NavBarBox from "./NavBarBox";
 import HomePageBox from './HomePage';
 import ClassificationBox from "./ClassificationPage";
-import PrivacyPolicyPage from "./PrivacyPolicy";
+import PrivacyPolicyPage from "./PrivacyPolicyPage";
+import TermsOfServicePage from "./TermsOfServicePage";
+import ApiDocumentationPage from "./ApiDocumentationPage";
 import LoginBox from "./LoginBox";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -64,6 +66,8 @@ export default function App() {
                 }}></Route>
 
                 <Route path="/privacy-policy" exact component={PrivacyPolicyPage}></Route>
+                <Route path="/terms-of-service" exact component={TermsOfServicePage}></Route>
+                <Route path="/api-documentation" exact component={ApiDocumentationPage}></Route>
 
             </div>
         </Router>

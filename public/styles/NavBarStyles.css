@@ -37,6 +37,7 @@
     font-weight: 600;
     font-family: 'Source Sans Pro', sans-serif;
     white-space: nowrap;
+    letter-spacing: 1px;
     font-feature-settings: "kern";
 }
 

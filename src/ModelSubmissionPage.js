@@ -90,7 +90,7 @@ export default class ModelSubmissionBox extends React.Component {
                     e.parentNode.removeChild(e);
                 });
 
-                if (presentType != "both") {
+                if (presentType !== "both") {
                     [].forEach.call(document.querySelectorAll(presentType + "PresentBox"), function(e) {
                         e.parentNode.removeChild(e);
                     });
@@ -168,7 +168,7 @@ export default class ModelSubmissionBox extends React.Component {
 
             var nameMinimum = chosenNationalities[startCompareIdx][1];
             for (let i=1; i<nationalityAmount; i++) {
-                if (chosenNationalities[i][0] != "else" && chosenNationalities[i][1] < nameMinimum) {
+                if (chosenNationalities[i][0] !== "else" && chosenNationalities[i][1] < nameMinimum) {
                     nameMinimum = chosenNationalities[i][1];
                 }
             }
@@ -254,12 +254,10 @@ export default class ModelSubmissionBox extends React.Component {
                      
                     this.setState({showConfirmationBox: false});
                     if (this.state.datasetType === "nationalities") {
-                        submitModelRequest(this.state.chosenNationalities, this.state.modelName);
+                        submitModelRequest(this.state.chosenNationalities, this.state.modelName, false);
                     }
                     else {
-                        this.setState({ chosenNationalityGroups: this.state.chosenNationalityGroups.push(["areNationalityGroups", 0]) })
-                        console.log(this.state.chosenNationalityGroups)
-                        submitModelRequest(this.state.chosenNationalityGroups, this.state.modelName);
+                        submitModelRequest(this.state.chosenNationalityGroups, this.state.modelName, true);
                     }
                 }} styles={{
                     width: "130px", 
@@ -295,7 +293,7 @@ export default class ModelSubmissionBox extends React.Component {
         return (
             <div className="modelSubmissionBox">
                 <div className="inner">
-                    <h1 className="modelSubmissionTitle">choose nationalities to request your model:</h1>
+                    <h1 className="pageTitle">choose nationalities to request your model:</h1>
 
                     <div className="helpBox">
                         <h1 className="helpTitle">to help you choose:</h1>
@@ -430,7 +428,7 @@ function createSuccessStyle(className, message) {
 }
 
 
-function submitModelRequest(chosenNationalities, modelName) {
+function submitModelRequest(chosenNationalities, modelName, isGroupLevel) {
     var nationalityString = chosenNationalities.map(
         function(nationality) {
             return nationality[0];
@@ -440,10 +438,10 @@ function submitModelRequest(chosenNationalities, modelName) {
 
     // TODO: add submission to API server
     var modelInformation = {
-        "email": Cookies.get("email"),
         "name": modelName,
         "description": "-",
         "nationalities": nationalityString,
+        "isGroupLevel": isGroupLevel
     };
 
     axios.post(config.API_URL + "create-model", 

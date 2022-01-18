@@ -306,7 +306,7 @@
     }
 
     .homePageBox {
-        height: 3350px;
+        height: 3450px;
     }   
 }
 
@@ -318,11 +318,11 @@
         left: calc(50% - 620px);
     }
 
-    /* CLASSIFICATION BOX */
-    .classificationTitle {
+    .pageTitle {
         width: calc(1417px - 190px);
     }
 
+    /* CLASSIFICATION BOX */
     .modelBox {
         position: absolute;
         left: 25px;

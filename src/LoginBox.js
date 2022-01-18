@@ -141,7 +141,7 @@ export default class LoginBox extends React.Component {
                     var roleField = document.getElementsByClassName("roleField")[0];
                     roleField.classList.add("roleSelected");
 
-                    if (e.target.value == "none") {
+                    if (e.target.value === "none") {
                         roleField.classList.remove("roleSelected");
                     }
                 }}className="roleField">
@@ -293,7 +293,7 @@ export default class LoginBox extends React.Component {
                     <p className="termsOfServiceText">
                         <h1 style={{textAlign: "left"}}>Website Terms and Conditions of Use</h1>
                         <h2>1. Terms</h2>
-                        <p>By accessing this Website, accessible from https://name-to-ethnicity.com, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
+                        <p>By accessing this Website, accessible from https://www.name-to-ethnicity.com, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
                         <h2>2. Use License</h2>
                         <p>Permission is granted to temporarily download one copy of the materials on name-to-ethnicity's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
                         <ul>
@@ -335,10 +335,12 @@ export default class LoginBox extends React.Component {
                     : null }
 
                     <div className="authFieldBox">
-                        <div className="authTitleBox">
-                            <img alt="nec-logo" src="images/nec_final_logo.svg" className="authBoxlogo" onclick="window.location='https://www.facebook.com/'"></img>
-                            <h1 className="authTitleText">name-to-ethnicity</h1>
-                        </div>
+                        <a href="/">
+                            <div className="authTitleBox">
+                                <img alt="nec-logo" src="images/nec_final_logo.svg" className="authBoxlogo"></img>
+                                <h1 className="authTitleText">name-to-ethnicity</h1>
+                            </div>
+                        </a>
 
                         <button className="authChoiceButton" id="loginChoice" onClick={(e) => {
                             this.setState({verificationMessage: null});

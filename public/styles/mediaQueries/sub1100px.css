@@ -188,7 +188,7 @@
     }
 
     .homePageBox {
-        height: 4075px;
+        height: 4150px;
     }
 
 }
@@ -267,7 +267,6 @@
         top: -7px;
         padding-right: 11px;
     }
-    
 
 }
 
@@ -281,5 +280,6 @@
     .startBox {
         left: 18vw;
     }
+
 }
 

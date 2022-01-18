@@ -43,14 +43,10 @@ export default class HomePageBox extends React.Component {
                 Email: Cookies.get("email")
             }
         }).then((response) => {
-            var amountStandardModels_ = 0;
             var amountCustomModels_ = 0;
 
             for (let i=0; i<response.data.length; i++) {
-                if (response.data[i].type === 1) {
-                    amountStandardModels_ += 1;
-                }
-                else if (response.data[i].type === 0) {
+                if (response.data[i].type === 0) {
                     amountCustomModels_ += 1;
                 }
             }

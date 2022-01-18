@@ -1,17 +1,12 @@
 import React from "react";
 
-export default class PrivacyPolicyPage extends React.Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = { };
-    }
 
+export default class PrivacyPolicyPage extends React.Component {
     render() {
         return (
-            <div className="privacyPolicyBox">
+            <div className="policyBox">
                 <h2>Privacy Policy</h2>
-                <p>Your privacy is important to us. It is name-to-ethnicity&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://name-to-ethnicity.com">https://name-to-ethnicity.com</a>, and other sites we own and operate. </p>
+                <p>Your privacy is important to us. It is name-to-ethnicity&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://www.name-to-ethnicity.com">https://www.name-to-ethnicity.com</a>, and other sites we own and operate. </p>
                 <p>This policy is effective as of 21 December 2021 and was last updated on 21 December 2021. </p>
                 <h3>Information We Collect</h3>
                 <p>Information we collect includes both information you knowingly and actively provide us when using or participating in any of our services and promotions, and any information automatically sent by your devices in the course of accessing our products and services. </p>

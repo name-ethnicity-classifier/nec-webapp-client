@@ -94,7 +94,25 @@
     }
 
     .homePageBox {
-        height: 3275px;
+        height: 3375px;
+    }
+    
+    .navigationLinkDiv {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .navigationButton {
+        top: 15px;
+        font-size: 15px;
+    }
+
+    .loginButton {
+        font-size: 15px;
+    }
+
+    .signupButton {
+        font-size: 15px;
     }
 }
 
@@ -297,6 +315,6 @@
     }
 
     .homePageBox {
-        height: 4300px;
+        height: 4375px;
     }
 }

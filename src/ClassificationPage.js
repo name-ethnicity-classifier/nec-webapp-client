@@ -24,6 +24,7 @@ export default class ClassificationBox extends React.Component {
             customModels: {},
             chosenModel: null,
             selectedFile: null,
+            fileContent: null,
             showClassificationPopup: false,
             showNationalityPopup: true,
             showModelDeletionButton: false
@@ -51,7 +52,7 @@ export default class ClassificationBox extends React.Component {
                 }
             }
 
-            this.setState({totalModels: {... standardModelList, ...customModelList}})
+            this.setState({totalModels: {...standardModelList, ...customModelList}})
             this.setState({standardModels: standardModelList});
             this.setState({customModels: customModelList});
 
@@ -135,17 +136,22 @@ export default class ClassificationBox extends React.Component {
         });
     }
 
-    fileSelectedHandler = files => {
-        if (files.length > 1) {
+    fileSelectedHandler = file => {
+        if (file.length > 1) {
             alert("Too many files! Please upload just one .csv file.");
+            return;
+        }
+        else if (file[0].name.split(".").pop() !== "csv") {
+            alert("You have to upload a .csv file!");
+            return;
         }
         else {
-            if (files[0].name.split(".").pop() !== "csv") {
-                alert("You have to upload a .csv file!");
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                this.setState({ fileContent: e.target.result });
             }
-            else {
-                this.setState({selectedFile: files[0], showClassificationPopup: true});
-            }
+            reader.readAsText(file[0])
+            this.setState({selectedFile: file[0], showClassificationPopup: true});
         }
     }
 
@@ -242,7 +248,6 @@ export default class ClassificationBox extends React.Component {
                     }, (error) => {
                         ;
                     });
-                    
                 }
                 else {
                     modelDeletionButton.classList.remove("deleteModelButtonClicked");
@@ -412,7 +417,7 @@ export default class ClassificationBox extends React.Component {
         return (
             <div className="classificationBox">
                 <div className="inner">
-                    <h1 className="classificationTitle">classify names</h1>
+                    <h1 className="pageTitle">classify names</h1>
                     
                     <div className="modelBox">
                         <h1 className="modelBoxTitle">models:</h1>
@@ -442,7 +447,7 @@ export default class ClassificationBox extends React.Component {
                     
 
                     {this.state.showModelDeletionButton ? this.showModelDeletionButton() : null}
-                    {this.state.showClassificationPopup ? <ClassificationPopup modelName={this.state.chosenModel} submittedFile={this.state.selectedFile} stopRenderingHandler={this.closeClassificationPopup}/> : null}
+                    {this.state.showClassificationPopup ? <ClassificationPopup modelName={this.state.chosenModel} submittedFile={this.state.selectedFile} fileContent={this.state.fileContent} stopRenderingHandler={this.closeClassificationPopup}/> : null}
                 </div>
                 <FooterBox/>
             </div>

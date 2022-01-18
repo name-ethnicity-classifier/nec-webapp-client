@@ -79,6 +79,14 @@ export default class HomeBarBox extends React.Component {
                         this.setState({ showNavigationMenu: false });
                     }}>create custom model</button>
                 </div>
+
+                <div className="navigationLinkDiv">
+                    <button className="navigationButton" onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href="/api-documentation";
+                        this.setState({ showNavigationMenu: false });
+                    }}>API</button>
+                </div>
                 
                 <div className="navigationLinkDiv lastNavigationLinkDiv">
                     {this.userSection()}
@@ -151,7 +159,7 @@ export default class HomeBarBox extends React.Component {
                                 e.preventDefault();
                                 window.location.href="/";
                     }}>
-                        <b>name to ethnicity</b>
+                        <b>name-to-ethnicity</b>
                         <img alt="nec-logo" src="images/nec_final_logo.svg" className="logo"></img>
                     </button>
                     
@@ -176,6 +184,13 @@ export default class HomeBarBox extends React.Component {
                                     e.preventDefault();
                                     window.location.href="/model-request";
                                 }}>create custom model</button>
+                            </div>
+
+                            <div className="navigationLinkDiv">
+                                <button className="navigationButton" onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href="/api-documentation";
+                                }}>API</button>
                             </div>
                             
                             <div className="navigationLinkDiv lastNavigationLinkDiv">

@@ -337,7 +337,7 @@
     }
 
     .homePageBox {
-        height: 4300px;
+        height: 4375px;
     }
 
     /* SETTING BOX */
@@ -352,4 +352,7 @@
         width: 360px;
     }
 
+    .goTopBackground {
+        display: none;
+    }
 }

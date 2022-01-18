@@ -14,17 +14,36 @@ export default class ClassificationPopup extends React.Component {
             showClassifyButton: true,
             showLoadingScreen: true,
             showDownloadButton: false,
-            outputFileContent: null
+            outputFileContent: null,
         };
+    }
+
+    jsonToCsvFormat(outputFileContent) {
+        let outputCsvFormat = "names,ethnicities";
+        for (const name in outputFileContent) {
+            outputCsvFormat += "\n" + name + "," + outputFileContent[name];
+        }
+        return outputCsvFormat;
+    }
+
+    csvToList(inputFileContent) {
+        let names = inputFileContent.split(/,\r\n/);
+        names.shift();
+        return names;
     }
 
     postFile() {
         this.setState({showClassifyButton: false, showLoadingScreen: true});
 
         var formData = new FormData();
-        formData.append("file", this.props.submittedFile)
+        formData.append("file", this.props.submittedFile);
 
-        axios.post(config.API_URL + "classify-names", formData, {
+        const body = {
+            "modelName": this.props.modelName,
+            "names": this.csvToList(this.props.fileContent)
+        }
+
+        axios.post(config.API_URL + "classify-names", body, {
             headers: {
                 Authorization: "Bearer " + Cookies.get("token"),
                 Email: Cookies.get("email"),
@@ -142,7 +161,8 @@ export default class ClassificationPopup extends React.Component {
             downloadButton.classList.add("clicked");
 
             var pom = document.createElement("a");
-            var blob = new Blob([this.state.outputFileContent], {type: "text/csv;charset=utf-8;"});
+            
+            var blob = new Blob([this.jsonToCsvFormat(this.state.outputFileContent)], { type: "text/csv;charset=utf-8;" });
             var url = URL.createObjectURL(blob);
             pom.href = url;
             pom.setAttribute("download", "ethnicities.csv");
