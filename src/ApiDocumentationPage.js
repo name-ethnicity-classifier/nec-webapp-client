@@ -214,7 +214,7 @@ export default class ApiDocumentationPage extends React.Component {
 
                                             <div className="responseCodeBlock">
                                                 {/*this.createCodeBlock('{\n        "names": [\n                "<name>",\n                . . . ,\n                "<name>"\n        ]\n         "ethnicities": [\n                "<ethnicity>",\n                . . . ,\n                "<ethnicity>"\n        ]\n}}', "json")*/}
-                                                {this.createCodeBlock('{\n        "predictions": {\n                "<name: string>": {\n                        "ethnicity": "<ethnicity: string>"\n                        "confidence": <confidence: float>\n                },\n                . . . ,\n                }\n        }', "json")}
+                                                {this.createCodeBlock('{\n        "<name: string>": [\n                "<ethnicity: string>", <confidence: float>\n        ],\n        . . . ,\n        "<name: string>": [\n                "<ethnicity: string>", <confidence: float>\n        ]\n}', "json")}
                                             </div>
                                         </div>
 
@@ -225,7 +225,7 @@ export default class ApiDocumentationPage extends React.Component {
 
                                             <div className="exampleCodeBlock">
                                                 {/*this.createCodeBlock('{\n        "names": [\n                "<name>",\n                . . . ,\n                "<name>"\n        ]\n         "ethnicities": [\n                "<ethnicity>",\n                . . . ,\n                "<ethnicity>"\n        ]\n}}', "json")*/}
-                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "10_nationalities_and_else",\n        "names": ["Theo Hafner", "Liu Cixin"] \n}\n\nresponse = request.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theo Hafner": {\n#                 "ethnicity": "German",\n#                 "confidence": 7.96\n#         },\n#         "Liu Cixin": {\n#                 "ethnicity": "Chinese",\n#                 "confidence": 9.26\n#         }\n# }', "python")}
+                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = request.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
                                             </div>
                                         </div>
 
@@ -303,7 +303,7 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="responseCodeBlock getResponseCodeBlock">
-                                                {this.createCodeBlock('{\n        "<model name: string>": <accuracy: float>,\n        . . . ,\n          "<model name: string>": <accuracy: float>\n}', "json")}
+                                                {this.createCodeBlock('{\n        "<model name: string>": <accuracy: float>,\n        . . . ,\n        "<model name: string>": <accuracy: float>\n}', "json")}
                                             </div>
                                         </div>
 

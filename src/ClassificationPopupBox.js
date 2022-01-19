@@ -19,9 +19,9 @@ export default class ClassificationPopup extends React.Component {
     }
 
     jsonToCsvFormat(outputFileContent) {
-        let outputCsvFormat = "names,ethnicities";
+        let outputCsvFormat = "names,ethnicities,confidence";
         for (const name in outputFileContent) {
-            outputCsvFormat += "\n" + name + "," + outputFileContent[name];
+            outputCsvFormat += "\n" + name + "," + outputFileContent[name][0] + "," + outputFileContent[name][1];
         }
         return outputCsvFormat;
     }
@@ -47,7 +47,6 @@ export default class ClassificationPopup extends React.Component {
             headers: {
                 Authorization: "Bearer " + Cookies.get("token"),
                 Email: Cookies.get("email"),
-                Model: this.props.modelName
             }
         }).then((response) => {
             if (response.status === 200) {

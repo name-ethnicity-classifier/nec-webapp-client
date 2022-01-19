@@ -32,7 +32,7 @@ export default class ClassificationBox extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(config.API_URL + "my-models", {
+        axios.get(config.API_URL + "models", {
             headers: {
                 Authorization: "Bearer " + Cookies.get("token"),
                 Email: Cookies.get("email")
@@ -234,9 +234,9 @@ export default class ClassificationBox extends React.Component {
 
             document.addEventListener("mouseup", (e) => {
                 if (modelDeletionButton.contains(e.target)) {
-                    var modelId = this.state.customModels[this.state.chosenModel]["model_id"]
+                    const modelName = this.state.chosenModel;
 
-                    axios.post(config.API_URL + "delete-model", { modelId }, {
+                    axios.post(config.API_URL + "delete-model", { modelName }, {
                         headers: {
                             Authorization: "Bearer " + Cookies.get("token"),
                             Email: Cookies.get("email")
