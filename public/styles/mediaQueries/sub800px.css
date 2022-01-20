@@ -1,5 +1,6 @@
 
 @media (max-width: 800px) {
+
     .earthPinIllustration {
         width: 0px;
         height: 0px;
@@ -355,4 +356,10 @@
     .goTopBackground {
         display: none;
     }
+
+    .headersCodeBlock {
+        width: 330px;
+        left: calc(50% - 165px);
+    }
+
 }

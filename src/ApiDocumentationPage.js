@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { nord, github, CodeBlock } from "react-code-blocks";
 import Switch from "react-switch";
-
+import FooterBox from './FooterBox';
 
 
 export default class ApiDocumentationPage extends React.Component {
@@ -22,7 +22,7 @@ export default class ApiDocumentationPage extends React.Component {
             toggleApiKeyDisabled: false,
             visibiltyIconPath: "images\\show-icon.svg",
             codetheme: github,
-            checked: false
+            checked: false        
         }
     }
 
@@ -93,11 +93,28 @@ export default class ApiDocumentationPage extends React.Component {
         )
     }
 
+    spanParentDiv() {
+        let openedApiTabs = document.getElementsByClassName("openEndpointSection").length;
+        let parentDiv = document.getElementsByClassName("apiDocumentationBox")[0];
+
+        if (openedApiTabs === 1) {
+            parentDiv.classList.add("tabOpen1");
+            parentDiv.classList.remove("tabOpen2");
+        }
+        else if (openedApiTabs === 2) {
+            parentDiv.classList.remove("tabOpen1");
+            parentDiv.classList.add("tabOpen2");
+        }
+        else {
+            parentDiv.classList.remove("tabOpen1");
+            parentDiv.classList.remove("tabOpen2");
+        }   
+    }
 
     render() {
         return (
             <div className="apiDocumentationBox">
-                <div className="inner">
+                <div className="inner innerDoc">
                     <h1 className="pageTitle">API documentation</h1>
 
                     <div className="innerDocumentationBox">
@@ -177,17 +194,17 @@ export default class ApiDocumentationPage extends React.Component {
                                     <button className="apiSectionBox apiSectionButton" id="apiSectionButton1" onClick={() => {
                                         document.getElementById("apiEndpointSection1").classList.toggle("openEndpointSection");
                                         document.getElementById("apiSectionButton1").classList.toggle("clickedApiSectionButton");
+                                        this.spanParentDiv()
                                     }}>
                                         <p className="apiEndpointText">/classify-names</p>
                                         {this.createRequestTag("POST")}
                                         <img alt="open-endpoint-icon" src="images\drop-icon-dark.svg" className="openEndpointExplanationIcon"></img>
-
                                     </button>
 
 
                                     <div className="endpointExplanationBox">
 
-                                        <div className="endpointExplanationDescriptionBox">
+                                        <div className="endpointExplanationSubBox">
                                             <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">description:</h1>
                                             </div>
@@ -197,33 +214,33 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
                                         </div>
                                         
-                                        <div className="endpointExplanationBodyBox">
+                                        <div className="endpointExplanationSubBox">
                                             <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">body:</h1>
                                             </div>
 
-                                            <div className="bodyCodeBlock">
+                                            <div className="codeBlock">
                                                 {this.createCodeBlock('{\n        "modelName": "<wanted model name: string>",\n        "names": [\n                "<name: string>",\n                . . . ,\n                "<name: string>"\n        ]\n}\n ', "json")}
                                             </div>
                                         </div>
 
-                                        <div className="endpointExplanationResponseBox">
+                                        <div className="endpointExplanationSubBox">
                                             <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">response:</h1>
                                             </div>
 
-                                            <div className="responseCodeBlock">
+                                            <div className="codeBlock">
                                                 {/*this.createCodeBlock('{\n        "names": [\n                "<name>",\n                . . . ,\n                "<name>"\n        ]\n         "ethnicities": [\n                "<ethnicity>",\n                . . . ,\n                "<ethnicity>"\n        ]\n}}', "json")*/}
                                                 {this.createCodeBlock('{\n        "<name: string>": [\n                "<ethnicity: string>", <confidence: float>\n        ],\n        . . . ,\n        "<name: string>": [\n                "<ethnicity: string>", <confidence: float>\n        ]\n}', "json")}
                                             </div>
                                         </div>
 
-                                        <div className="endpointExplanationExampleBox">
+                                        <div className="endpointExplanationSubBox">
                                             <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">Python example:</h1>
                                             </div>
 
-                                            <div className="exampleCodeBlock">
+                                            <div className="codeBlock">
                                                 {/*this.createCodeBlock('{\n        "names": [\n                "<name>",\n                . . . ,\n                "<name>"\n        ]\n         "ethnicities": [\n                "<ethnicity>",\n                . . . ,\n                "<ethnicity>"\n        ]\n}}', "json")*/}
                                                 {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = request.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
                                             </div>
@@ -236,39 +253,42 @@ export default class ApiDocumentationPage extends React.Component {
                                 <button className="apiSectionBox apiSectionButton" id="apiSectionButton2" onClick={() => {
                                         document.getElementById("apiEndpointSection2").classList.toggle("openEndpointSection");
                                         document.getElementById("apiSectionButton2").classList.toggle("clickedApiSectionButton");
+                                        this.spanParentDiv()
                                     }}>
-                                        <p className="apiEndpointText">/standard-models</p>
+                                        <p className="apiEndpointText">/models</p>
                                         {this.createRequestTag("GET")}
 
                                         <img alt="open-endpoint-icon" src="images\drop-icon-dark.svg" className="openEndpointExplanationIcon"></img>
                                     </button>
                                     <div className="endpointExplanationBox">
 
-                                        <div className="endpointExplanationDescriptionBox">
+                                        <div className="endpointExplanationSubBox">
                                             <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">description:</h1>
                                             </div>
                                             <div className="endpointDescriptionText">
-                                                This endpoint returns a list of all available standard models (ie. models trained by us) with the accuracy they archieved on our test set.
+                                                This endpoint returns a list of all the, for you, available models with the accuracy they archieved on our test set.
+                                                Additionally we provide the nationalities it was trained on, the F1-score of every class, the type (standard or custom model) and the creation date.
                                             </div>
                                         </div>
                                         
-                                        <div className="endpointExplanationResponseBox getResponseBox">
+                                        <div className="endpointExplanationSubBox">
                                             <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">response:</h1>
                                             </div>
 
-                                            <div className="responseCodeBlock getResponseCodeBlock">
-                                                {this.createCodeBlock('{\n        "<model name: string>": <accuracy: float>,\n        . . . ,\n          "<model name: string>": <accuracy: float>\n}', "json")}
+                                            <div className="codeBlock">
+                                                {this.createCodeBlock('[\n        {\n                "name": "<model name: string>",\n                "accuracy": <accuracy: float>,\n                "nationalities": ["<nationality/ethnicity: string>", . . . , "<nationality/ethnicity: string>"],\n                "scores": [<score: float>, . . . , <score: float>],\n                "type": <model type: 1=standard, 0=custom>,\n                "creationTime": "<date time: string>"\n        },\n        . . . \n]', "json")}
+                                                {/*this.createCodeBlock('{\n        "<model name: string>": <accuracy: float>,\n        . . . ,\n          "<model name: string>": <accuracy: float>\n}', "json")*/}
                                             </div>
                                         </div>
 
-                                        <div className="endpointExplanationExampleBox getResponseExampleBox">
-                                            <div className="endpointEplanationTitleBox getResponseExampleBox">
+                                        <div className="endpointExplanationSubBox">
+                                            <div className="endpointEplanationTitleBox">
                                                 <h1 className="endpointEplanationTitle">Python example:</h1>
                                             </div>
 
-                                            <div className="exampleCodeBlock getResponseExampleCodeBox">
+                                            <div className="codeBlock">
                                                 {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/standard-models"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nresponse = request.get(api_url, headers=headers)\n\nprint(response.json())', "python")}
                                             </div>
                                         </div>
@@ -276,8 +296,8 @@ export default class ApiDocumentationPage extends React.Component {
                                     </div>
                                 </div>        
 
-                                <div className="apiEndpointSection" id="apiEndpointSection3">
-                                <button className="apiSectionBox apiSectionButton" id="apiSectionButton3" onClick={() => {
+                                {/*<div className="apiEndpointSection" id="apiEndpointSection3">
+                                    <button className="apiSectionBox apiSectionButton" id="apiSectionButton3" onClick={() => {
                                         document.getElementById("apiEndpointSection3").classList.toggle("openEndpointSection");
                                         document.getElementById("apiSectionButton3").classList.toggle("clickedApiSectionButton");
                                     }}>
@@ -313,17 +333,17 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="exampleCodeBlock getResponseExampleCodeBox">
-                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/my-models"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nresponse = request.get(api_url, headers=headers)\n\nprint(response.json())', "python")}
+                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/models"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nresponse = request.get(api_url, headers=headers)\n\nprint(response.json())', "python")}
                                             </div>
                                         </div>
 
                                     </div>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <FooterBox/>
             </div>
         )
     }

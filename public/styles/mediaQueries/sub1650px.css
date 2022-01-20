@@ -322,6 +322,13 @@
         width: calc(1417px - 190px);
     }
 
+    .apiTitle {
+        left: 30px;
+        right: 30px;
+        width: auto;/*calc(1417px - 190px);*/
+
+    }
+
     /* CLASSIFICATION BOX */
     .modelBox {
         position: absolute;
@@ -455,6 +462,12 @@
         left: 1.2vw;
     }
 
+    .innerDocumentationBox {
+        left: 3vw;
+        width: 90vw;
+    }
+
+
 }
 
 @media (max-width: 1075px) {
@@ -515,4 +528,5 @@
         width: 727px;
     }
 
+    
 }

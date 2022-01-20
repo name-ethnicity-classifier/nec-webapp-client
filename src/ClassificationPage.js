@@ -226,7 +226,7 @@ export default class ClassificationBox extends React.Component {
 
             var deletionConfirmationText = document.createElement("p");
             deletionConfirmationText.classList.add("deletionConfirmationText");
-            deletionConfirmationText.innerText = "You are about to delete this model! Are you sure you want to do that? Click again to confirm, click outside to abort.";
+            deletionConfirmationText.innerText = "You are about to delete this model! Are you sure you want to do that? CLICK AGAIN to confirm, CLICK OUTSIDE to abort.";
             modelDeletionButton.appendChild(deletionConfirmationText);
 
             var deleteModelIcon = document.getElementsByClassName("deleteModelIcon")[0];
