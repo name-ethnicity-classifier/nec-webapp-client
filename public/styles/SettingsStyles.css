@@ -387,9 +387,9 @@
 }
 
 .policyBox {
-    position: absolute;
+    position: relative;
     top: 65px;
+    width: calc(100% - 100px);
     left: 50px;
-    right: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 200px;
 }

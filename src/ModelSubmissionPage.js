@@ -412,7 +412,6 @@ export default class ModelSubmissionBox extends React.Component {
 
                     </div>
                 </div>
-                <FooterBox/>
             </div>
         );
     }

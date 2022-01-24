@@ -1,9 +1,19 @@
 
+
+.classificationBox {
+    position: relative;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 200px;
+    left: 0px;
+    top: 0px;
+}
+
 .inner {
-    position: absolute;
+    position: relative;
     height: 885px;
     width: 1437px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     left: calc(50% - 720px);
     top: 50px;
 }
@@ -23,14 +33,6 @@
 }
 
 
-.classificationBox {
-    position: absolute;
-    width: 100%;
-    height: 1350px;
-    background-color: rgb(255, 255, 255);
-    left: 0px;
-    top: 0px;
-}
 
 .modelBox {
     position: absolute;

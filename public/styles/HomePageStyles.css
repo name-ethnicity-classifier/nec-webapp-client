@@ -1,8 +1,9 @@
 
 .homePageBox {
-    position: absolute;
-    height: 3500px;
-    background-color: rgba(235, 150, 150, 0);
+    position: relative;
+    padding-bottom: 1800px;
+    min-height: 1px;
+    background-color: rgb(255, 255, 255);
     width: 100%;
     top: 40px;
 }

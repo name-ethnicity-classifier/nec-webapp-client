@@ -3,13 +3,6 @@ import React from "react";
 
 
 export default class FooterBox extends React.Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-        };
-    }
-
     render() {
         return (
             <footer className="footer">
@@ -57,13 +50,14 @@ export default class FooterBox extends React.Component {
                 </div>
                 <p className="copyRightText">© copyright 2022, Theodor Peifer (teddypeifer@gmail.com)</p>
                 
-                <div className="goTopBackground">
+                {document.location.pathname === "/" ? <div className="goTopBackground">
                     <button className="goTopButton" onClick={() => {
                         window.location.href="/#";
                     }}>
                         <img alt="goTopIcon" className="goUpIcon" src="images/arrow-up-icon.svg"></img>
                     </button>
                 </div>
+                : null}
 
             </footer>
         );

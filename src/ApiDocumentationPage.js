@@ -93,57 +93,42 @@ export default class ApiDocumentationPage extends React.Component {
         )
     }
 
-    spanParentDiv() {
-        let openedApiTabs = document.getElementsByClassName("openEndpointSection").length;
-        let parentDiv = document.getElementsByClassName("apiDocumentationBox")[0];
-
-        if (openedApiTabs === 1) {
-            parentDiv.classList.add("tabOpen1");
-            parentDiv.classList.remove("tabOpen2");
-        }
-        else if (openedApiTabs === 2) {
-            parentDiv.classList.remove("tabOpen1");
-            parentDiv.classList.add("tabOpen2");
-        }
-        else {
-            parentDiv.classList.remove("tabOpen1");
-            parentDiv.classList.remove("tabOpen2");
-        }   
-    }
-
     render() {
         return (
             <div className="apiDocumentationBox">
-                <div className="inner innerDoc">
-                    <h1 className="pageTitle">API documentation</h1>
+                <div className="inner apiInner">
+                    <h1 className="pageTitle apiPageTitle">API documentation</h1>
 
                     <div className="innerDocumentationBox">
-                        <p className="apiDescriptionText">With our public API you can classify names automatically and more easily using a simply <a className="postExplanationLink" target="_blank" href="https://en.wikipedia.org/wiki/POST_(HTTP)">POST</a> request.</p>
 
-                        <div className="toggleThemeSwitchBox">
-                            <Switch 
-                                className="toggleThemeSwitch" 
-                                offColor="#d2d1ff"
-                                onColor="#d2d1ff"
-                                offHandleColor="#605dff"
-                                onHandleColor="#605dff"
-                                checkedHandleIcon={
-                                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", borderRadius: "50%", fontSize: 20 }}>
-                                        <img alt="dark-mode-icon" src="images/dark-mode-icon.svg"></img>
-                                    </div>
-                                }
-                                uncheckedHandleIcon={
-                                    <div style={{ display: "flex", paddingTop: "11px", paddingLeft: "10px", justifyContent: "center", alignItems: "center", height: "20%", width: "20%", borderRadius: "50%", fontSize: 20 }}>
-                                        <img alt="light-mode-icon" src="images/light-mode-icon.svg"></img>
-                                    </div>
-                                }
-                                
-                                
-                                uncheckedIcon={null}
-                                checkedIcon={null}
-                                onChange={this.toggleCodeTheme} 
-                                checked={this.state.checked}
-                            />
+                        <div className="apiDescriptionBox">
+                            <p className="apiDescriptionText">With our public API you can classify names automatically and more easily using a simply <a className="postExplanationLink" target="_blank" href="https://en.wikipedia.org/wiki/POST_(HTTP)">POST</a> request.</p>
+
+                            <div className="toggleThemeSwitchBox">
+                                <Switch 
+                                    className="toggleThemeSwitch" 
+                                    offColor="#d2d1ff"
+                                    onColor="#d2d1ff"
+                                    offHandleColor="#605dff"
+                                    onHandleColor="#605dff"
+                                    checkedHandleIcon={
+                                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", borderRadius: "50%", fontSize: 20 }}>
+                                            <img alt="dark-mode-icon" src="images/dark-mode-icon.svg"></img>
+                                        </div>
+                                    }
+                                    uncheckedHandleIcon={
+                                        <div style={{ display: "flex", paddingTop: "11px", paddingLeft: "10px", justifyContent: "center", alignItems: "center", height: "20%", width: "20%", borderRadius: "50%", fontSize: 20 }}>
+                                            <img alt="light-mode-icon" src="images/light-mode-icon.svg"></img>
+                                        </div>
+                                    }
+                                    
+                                    
+                                    uncheckedIcon={null}
+                                    checkedIcon={null}
+                                    onChange={this.toggleCodeTheme} 
+                                    checked={this.state.checked}
+                                />
+                            </div>
                         </div>
 
                         <div className="apiDocumentationSection apiKeySection">
@@ -194,7 +179,6 @@ export default class ApiDocumentationPage extends React.Component {
                                     <button className="apiSectionBox apiSectionButton" id="apiSectionButton1" onClick={() => {
                                         document.getElementById("apiEndpointSection1").classList.toggle("openEndpointSection");
                                         document.getElementById("apiSectionButton1").classList.toggle("clickedApiSectionButton");
-                                        this.spanParentDiv()
                                     }}>
                                         <p className="apiEndpointText">/classify-names</p>
                                         {this.createRequestTag("POST")}
@@ -210,7 +194,7 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
                                             <div className="endpointDescriptionText">
                                                 Using this endpoint, you can classify names in a given list. Additional to the names, you have to provide the name of the model you want to use 
-                                                (model names can be found on this webapp and using the <b>/standard-models</b> or <b>/my-models</b> endpoints). 
+                                                (model names can be found on this webapp and using the <b>/models</b> or <b>/my-models</b> endpoints). 
                                             </div>
                                         </div>
                                         
@@ -230,7 +214,6 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="codeBlock">
-                                                {/*this.createCodeBlock('{\n        "names": [\n                "<name>",\n                . . . ,\n                "<name>"\n        ]\n         "ethnicities": [\n                "<ethnicity>",\n                . . . ,\n                "<ethnicity>"\n        ]\n}}', "json")*/}
                                                 {this.createCodeBlock('{\n        "<name: string>": [\n                "<ethnicity: string>", <confidence: float>\n        ],\n        . . . ,\n        "<name: string>": [\n                "<ethnicity: string>", <confidence: float>\n        ]\n}', "json")}
                                             </div>
                                         </div>
@@ -241,7 +224,6 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="codeBlock">
-                                                {/*this.createCodeBlock('{\n        "names": [\n                "<name>",\n                . . . ,\n                "<name>"\n        ]\n         "ethnicities": [\n                "<ethnicity>",\n                . . . ,\n                "<ethnicity>"\n        ]\n}}', "json")*/}
                                                 {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = request.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
                                             </div>
                                         </div>
@@ -253,7 +235,6 @@ export default class ApiDocumentationPage extends React.Component {
                                 <button className="apiSectionBox apiSectionButton" id="apiSectionButton2" onClick={() => {
                                         document.getElementById("apiEndpointSection2").classList.toggle("openEndpointSection");
                                         document.getElementById("apiSectionButton2").classList.toggle("clickedApiSectionButton");
-                                        this.spanParentDiv()
                                     }}>
                                         <p className="apiEndpointText">/models</p>
                                         {this.createRequestTag("GET")}
@@ -343,7 +324,6 @@ export default class ApiDocumentationPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <FooterBox/>
             </div>
         )
     }

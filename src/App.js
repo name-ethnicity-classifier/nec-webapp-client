@@ -11,7 +11,7 @@ import LoginBox from "./LoginBox";
 import Cookies from "js-cookie";
 import axios from "axios";
 import config from "./config";
-
+import FooterBox from "./FooterBox";
 
 export default function App() {
 
@@ -19,16 +19,16 @@ export default function App() {
 
     function requireAuth() {
         axios.get(config.API_URL + "authentication-check", {
-        headers: {
-            Authorization: "Bearer " + Cookies.get("token"),
-            Email: Cookies.get("email")
-        }}).then((response) => {
-            setLogIn(true);
+            headers: {
+                Authorization: "Bearer " + Cookies.get("token"),
+                Email: Cookies.get("email")
+            }
+        }).then((response) => {
+            setLogIn(true); 
         }, (error) => {
             if (error.response.status === 401) {
                 Cookies.remove("email");
                 Cookies.remove("token");
-                window.location.href = "/login";
             }
         });
     }
@@ -61,13 +61,17 @@ export default function App() {
                         return ( <ClassificationBox/> ); 
                     }
                     else { 
-                        <Redirect to="/login"/> 
+                        window.location.href = "/login";
                     } 
                 }}></Route>
 
                 <Route path="/privacy-policy" exact component={PrivacyPolicyPage}></Route>
                 <Route path="/terms-of-service" exact component={TermsOfServicePage}></Route>
                 <Route path="/api-documentation" exact component={ApiDocumentationPage}></Route>
+
+                {window.location.pathname !== "/login" && window.location.pathname !== "/signup" ? 
+                    <FooterBox/>
+                : null}
 
             </div>
         </Router>

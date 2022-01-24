@@ -449,7 +449,6 @@ export default class ClassificationBox extends React.Component {
                     {this.state.showModelDeletionButton ? this.showModelDeletionButton() : null}
                     {this.state.showClassificationPopup ? <ClassificationPopup modelName={this.state.chosenModel} submittedFile={this.state.selectedFile} fileContent={this.state.fileContent} stopRenderingHandler={this.closeClassificationPopup}/> : null}
                 </div>
-                <FooterBox/>
             </div>
 
         );

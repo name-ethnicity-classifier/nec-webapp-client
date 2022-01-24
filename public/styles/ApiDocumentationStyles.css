@@ -1,29 +1,28 @@
 
 .apiDocumentationBox {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 1300px;
+    padding-bottom: 200px;
     left: 0px;
     top: 0px;
 }
 
-.tabOpen1 {
-    height: 2000px;
-}
-
-.tabOpen2 {
-    height: 2700px;
-}
-
-.tabOpen3 {
-    height: 3400px;
-}
 
 .innerDocumentationBox {
-    position: absolute;
-    top: 65px;
+    position: relative;
+    padding-bottom: 400px;
     left: calc(50% - 500px);
     width: 1000px;
+    top: 65px;
+}
+
+.apiInner {
+    position: relative;
+    height: auto;
+    padding-bottom: 100px;
+    left: calc(50% - 720px);
+    right: 50px;
+    top: 50px;
 }
 
 .apiTitle {
@@ -40,18 +39,36 @@
     border-bottom-color: rgb(224, 224, 224);
 }
 
-.apiDescriptionText {
-    position: absolute;
-    top: 0px;
-    font-size: 20px;
+.apiDescriptionBox {
+    position: relative;
+    display: grid;
+    top: 10px;
+    padding: 0px;
+    margin: 0px;
     left: 0px;
-    width: 90%;
+    right: 0px;
+}
+
+.apiDescriptionText {
+    position: relative;
+    grid-column: 1/4;
+    height: fit-content;
+    font-size: 20px;
+    top: 5px;
+    left: 0px;
+    width: 95%;
+    padding: 0px;
+    margin: 0px;
 }
 
 .toggleThemeSwitchBox {
-    position: absolute;
-    top: 20px;
-    right: 0px;
+    position: relative;
+    grid-column: 4/4;
+    top: 5px;
+    left: calc(100% - 60px);
+    width: 60px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .postExplanationLink {
@@ -66,7 +83,6 @@
 
 .apiDocumentationSection {
     position: relative;
-    top: 0px;
     left: 0px;
     width: 100%;
 }
@@ -84,7 +100,7 @@
 
 
 .apiKeySection {
-    top: 75px;
+    top: 35px;
     height: 100px;
 }
 
@@ -189,12 +205,12 @@
 }
 
 .baseURLSection {
-    top: 90px;
+    top: 45px;
     height: 100px;
 }
 
 .allHeadersSection {
-    top: 105px;
+    top: 55px;
 }
 
 .headersCodeBlock {
@@ -218,7 +234,7 @@
 }
 
 .endpointsSection {
-    top: 325px;
+    top: 275px;
 }
 
 .apiEndpointSection {

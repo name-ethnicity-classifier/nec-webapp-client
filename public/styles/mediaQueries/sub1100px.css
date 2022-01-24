@@ -188,29 +188,10 @@
     }
 
     .homePageBox {
-        height: 4150px;
+        padding-bottom: 3600px;
     }
 
     /* API DOCUMENTATION BOX */
-    .apiKeySection {
-        top: 100px;
-    }
-
-    .baseURLSection {
-        top: 115px;
-    }
-
-    .allHeadersSection {
-        top: 130px;
-    }
-
-    .endpointsSection {
-        top: 340px;
-    }
-
- 
-
-
     .endpointExplanationExampleBox {
         top: 494px;
     }
@@ -292,10 +273,7 @@
     }
 
     /* API DOC BOX */
-    .apiDescriptionText {
-        width: 80%;
-        font-size: 18px;
-    }
+
 
 }
 
@@ -310,24 +288,7 @@
         left: 18vw;
     }
 
-    /* API DOC BOX */
 
-    .apiKeySection {
-        top: 112px;
-        height: 50px;
-    }
-
-    .baseURLSection {
-        top: 170px;
-    }
-
-    .allHeadersSection {
-        top: 175px;
-    }
-
-    .endpointsSection {
-        top: 395px;
-    }
 
 }
 

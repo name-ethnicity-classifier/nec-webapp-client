@@ -326,7 +326,7 @@ export default class LoginBox extends React.Component {
 
     render() {
         return (
-                <div className="userLoginBox">
+                <div className="userAuthBox">
 
                     { this.state.verificationMessage !== null ? 
                         <div className="verificationMessageBox">

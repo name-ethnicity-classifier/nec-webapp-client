@@ -33,8 +33,7 @@ export default class HomeBarBox extends React.Component {
         this.setState({ hideNavigationLinks: window.innerWidth < 1100 });
         if ( !this.state.hideNavigationLinks ) {
             this.setState({ showNavigationMenu: false });
-        }
-        
+        }   
     }
 
     componentDidMount() {
@@ -51,6 +50,10 @@ export default class HomeBarBox extends React.Component {
         }, (error) => {
             this.setState({loggedIn: false});
         });
+
+        if (Cookies.get("email") === undefined) {
+            this.setState({loggedIn: false});
+        }
     }
 
     showNavigationMenu() {

@@ -26,7 +26,7 @@ export default class PresentBox extends React.Component {
             endpoint = "standard-models";
         }
         else if (this.props.type === "customModelData") {
-            endpoint = "my-models";
+            endpoint = "models";
             headers_ = 
                 {
                     headers: {

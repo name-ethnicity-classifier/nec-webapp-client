@@ -306,14 +306,13 @@
     }
 
     .homePageBox {
-        height: 3450px;
+        padding-bottom: 1800px;
     }   
 }
 
 
 @media (max-width: 1475px) {
     .inner {
-        background-color: rgb(255, 255, 255);
         width: calc(1437px - 100px);
         left: calc(50% - 620px);
     }
@@ -454,6 +453,10 @@
     .datasetInformationBox {
         width: 65.85vw;
     }
+
+    .apiInner {
+        width: 1250px;
+    }
     
 }
 
@@ -467,6 +470,14 @@
         width: 90vw;
     }
 
+    .apiInner {
+        left: 1vw;
+        width: 97vw;
+    }
+
+    .apiPageTitle {
+        width: calc(95vw - 10px);
+    }
 
 }
 
@@ -527,6 +538,5 @@
     .datasetInformationBox {
         width: 727px;
     }
-
     
 }

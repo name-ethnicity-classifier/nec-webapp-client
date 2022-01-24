@@ -37,7 +37,7 @@ export default class HomePageBox extends React.Component {
         });
         
         // get custom model amount
-        axios.get(config.API_URL + "my-models",  {
+        axios.get(config.API_URL + "models",  {
             headers: {
                 Authorization: "Bearer " + Cookies.get("token"),
                 Email: Cookies.get("email")
@@ -255,7 +255,7 @@ export default class HomePageBox extends React.Component {
                                 <b>Lena Hafner</b> - Phd. Candidate in Politics and International Studies, University of Cambridge
                             </h1>
                             <h1 className="aboutText aboutPadding">
-                                <b>Theodor Peifer</b> - BSc. Student in Data Science and Machine Learning, Technical University Ingolstadt
+                                <b>Theodor Peifer</b> - BSc. Student in Computer Science and Machine Learning, Technical University Ingolstadt
                             </h1>
 
                             <h1 className="aboutText">
@@ -310,7 +310,6 @@ export default class HomePageBox extends React.Component {
                         </div>
                     </div>
                 </div>
-                <FooterBox/>
             </div>
         );
     }
