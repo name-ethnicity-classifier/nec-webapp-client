@@ -43,7 +43,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: rgb(202, 202, 202);
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: rgb(250, 250, 250);
 }
 
@@ -59,7 +59,7 @@
     padding-bottom: 10px;
     border-style: solid;
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 5px;
     border-color: rgb(202, 202, 202);
     background: linear-gradient(to bottom right, rgb(72, 83, 235) 30%, rgb(138, 65, 255));
 }

@@ -179,9 +179,11 @@
     height: 40px;
     width: 100px;
     outline: none;
+    transition: all .1s ease-out;
 }
 
 .submitNationalitiesButton:hover {
+    transition: all .1s ease-out;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 

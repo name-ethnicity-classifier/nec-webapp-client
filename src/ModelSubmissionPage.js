@@ -3,9 +3,9 @@ import axios from "axios";
 import PresentBox from "./PresentBox";
 import DatasetChoosingBox from "./DatasetChoosingBox";
 import Cookies from "js-cookie";
-import FooterBox from "./FooterBox";
 import ShadowButton from "./ShadowButton";
 import config from "./config";
+import { authorizationCheck } from "./App";
 
 
 export default class ModelSubmissionBox extends React.Component {
@@ -44,6 +44,8 @@ export default class ModelSubmissionBox extends React.Component {
     }
 
     componentDidMount() {
+        authorizationCheck();
+
         axios.get(config.API_URL + "nationalities")
         .then((response) => {
             // convert nationality json object to list

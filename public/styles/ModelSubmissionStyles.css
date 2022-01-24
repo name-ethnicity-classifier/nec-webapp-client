@@ -148,11 +148,12 @@
     height: 30px;
     width: 85px;
     padding-top: 0px;
-
     outline: none;
+    transition: all .1s ease-out;
 }
 
 .editDatasetButton:hover {
+    transition: all .1s ease-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 

@@ -4,8 +4,8 @@ import { Bar } from "react-chartjs-2";
 import Dropzone from 'react-dropzone';
 import ClassificationPopup from './ClassificationPopupBox'
 import Cookies from 'js-cookie';
-import FooterBox from './FooterBox';
 import config from "./config";
+import { authorizationCheck } from './App';
 
 
 export default class ClassificationBox extends React.Component {
@@ -32,6 +32,8 @@ export default class ClassificationBox extends React.Component {
     }
 
     componentDidMount() {
+        authorizationCheck();
+
         axios.get(config.API_URL + "models", {
             headers: {
                 Authorization: "Bearer " + Cookies.get("token"),

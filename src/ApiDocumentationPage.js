@@ -82,11 +82,11 @@ export default class ApiDocumentationPage extends React.Component {
         );
     }
 
-    createRequestTag(tag) {
+    createRequestTag(tag, color) {
         return (
             <div className="requestTagBox">
-                <div className="requestTagBorder">
-                    <h1 className="requestTagText">{tag}</h1>
+                <div style={{borderColor: color}} className="requestTagBorder">
+                    <h1 style={{color: color}} className="requestTagText">{tag}</h1>
                 </div>
                 <div className="requestTagShadow"></div>
             </div>
@@ -181,7 +181,7 @@ export default class ApiDocumentationPage extends React.Component {
                                         document.getElementById("apiSectionButton1").classList.toggle("clickedApiSectionButton");
                                     }}>
                                         <p className="apiEndpointText">/classify-names</p>
-                                        {this.createRequestTag("POST")}
+                                        {this.createRequestTag("POST", "rgb(96, 93, 255)")}
                                         <img alt="open-endpoint-icon" src="images\drop-icon-dark.svg" className="openEndpointExplanationIcon"></img>
                                     </button>
 
@@ -237,7 +237,7 @@ export default class ApiDocumentationPage extends React.Component {
                                         document.getElementById("apiSectionButton2").classList.toggle("clickedApiSectionButton");
                                     }}>
                                         <p className="apiEndpointText">/models</p>
-                                        {this.createRequestTag("GET")}
+                                        {this.createRequestTag("GET", "rgb(96, 93, 255)")}
 
                                         <img alt="open-endpoint-icon" src="images\drop-icon-dark.svg" className="openEndpointExplanationIcon"></img>
                                     </button>
@@ -322,6 +322,27 @@ export default class ApiDocumentationPage extends React.Component {
                                 </div>*/}
                             </div>
                         </div>
+
+                        <div className="apiDocumentationSection responseCodesSection">
+                            <h1 className="apiDocumentationSubTitle">Response codes:</h1>
+                                <div className="apiSectionBox responseCodeBox">
+                                    {this.createRequestTag("200", "rgb(17, 207, 128)")}  
+                                    <p className="responseCodeText"><b>OK</b>,&nbsp;&nbsp;everything is looking fine :)</p>
+                                </div>
+                                <div className="apiSectionBox responseCodeBox">
+                                    {this.createRequestTag("401", "rgb(255, 105, 105)")}  
+                                    <p className="responseCodeText"><b>authorizationFailed</b>,&nbsp;&nbsp;make sure your email and API token are correct!</p>
+                                </div>
+                                <div className="apiSectionBox responseCodeBox">
+                                    {this.createRequestTag("409", "rgb(255, 105, 105)")}  
+                                    <p className="responseCodeText"><b>modelDoesNotExist</b>,&nbsp;&nbsp;does the model name you entered exist?</p>
+                                </div>
+                                <div className="apiSectionBox responseCodeBox">
+                                    {this.createRequestTag("400", "rgb(255, 105, 105)")}  
+                                    <p className="responseCodeText"><b>classificationFailed</b>,&nbsp;&nbsp;did you follow the classification instructions correctly?</p>
+                                </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

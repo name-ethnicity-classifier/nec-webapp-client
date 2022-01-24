@@ -293,10 +293,10 @@
 
 .apiEndpointText {
     position: absolute;
-    font-family: inherit;
+    font-family: 'Source Sans Pro', sans-serif;;
     left: 100px;
-    top: -2px;
-    letter-spacing: 1px;
+    top: -3px;
+    letter-spacing: 0px;
     font-size: 17px;
 }
 
@@ -325,6 +325,7 @@
     font-size: 16px;
     color: rgb(96, 93, 255);
     width: 46px;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
@@ -416,3 +417,27 @@
     transition: all .05s ease-out;
 }
 
+.responseCodesSection {
+    top: 350px;
+    height: fit-content;
+}
+
+.responseCodeBox {
+    position: relative;
+    height: fit-content;
+    margin-bottom: 20px;
+}
+
+.responseCodeText {
+    position: relative;
+    font-family: 'Source Sans Pro', sans-serif;;
+    left: 100px;
+    width: calc(100% - 120px);
+    top: 14px;
+    margin: 0px;
+    padding-bottom: 25px;
+    letter-spacing: 0px;
+    font-size: 17px;
+    min-height: 23px;
+    height: fit-content;
+}
