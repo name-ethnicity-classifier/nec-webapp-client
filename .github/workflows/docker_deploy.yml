@@ -22,7 +22,7 @@ jobs:
       - name: create image from repository
         run: docker build -t ${{ github.actor }}/nec-webapp-client .
       - name: push image to GitHub Container Registry
-        run: docker push ${{ github.actor }}/nec-webapp-client:latest
+        run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
 
       
 
