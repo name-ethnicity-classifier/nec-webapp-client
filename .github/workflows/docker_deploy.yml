@@ -13,7 +13,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: name-ethnicity-classifier
           password: ${{ secrets.GITHUB_TOKEN }}
   build:
     runs-on: ubuntu-latest
@@ -21,8 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: create image from repository
         run: |
-          docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
-          echo ${{ github.actor }}
+          docker build -t ghcr.io/name-ethnicity-classifier/nec-webapp-client .
       - name: push image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
+        run: docker push ghcr.io/name-ethnicity-classifier/nec-webapp-client:latest
 
