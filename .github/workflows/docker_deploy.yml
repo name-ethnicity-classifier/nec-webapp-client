@@ -20,8 +20,9 @@ jobs:
     steps:
       - name: create image from repository
       - uses: actions/checkout@v2
-        run: docker build -t nec-webapp-client .
-      - name: push image to GitHub Container Registry
-        run: docker push nec-webapp-client
+        run: |
+          docker build -t nec-webapp-client .
+          docker push nec-webapp-client
+
       
 
