@@ -20,8 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: create image from repository
-        run: docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
-        run: echo ${{ github.actor }}
+        run: |
+          docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
+          echo ${{ github.actor }}
       - name: push image to GitHub Container Registry
         run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
 
