@@ -18,17 +18,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: build image from repository and push to GitHub Container Registry
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: ghcr.io/${{ github.actor }}/nec-webapp-client:latest
-
-      #- uses: actions/checkout@v2
-      #- name: create image from repository
-      #  run: docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
-      #- name: push image to GitHub Container Registry
-      #  run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
-      
+      - uses: actions/checkout@v2
+      - name: create image from repository
+        run: docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
+      - name: push image to GitHub Container Registry
+        run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
 
