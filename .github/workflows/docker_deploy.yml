@@ -18,8 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: create image from repository
-        uses: actions/checkout@v2
         run: docker build -t nec-webapp-client .
       - name: push image to GitHub Container Registry
         run: docker push nec-webapp-client
