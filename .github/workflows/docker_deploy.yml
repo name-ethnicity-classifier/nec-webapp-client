@@ -6,7 +6,7 @@ on:
       - server
 
 jobs:
-  dockerloginbuildpush:
+  docker-push:
     runs-on: ubuntu-latest
     steps:
       - name: login to GitHub Container Registry
@@ -19,7 +19,7 @@ jobs:
       - name: create image from repository
         run: docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
       - name: push image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
+        run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client
 
 #jobs:
 #  docker-push:
