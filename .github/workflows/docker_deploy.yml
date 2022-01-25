@@ -6,7 +6,7 @@ on:
       - server
 
 jobs:
-  login:
+  docker-push:
     runs-on: ubuntu-latest
     steps:
       - name: login to GitHub Container Registry
@@ -14,13 +14,11 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: create image from repository
-        run: docker build -t ghcr.io/${{ github.actor }}/nec-webapp-client .
-      - name: push image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.actor }}/nec-webapp-client:latest
-
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: build image and push to GitHub Container Registry
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.actor }}/nec-webapp-client:latest
