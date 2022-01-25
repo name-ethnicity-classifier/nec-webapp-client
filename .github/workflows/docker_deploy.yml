@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: login to GitHub Container Registry
-      - uses: docker/login-action@v1
-      - with:
+        uses: docker/login-action@v1
+        with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -19,10 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create image from repository
-      - run: |
-          docker build -t nec-webapp-client .
-          docker push nec-webapp-client
+        run: docker build -t nec-webapp-client .
       - name: push image to GitHub Container Registry
-        run: 
+        run: docker push nec-webapp-client
+
       
 
