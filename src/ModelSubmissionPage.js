@@ -202,7 +202,7 @@ export default class ModelSubmissionBox extends React.Component {
     checkRequest() {
         if (this.state.modelName === null || this.state.modelName.length <= 1 || this.state.modelName.length > 50) {
             var modelNameField = document.getElementsByClassName("modelNameField")[0];
-            modelNameField.style.borderColor = "rgb(247, 148, 148)";
+            modelNameField.style.borderColor = "tomato";
             modelNameField.placeholder = "invalid dataset name (min: 2, max: 40)";
 
             document.addEventListener("mouseup", function handler(e) {
@@ -213,7 +213,7 @@ export default class ModelSubmissionBox extends React.Component {
         }
         else if (this.checkModelNameDuplicate()) {
             var modelNameField = document.getElementsByClassName("modelNameField")[0];
-            modelNameField.style.borderColor = "rgb(247, 148, 148)";
+            modelNameField.style.borderColor = "tomato";
             modelNameField.placeholder = "name already exists!";
     
             document.addEventListener("mouseup", function handler(e) {
@@ -225,7 +225,7 @@ export default class ModelSubmissionBox extends React.Component {
         else if (this.state.nationalityAmount < 2) {
             var datasetInstructionText = document.getElementsByClassName("datasetInstructionText")[0];
             datasetInstructionText.innerText = "please choose nationalities!"
-            datasetInstructionText.style.color = "rgb(218, 134, 134)";
+            datasetInstructionText.style.color = "tomato";
         }
         else {
             this.setState({showConfirmationBox: true});
