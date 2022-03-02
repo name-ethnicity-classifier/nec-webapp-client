@@ -394,8 +394,10 @@
     height: 75px;
     background-color: white;
     border-radius: 5px;
+    border: solid 1px rgb(35, 49, 233);
     text-align: center;
     box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
+    z-index: 10000;
 }
 
 .verificationMessage {
