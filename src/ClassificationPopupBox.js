@@ -27,8 +27,10 @@ export default class ClassificationPopup extends React.Component {
     }
 
     csvToList(inputFileContent) {
-        let names = inputFileContent.split(/,\r\n/);
+        inputFileContent = inputFileContent.replace(/\n|\r/g, "");
+        let names = inputFileContent.split(",");
         names.shift();
+
         return names;
     }
 
@@ -43,6 +45,7 @@ export default class ClassificationPopup extends React.Component {
             "names": this.csvToList(this.props.fileContent)
         }
 
+        //console.log(this.csvToList(this.props.fileContent));
         axios.post(config.API_URL + "classify-names", body, {
             headers: {
                 Authorization: "Bearer " + Cookies.get("token"),

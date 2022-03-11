@@ -187,43 +187,6 @@ export default class LoginBox extends React.Component {
                 <p className="termsOfServiceDescription termsOfServicePeriod">.</p>
 
                 <button className="submitAuthButton signupSubmitButton" onClick={() => {
-                    /* potential client side validations:
-
-                    if (this.state.role == "none") {
-                        this.createFieldErrorStyle("roleField", null, null, true);
-                        return null;
-                    }
-                    if (this.state.name.length > 40) {
-                        this.createFieldErrorStyle("nameField", "please shorten name!", "first and last name");
-                        return null;
-                    }
-
-                    var latinOnly = true;
-                    var matchStr = this.state.name.match(/[a-zA-Z ]+/);
-                    if (matchStr == null) {
-                        latinOnly = false;
-                    }
-                    latinOnly = matchStr[0].length == this.state.name.length;
-                    if(!latinOnly) {                
-                        this.createFieldErrorStyle("nameField", "latin characters only!", "first and last name");
-                        return null;
-                    }
-                    if (this.state.name.length < 3) {
-                        this.createFieldErrorStyle("nameField", "please provide full name!", "first and last name");
-                        return null;
-                    }
-
-                    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    if (!re.test(String(this.state.signupEmail).toLowerCase())) {
-                        this.createFieldErrorStyle("loginEmailField", "please enter a valid email address!", "example@mail.com");
-                        return null;
-                    }
-                    if (this.state.signupPassword.length < 10 || this.state.signupPassword.length > 63 || !/\d/.test(this.state.signupPassword)) {
-                        this.createFieldErrorStyle("signupPasswordField", "minimum of 10 characters, at least 1 number!", "minimum of 10 characters, at least 1 number");
-                        return null;
-                    }
-                    */
-
                     if (this.state.signupPassword !== this.state.repeatedPassword) {
                         this.createFieldErrorStyle("repeatPasswordField", "the passwords don't match!", "minimum of 10 characters, at least 1 number");
                         return null;
