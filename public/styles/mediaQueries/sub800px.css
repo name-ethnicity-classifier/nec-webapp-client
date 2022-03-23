@@ -370,5 +370,11 @@
     .verificationMessageBox {
         transform: scale(0.8);
     }
+
+    .footerTitle {
+        top: 60px;
+        font-size: 30px;
+    }
+    
 }
 

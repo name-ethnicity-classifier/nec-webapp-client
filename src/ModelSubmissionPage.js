@@ -179,13 +179,12 @@ export default class ModelSubmissionBox extends React.Component {
         }
     }
 
-    changeModelName(event) {
-        if (event.key === "Enter") {
-            this.setState({modelName: document.getElementsByClassName("modelNameField")[0].value});
-            var inputField = document.getElementsByClassName("modelNameField")[0];
-            inputField.placeholder = inputField.value;
-            inputField.value = "";
-        }
+    changeModelName() {
+        alert("test")
+        this.setState({modelName: document.getElementsByClassName("modelNameField")[0].value});
+        var inputField = document.getElementsByClassName("modelNameField")[0];
+        inputField.placeholder = inputField.value;
+        inputField.value = "";
     }
 
     checkModelNameDuplicate() {
@@ -346,8 +345,7 @@ export default class ModelSubmissionBox extends React.Component {
 
                         <div className="modelNameBox">
                             <h1 className="modelNameTitle">model name:</h1>
-                            <input type="text" placeholder="give your model a descriptive name..." className="modelNameField" onKeyDown={(event) => 
-                                this.changeModelName(event)}>
+                            <input type="text" placeholder="give your model a descriptive name..." className="modelNameField" onBlur={() => {this.changeModelName()}}>
                             </input>
                         </div>
                             
