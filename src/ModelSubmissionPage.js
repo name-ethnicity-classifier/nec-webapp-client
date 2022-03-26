@@ -180,7 +180,6 @@ export default class ModelSubmissionBox extends React.Component {
     }
 
     changeModelName() {
-        alert("test")
         this.setState({modelName: document.getElementsByClassName("modelNameField")[0].value});
         var inputField = document.getElementsByClassName("modelNameField")[0];
         inputField.placeholder = inputField.value;
