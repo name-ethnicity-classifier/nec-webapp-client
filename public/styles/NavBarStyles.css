@@ -67,6 +67,7 @@
 
 .navigationLinkDiv {
     position: relative;
+    display: flex;
     top: 8px;
     height: 37px;
     padding-left: 40px;
