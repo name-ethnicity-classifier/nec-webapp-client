@@ -224,7 +224,7 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="codeBlock">
-                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Authorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = request.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
+                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Authorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = requests.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
                                             </div>
                                         </div>
 
