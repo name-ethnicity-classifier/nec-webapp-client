@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "ansi-regex": "^6.0.1",
     "axios": "^0.21.4",
     "react-portal": "^4.2.1"
   }

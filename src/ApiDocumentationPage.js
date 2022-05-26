@@ -224,7 +224,7 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="codeBlock">
-                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = request.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
+                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/classify-names"\n\nheaders = {\n        "Authorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nbody = {\n        "modelName": "chinese_and_else",\n        "names": ["Theodor Peifer", "Liu Cixin"] \n}\n\nresponse = requests.post(api_url, data=body, headers=headers)\n\nprint(response.json())\n# output:\n # {\n#         "Theodor Peifer": [\n#                 "else", 95.1\n#         ],\n#         "Liu Cixin": [\n#                 "chinese", 98.5\n#         ]\n# }', "python")}
                                             </div>
                                         </div>
 
@@ -270,56 +270,12 @@ export default class ApiDocumentationPage extends React.Component {
                                             </div>
 
                                             <div className="codeBlock">
-                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/standard-models"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nresponse = request.get(api_url, headers=headers)\n\nprint(response.json())', "python")}
+                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/standard-models"\n\nheaders = {\n        "Authorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nresponse = requests.get(api_url, headers=headers)\n\nprint(response.json())', "python")}
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>        
-
-                                {/*<div className="apiEndpointSection" id="apiEndpointSection3">
-                                    <button className="apiSectionBox apiSectionButton" id="apiSectionButton3" onClick={() => {
-                                        document.getElementById("apiEndpointSection3").classList.toggle("openEndpointSection");
-                                        document.getElementById("apiSectionButton3").classList.toggle("clickedApiSectionButton");
-                                    }}>
-                                        <p className="apiEndpointText">/my-models</p>
-                                        {this.createRequestTag("GET")}
-                                        <img alt="open-endpoint-icon" src="images\drop-icon-dark.svg" className="openEndpointExplanationIcon"></img>
-                                    </button>
-
-                                    <div className="endpointExplanationBox">
-
-                                        <div className="endpointExplanationDescriptionBox">
-                                            <div className="endpointEplanationTitleBox">
-                                                <h1 className="endpointEplanationTitle">description:</h1>
-                                            </div>
-                                            <div className="endpointDescriptionText">
-                                                This endpoint returns a list of all your custom models (ie. models trained you trained on this webapp) with the accuracy they archieved on our test set.
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="endpointExplanationResponseBox getResponseBox">
-                                            <div className="endpointEplanationTitleBox">
-                                                <h1 className="endpointEplanationTitle">response:</h1>
-                                            </div>
-
-                                            <div className="responseCodeBlock getResponseCodeBlock">
-                                                {this.createCodeBlock('{\n        "<model name: string>": <accuracy: float>,\n        . . . ,\n        "<model name: string>": <accuracy: float>\n}', "json")}
-                                            </div>
-                                        </div>
-
-                                        <div className="endpointExplanationExampleBox getResponseExampleBox">
-                                            <div className="endpointEplanationTitleBox getResponseExampleBox">
-                                                <h1 className="endpointEplanationTitle">Python example:</h1>
-                                            </div>
-
-                                            <div className="exampleCodeBlock getResponseExampleCodeBox">
-                                                {this.createCodeBlock('import requests\n\napi_url = "https://api.name-to-ethnicity.com/models"\n\nheaders = {\n        "Autorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxx",\n        "Email": "example@user.com" \n}\n\nresponse = request.get(api_url, headers=headers)\n\nprint(response.json())', "python")}
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>*/}
                             </div>
                         </div>
 

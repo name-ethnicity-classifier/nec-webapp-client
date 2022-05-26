@@ -215,7 +215,7 @@
 
 .headersCodeBlock {
     position: absolute;
-    height: 123px;
+    height: fit-content;
     width: 500px;
     top: 60px;
     left: calc(50% - 250px);
