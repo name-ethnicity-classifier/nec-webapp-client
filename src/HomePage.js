@@ -255,7 +255,7 @@ export default class HomePageBox extends React.Component {
                                 <b>Lena Hafner</b> - Phd. Candidate in Politics and International Studies, University of Cambridge
                             </h1>
                             <h1 className="aboutText aboutPadding">
-                                <b>Theodor Peifer</b> - BSc. Student in Computer Science and Machine Learning, Technical University Ingolstadt
+                                <b>Theodor Peifer</b> - BSc. Student in Computer Science and Design, Hochschule München
                             </h1>
 
                             <h1 className="aboutText">

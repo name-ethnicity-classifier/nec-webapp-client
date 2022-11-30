@@ -27,9 +27,11 @@ export default class ClassificationPopup extends React.Component {
     }
 
     csvToList(inputFileContent) {
-        inputFileContent = inputFileContent.replace(/\n|\r/g, "");
+        inputFileContent = inputFileContent.replace(/\n|\r/g, ",");
         let names = inputFileContent.split(",");
         names.shift();
+        names.splice(names.length - 1, 1);
+        console.log(names);
 
         return names;
     }
