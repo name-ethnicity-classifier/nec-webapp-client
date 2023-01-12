@@ -6,7 +6,7 @@
     }
 
     .startBox {
-        top: 55px;
+        top: 70px;
         left: 10vw;
         margin: auto;
     }
@@ -19,6 +19,18 @@
         font-size: 0.9em;
     }
 
+    .startButton {
+        left: 200px;
+    }
+
+    .startButton:active {
+        left: 206px;
+    }
+    
+    .startButtonShadow {
+        left: 206px;
+    }
+
     .earthPinIllustration {
         height: 280px;
         top: 93px;
@@ -27,7 +39,7 @@
 
     .earthPinIllustration2 {
         height: 350px;
-        top:75px;
+        top: 65px;
         right: 5vw;
     }
 
@@ -86,15 +98,15 @@
 
     .toggleMenuIcon {
         position: absolute;
-        height: 45px;
-        width: 45px;
-        top: calc(50% - 22px);
-        left: calc(50% - 22px);
+        height: 35px;
+        width: 35px;
+        top: calc(50% - 17px);
+        left: calc(50% - 17px);
         transition: all .065s ease-out;
     }
 
     .toggleMenuIcon:hover {
-        transform: scale(1.075);
+        transform: scale(1.05);
         transition: all .065s ease-out;
     }
 
@@ -131,9 +143,9 @@
         padding-left: 10px;
         padding-right: 10px;
         border: none;
-        border-bottom: solid;
+        /*border-bottom: solid;
         border-width: 1px;
-        border-color: rgb(224, 224, 224);
+        border-color: rgb(224, 224, 224);*/
     }
 
     .lastNavigationLinkDiv {
@@ -278,15 +290,20 @@
 }
 
 @media (max-width: 850px) {
-    .earthPinIllustration2 {
+    /*.earthPinIllustration2 {
         height: 0px;
         top: 0px;
         display: none;
-    }
+    }*/
 
-    .startBox {
-        left: 18vw;
+    .earthPinIllustration2 {
+        height: 290px;
+        top: 75px;
+        right: 5vw;
     }
+    /*.startBox {
+        left: 18vw;
+    }*/
 
 
 

@@ -26,7 +26,7 @@ export default class FooterBox extends React.Component {
                         );
                     }}>
                         <img alt="privacyPolicyIcon" className="footerLinkIcon" src="images/privacy-policy-icon.svg"></img>
-                        <p className="footerLinkText">privacy &#8211; policy</p>
+                        <p className="footerLinkText">privacy &amp; imprint</p>
                     </button>
 
                     <button className="footerLinkButton smallerFooterButton" onClick={() => {
