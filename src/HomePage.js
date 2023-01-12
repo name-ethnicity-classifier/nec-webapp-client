@@ -158,8 +158,12 @@ export default class HomePageBox extends React.Component {
 
                 <div id="startBox" className="startBox">
                     {/*<h1 className="startText slideInTop">request a custom classification model by choosing the exact nationalities you need and classify names for free</h1>
-                    <h1 className="startSubText slideInTop">to get started you should first check out...</h1>*/}
+                    <h1 className="startSubText slideInTop">to get started you should first check out...</h1>
                     <h1 className="startText slideInTop">customised name-ethnicity classification:<br/>you choose just the nationalities you need - we train your custom model for free.</h1>
+                    <h1 className="startText slideInTop">name-ethnicity classification with N2E:<br/>you choose the nationalities you need<br/>we train your custom model for free.</h1>
+                    <h1 className="startText slideInTop">name-ethnicity classification with N2E:<br/>classifiy names using one of our pretrained models or train your custom model for free.</h1>*/}
+                    <h1 className="startText slideInTop">name-ethnicity classification with N2E:<br/>you choose the nationalities you need -<br/>we train your custom model for free.</h1>
+
                     <h1 className="startSubText slideInTop">to get started, check out...</h1>
                     <button className="startButton slideInTop" onClick={(e) => {
                                 e.preventDefault();

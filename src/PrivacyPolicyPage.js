@@ -5,6 +5,9 @@ export default class PrivacyPolicyPage extends React.Component {
     render() {
         return (
             <div className="policyBox">
+                <h2>Imprint</h2>
+                <p>Theodor Peifer<br/>teddypeifer@gmail<br/>Clemensstraße 80803 Munich, Germany</p>
+
                 <h2>Privacy Policy</h2>
                 <p>Your privacy is important to us. It is name-to-ethnicity&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://www.name-to-ethnicity.com">https://www.name-to-ethnicity.com</a>, and other sites we own and operate. </p>
                 <p>This policy is effective as of 21 December 2021 and was last updated on 21 December 2021. </p>

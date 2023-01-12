@@ -1,16 +1,17 @@
 
 @media (max-width: 800px) {
 
-    .earthPinIllustration {
+    /*.earthPinIllustration2 {
         width: 0px;
         height: 0px;
         display: none;
-    }
+    }*/
 
     .earthPinIllustration2 {
-        width: 0px;
-        height: 0px;
-        display: none;    
+        height: 135px;
+        width: auto;
+        top: 65px;
+        left: 50vw;
     }
 
     .startBackground {
@@ -19,53 +20,59 @@
 
     .startBox {
         position: absolute;
-        top: 35px;
+        top: 45px;
         width: 330px;
-        left: calc(50% - 170px);
-        height: 250px;
+        left: calc(50% - 164px);
+        height: 150px;
         font-size: 11px;
+    }
+
+    .startText {
+        width: 100%;
     }
 
     .startSubText {
         top: 85px;
-        left: 95px;
-        font-size: 1.2em;
+        left: 0px;
+        font-size: 1.0em;
     }
 
     .startButton {
-        width: 120px;
-        height: 32px;
-        left: 103px;
-        top: 140px;
-        font-size: 1.2em;
+        width: 105px;
+        height: 30px;
+        left: 133px;
+        top: 104px;
+        font-size: 1.0em;
     }
 
     .startButton:active {
-        left: 108px;
-        top: 145px;
+        left: 138px;
+        top: 109px;
     }
     
     .startButtonShadow {
-        left: 108px;
-        top: 145px;
-        width: 120px;
-        height: 32px;
+        left: 138px;
+        top: 109px;
+        width: 105px;
+        height: 30px;
     }
 
     /* INFORMATION BOX */
 
     .informationButtonBox {
         flex-direction: column;
-        width: 275px;
+        width: 330px;
         height: 290px;
         background-color: rgba(106, 165, 28, 0);
         top: 250px;
-        left: calc(50% - 145px);
+        left: calc(50% - 165px);
     }
 
     .informationButton {
         width: 100%;
         margin: 7px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
    .informationButtonText {
@@ -240,9 +247,6 @@
         top: 555px;
         height: 1350px;
         margin-bottom: 100px;
-        border-top-style: solid;
-        border-top-width: 2px;
-        border-top-color: rgb(235, 235, 235);
     }
     
     .slideBox {
@@ -378,3 +382,14 @@
     
 }
 
+
+@media (max-width: 500px) {
+    .earthPinIllustration2 {
+        height: 350px;
+        width: auto;
+        top: 0px;
+        right: -175px;
+        left: auto;
+    }
+    
+}

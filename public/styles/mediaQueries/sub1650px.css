@@ -27,19 +27,19 @@
     }
 
     .startButton {
-        top: 235px;
+        top: 189px;
         left: 217px;
         height: 40px;
         width: 147px;
     }
 
     .startButton:active {
-        top: 241px;
+        top: 195px;
         left: 223px;
     }
     
     .startButtonShadow {
-        top: 241px;
+        top: 195px;
         left: 223px;
         height: 40px;
         width: 147px;
@@ -91,9 +91,6 @@
         height: 700px;
         width: 1100px;
         background-color: transparent;
-        border-top-style: solid;
-        border-top-width: 2px;
-        border-top-color: rgb(235, 235, 235);
     }
     
     .slideBox {
@@ -214,7 +211,6 @@
         top: 1250px;
         right: 100px;
         height: 1000px;
-        border-top: 2px solid rgb(235, 235, 235);
         left: calc(50% - 555px);
         width: 1100px;
     }
@@ -249,7 +245,6 @@
         width: 495px;
         height: 1050px;
         bottom: 30px;
-        border-right: 2px solid rgb(235, 235, 235);
         z-index: 1;
     }
     

@@ -15,7 +15,7 @@
     height: 626px;
     margin: 0;
     padding: 0;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    /*box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);*/
     background: linear-gradient(to bottom right, rgb(72, 83, 235) 30%, rgb(138, 65, 255));
 }
 
@@ -48,12 +48,12 @@
 .startBox {
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     width: 700px;
     height: 350px;
     left: 12vw;
     background-color: rgba(245, 218, 218, 0);
-    top: 110px;
+    top: 130px;
     font-size: 25px;
     line-height: 50px;
 }
@@ -63,14 +63,15 @@
     font-size: 1.325em;
     color: white;
     top: 0px;
-    text-align: center;
+    text-align: left;
     line-height: 1.55em;
 }
 
 .startSubText {
     position: absolute;
     top: 200px;
-    font-size: 0.7em;
+    left: 0px;
+    font-size: 0.8em;
     color: white;
     font-weight: 400;
 }
@@ -79,8 +80,8 @@
 .startButton {
     position: absolute;
     left: 249px;
-    top: 272px;
-    height: 55px;
+    top: 216px;
+    height: 45px;
     width: 200px;
     border: solid 1px white;
     background-color: transparent;
@@ -98,8 +99,8 @@
 }
 
 .startButton:active {
-    top: 280px;
-    left: 258px;
+    top: 223px;
+    left: 257px;
     -moz-transition: all .035s ease-out;
     -o-transition: all .035s ease-out;
     -webkit-transition: all .035s ease-out;
@@ -108,9 +109,9 @@
 
 .startButtonShadow {
     position: absolute;
-    left: 257px;
-    top: 280px;
-    height: 55px;
+    left: 256px;
+    top: 223px;
+    height: 45px;
     width: 201px;
     border: none;
     background-color: rgba(0, 0, 0, 0.2);
@@ -141,16 +142,16 @@
     border-color: rgb(225, 225, 225);
     border-bottom-width: 1px;
     color: rgb(63, 63, 63);
-    z-index: 3;
-    transition: all .08s ease-out;
     border-radius: 4px;
+    z-index: 3;
+    transition: all .05s ease-out;
 }
 
 .informationButton:hover {
-    transform: scale(1.015);
-    border-bottom-color: rgb(190, 190, 190);
+    transform: scale(1.01);
+    border-bottom-color: rgb(200, 200, 200);
     box-shadow: 0 10px 25px -15px rgb(148, 148, 148);
-    transition: all .08s ease-out;
+    transition: all .05s ease-out;
 }
 
 
@@ -338,8 +339,8 @@
     width: 1500px;
     background-color: rgba(233, 252, 236, 0);
     border-top-style: solid;
-    border-top-width: 2px;
-    border-top-color: rgb(235, 235, 235);
+    border-top-width: 1px;
+    border-top-color: rgb(225, 225, 225);
 }
 
 .slideBox {
@@ -594,7 +595,7 @@
     height: 1000px;
     left: calc(50vw - 760px);
     width: 1500px;
-    border-top: 2px solid rgb(235, 235, 235);
+    border-top: 1px solid rgb(225, 225, 225);
 }
 
 .explainationBoxTitle {
@@ -633,7 +634,7 @@
     width: 718px;
     height: 1025px;
     bottom: 30px;
-    border-right: 2px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(225, 225, 225);
     z-index: 1;
 }
 
