@@ -351,17 +351,8 @@
     height: 700px;
 }
 
-.slideInBottom {
-    grid-column: 1 / 2;
-    transform: translateY(25%);
-    opacity: 0;
-    transition: opacity 650ms ease-in, transform 650ms ease-in;
-}
 
-.slideInBottom.appear {
-    opacity: 1;
-    transform: translateX(0%);
-}
+
 
 .slideInTop {
     grid-column: 2 / 4;
@@ -460,6 +451,42 @@
     -webkit-transition: all .15s ease-out;
     transition: all .15s ease-out;
 }
+
+
+.aboutPaperBox {
+    position: absolute;
+    top: 685px;
+    left: calc(50% - 225px);
+    width: 400px;
+    height: 165px;
+    border: none;
+    border-radius: 5px;
+    border: solid rgb(226, 231, 255) 1px;
+    padding: 30px;
+    z-index: 3;
+    line-height: 20px;
+    box-shadow: 0 0 30px rgba(12, 64, 160, 0.15);
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+
+.paperLink {
+    text-decoration: none;
+    font-weight: 400;
+    color: rgb(42, 72, 243);
+    font-family: 'Source Sans Pro', sans-serif;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.paperLink:hover {
+    color: rgb(135, 152, 250);
+}
+
 
 
 .aboutSponsorButton {

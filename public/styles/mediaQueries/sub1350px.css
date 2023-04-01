@@ -1,3 +1,18 @@
+@media (min-width: 1350px) {
+    .slideInBottom {
+        grid-column: 1 / 2;
+        transform: translateY(25%);
+        opacity: 0;
+        transition: opacity 650ms ease-in, transform 650ms ease-in;
+    }
+
+    .slideInBottom.appear {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
 @media (max-width: 1350px) {
     .startBackground {
         height: 475px;
@@ -125,7 +140,7 @@
         left: calc(50% - 41vw);
         width: 80vw;
         top: 647px;
-        height:800px;
+        height: 800px;
         margin-bottom: 100px;
     }
     
@@ -168,6 +183,14 @@
         top: 60px;
         width: 580px;
         height: 340px;
+        left: calc(50% - 320px);
+    }
+
+    .aboutPaperBox {
+        position: relative;
+        top: 90px;
+        width: 580px;
+        height: 140px;
         left: calc(50% - 320px);
     }
 
@@ -218,7 +241,7 @@
         width: 80vw;
         left: calc(50% - 41.5vw);
         height: auto;
-        top: 2085px;
+        top: 2350px;
     }
     
     .explainationBoxTitle {
@@ -313,7 +336,7 @@
     }
 
     .homePageBox {
-        padding-bottom: 3800px;
+        padding-bottom: 4000px;
     }
 
 

@@ -266,6 +266,14 @@ export default class HomePageBox extends React.Component {
                                 <b>Franziska Hafner</b> - MA Student in Computer Science and Public Policy, University of Glasgow
                             </h1>
                         </div>
+
+                        <div className="aboutPaperBox aboutSubBox">
+                            <h1 className="aboutSubTitle">... our paper</h1>
+ 
+                            <h1 className="aboutText">
+                                If you'd like to read more about the science behind our approach and how our fairness-aware AI design distinguishes our tool from competitors, please have a look at the <a className="paperLink" href="https://link.springer.com/article/10.1007/s00146-022-01619-4">academic paper</a> we published in <i>"AI & Society: Knowledge, Culture and Communication"</i>.
+                            </h1>
+                        </div>
                         
                     </div>
                     <img alt="undraw-illustration" src="images\undraw_connected_world_wuay.svg" className="analyticsIllustration slideInBottom"></img>

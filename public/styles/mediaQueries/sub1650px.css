@@ -164,6 +164,12 @@
         -webkit-transition: all .15s ease-out;
         transition: all .15s ease-out;
     }
+
+    .aboutPaperBox {
+        width: 320px;
+        left: calc(50% - 185px);
+        top: 785px;
+    }
     
     .aboutSponsorButton {
         position: absolute;

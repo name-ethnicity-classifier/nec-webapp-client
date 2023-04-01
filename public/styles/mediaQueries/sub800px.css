@@ -1,5 +1,22 @@
 
+/*@media (min-width: 800px) {
+    .slideInBottom {
+        grid-column: 1 / 2;
+        transform: translateY(25%);
+        opacity: 0;
+        transition: opacity 650ms ease-in, transform 650ms ease-in;
+    }
+
+    .slideInBottom.appear {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}*/
+
 @media (max-width: 800px) {
+
+    
+    
 
     /*.earthPinIllustration2 {
         width: 0px;
@@ -291,6 +308,15 @@
         padding: 15px;
     }
 
+    .aboutPaperBox {
+        position: relative;
+        top: 60px;
+        width: 300px;
+        height: 175px;
+        left: 0px;
+        padding: 15px;
+    }
+
     .aboutText {
         line-height: 25px;
     }
@@ -303,7 +329,7 @@
 
     .explainationBox {
         position: absolute;
-        top: 1910px;
+        top: 2160px;
         left: calc(50% - 165px);
         width: 330px;
         margin: 0px;
@@ -342,7 +368,7 @@
     }
 
     .homePageBox {
-        padding-bottom: 4000px;
+        padding-bottom: 4200px;
     }
 
     /* SETTING BOX */
