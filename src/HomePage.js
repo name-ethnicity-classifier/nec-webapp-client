@@ -2,7 +2,7 @@ import React from "react";
 import PresentBox from "./PresentBox";
 import axios from "axios";
 import Cookies from "js-cookie";
-import FooterBox from "./FooterBox";
+import CookieConsent from "react-cookie-consent";
 import config from "./config";
 import ShadowButton from "./ShadowButton";
 
@@ -157,11 +157,6 @@ export default class HomePageBox extends React.Component {
                 <div className="startBackground"></div>
 
                 <div id="startBox" className="startBox">
-                    {/*<h1 className="startText slideInTop">request a custom classification model by choosing the exact nationalities you need and classify names for free</h1>
-                    <h1 className="startSubText slideInTop">to get started you should first check out...</h1>
-                    <h1 className="startText slideInTop">customised name-ethnicity classification:<br/>you choose just the nationalities you need - we train your custom model for free.</h1>
-                    <h1 className="startText slideInTop">name-ethnicity classification with N2E:<br/>you choose the nationalities you need<br/>we train your custom model for free.</h1>
-                    <h1 className="startText slideInTop">name-ethnicity classification with N2E:<br/>classifiy names using one of our pretrained models or train your custom model for free.</h1>*/}
                     <h1 className="startText slideInTop">name-ethnicity classification with N2E:<br/>you choose the nationalities you need -<br/>we train your custom model for free.</h1>
 
                     <h1 className="startSubText slideInTop">to get started, check out...</h1>
@@ -182,7 +177,6 @@ export default class HomePageBox extends React.Component {
                         <h1 className="informationButtonText">{this.state.amountNationalities < 10 ? <b>&nbsp;</b> : null}{this.state.amountNationalities}</h1>
                         <h1 className="informationButtonExplaination nationalityAmountExplaination">nationalities to choose from</h1>
                     </button>
-                    {/*<div className="shadowBox1"></div>*/}
 
                     {this.state.showDatasetTable ? 
                                 <PresentBox propClassName={"datasetPresentBox"} type={"nationalityData"} boxTitle={"the dataset"} keys={["nationality", "amount"]} searchBar={true}/> 
@@ -196,7 +190,6 @@ export default class HomePageBox extends React.Component {
                         <h1 className="informationButtonText">{this.state.amountStandardModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountStandardModels}</h1>
                         <h1 className="informationButtonExplaination standardModelsExplaination">already trained standard models</h1>
                     </button>
-                    {/*<div className="shadowBox2"></div>*/}
 
                     {this.state.showModelTable ? 
                                 <PresentBox propClassName={"modelPresentBox"} type={"modelData"} boxTitle={"standard models"} keys={["model name", "accuracy"]}/>
@@ -209,7 +202,6 @@ export default class HomePageBox extends React.Component {
                         <h1 className="informationButtonText">{this.state.amountCustomModels < 10 ? <b>&nbsp;</b> : null}{this.state.amountCustomModels}</h1>
                         <h1 className="informationButtonExplaination customModelsExplaination">custom models</h1>
                     </button>
-                    {/*<div className="shadowBox3"></div>*/}
 
                     {this.state.showCustomModelTable ? 
                                 <PresentBox propClassName={"modelPresentBox"} type={"customModelData"} boxTitle={"custom models"} keys={["model name", "accuracy"]}/>
@@ -263,7 +255,7 @@ export default class HomePageBox extends React.Component {
                             </h1>
 
                             <h1 className="aboutText">
-                                <b>Franziska Hafner</b> - MA Student in Computer Science and Public Policy, University of Glasgow
+                                <b>Franziska Hafner</b> - MSc, Student in Social Data Science, University of Oxford
                             </h1>
                         </div>
 
@@ -322,6 +314,20 @@ export default class HomePageBox extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <CookieConsent
+                    location="bottom"
+                    buttonText="I consent"
+                    cookieName="cookie-consent"
+                    enableDeclineButton
+                    style={{ background: "#2B373B" }}
+                    buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+                    expires={150}
+                >
+                    We use cookies to securely log you into your account.
+                    By accepting, you agree to the use of necessary cookies for authentication purposes. 
+                    For more details, please read our <a href="/privacy-policy#cookies">Privacy Policy</a>.
+                </CookieConsent>
             </div>
         );
     }

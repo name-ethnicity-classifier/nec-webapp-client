@@ -48,7 +48,7 @@ export default class FooterBox extends React.Component {
                         <p className="footerLinkText">terms of service</p>
                     </button>
                 </div>
-                <p className="copyRightText">© copyright 2022, Theodor Peifer (teddypeifer@gmail.com)</p>
+                <p className="copyRightText">© copyright 2022, Theodor Peifer (theodorpeifer@gmail.com)</p>
                 
                 {document.location.pathname === "/" ? <div className="goTopBackground">
                     <button className="goTopButton" onClick={() => {

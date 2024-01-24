@@ -87,7 +87,7 @@
     background-color: transparent;
     border-radius: 5px;
     font-size: 0.7em;
-    font-family: 'Roboto';
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
     text-align: center;
     outline: none;
@@ -166,7 +166,7 @@
 .informationButtonExplaination {
     position: absolute;
     font-size: 27px;
-    font-family: 'Roboto';
+    font-family: 'Source Sans Pro', sans-serif;
     width: 200px;
     top: 23px;
     left: 180px;
@@ -204,7 +204,7 @@
 .nationalityAmountExplaination {
     position: absolute;
     font-size: 27px;
-    font-family: 'Roboto';
+    font-family: 'Source Sans Pro', sans-serif;
     width: 200px;
     top: 23px;
     left: 180px;
@@ -258,7 +258,7 @@
     position: absolute;
     color: rgb(63, 63, 63);
     font-size: 27px;
-    font-family: 'Roboto';
+    font-family: 'Source Sans Pro', sans-serif;
     width: 200px;
     top: 23px;
     left: 160px;
@@ -477,7 +477,7 @@
     text-decoration: none;
     font-weight: 400;
     color: rgb(42, 72, 243);
-    font-family: 'Roboto';
+    font-family: 'Source Sans Pro', sans-serif;
     border: none;
     outline: none;
     background-color: transparent;
@@ -510,7 +510,7 @@
     font-weight: 400;
     color: rgb(56, 56, 56);
     text-align: justify;
-    line-height: 30px;
+    line-height: 26px;
 }
 
 .aboutPadding {

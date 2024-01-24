@@ -288,7 +288,7 @@ export default class SettingsBox extends React.Component {
 
                     <div className="informationSection">
                         <b><p className="informationSectionTitle">email:</p></b>
-                        <p className="informationSectionText">teddypeifer@gmail.com</p>                    
+                        <p className="informationSectionText">theodorpeifer@gmail.com</p>                    
                     </div>
 
                     <div className="informationSection">
