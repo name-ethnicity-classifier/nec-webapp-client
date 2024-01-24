@@ -118,7 +118,7 @@
     border-radius: 0px; 
     text-align: left;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
     padding-top: 7px;
     padding-bottom: 7px;
@@ -181,7 +181,7 @@
     right: 10px;
     font-size: 16px;
     line-height: 19px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: red;
 }
 
@@ -268,7 +268,7 @@
 .showNationalitiesButton {
     position: relative;
     top: 2px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     font-size: 20px;
     outline: none;
     line-height: 0px;
@@ -372,14 +372,14 @@
     width: 1000px;
     font-weight: 400;
     color: rgb(63, 63 ,63);
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
 }
 
 .fileFormatButton {
     font-size: 20px;
     font-weight: 400;
     color: rgb(42, 72, 243);
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     border: none;
     outline: none;
     background-color: transparent;
