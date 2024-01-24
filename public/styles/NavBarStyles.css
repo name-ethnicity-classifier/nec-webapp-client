@@ -36,7 +36,7 @@
     text-align: center;
     font-size: 22px;
     font-weight: 600;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     white-space: nowrap;
     letter-spacing: 1px;
     font-feature-settings: "kern";
@@ -86,7 +86,7 @@
 
 .navigationButton {
     position: relative;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     padding: 0px;
     top: 16px;
     left: 50%;
@@ -122,7 +122,7 @@
     border: none;
     border-right: solid 1px rgb(224, 224, 224);
     background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     font-size: 16px;
     font-weight: 600;
     text-align: center;
@@ -137,7 +137,7 @@
     outline: none;
     border: none;
     background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     font-size: 16px;
     font-weight: 600;
     text-align: center;
@@ -156,7 +156,7 @@
     outline: none;
     border: none;
     background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     font-size: 16px;
     font-weight: 600;
     color: rgb(50, 50, 50);

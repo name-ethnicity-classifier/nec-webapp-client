@@ -86,7 +86,7 @@
     position: absolute;
     top: -5px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
 }
 
@@ -98,7 +98,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
 }
 
@@ -119,7 +119,7 @@
     position: absolute;
     top: -6px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
 }
 
@@ -176,7 +176,7 @@
     position: absolute;
     top: -5px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
 }
 
@@ -185,7 +185,7 @@
     left: 150px;
     top: -5px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
 }
 
@@ -209,7 +209,7 @@
     left: 12px;
     top: 55px;
     font-size: 17px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 63, 63);
 }
 
@@ -382,7 +382,7 @@
 
 .showPrivacyPolicyButton {
     position: absolute;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     color: rgb(63, 124, 247);
     left: 12px;
     font-size: 17px;

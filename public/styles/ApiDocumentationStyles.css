@@ -293,7 +293,7 @@
 
 .apiEndpointText {
     position: absolute;
-    font-family: 'Source Sans Pro', sans-serif;;
+    font-family: 'Roboto';;
     left: 100px;
     top: -3px;
     letter-spacing: 0px;
@@ -430,7 +430,7 @@
 
 .responseCodeText {
     position: relative;
-    font-family: 'Source Sans Pro', sans-serif;;
+    font-family: 'Roboto';;
     left: 100px;
     width: calc(100% - 120px);
     top: 14px;
