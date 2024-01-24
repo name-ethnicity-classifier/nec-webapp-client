@@ -51,6 +51,8 @@
     font-size: 22px;
     color: white;
     font-weight: 600;
+    margin-bottom: 0px;
+    margin-top: 17px;
 }
 
 .authChoiceButton {
@@ -201,7 +203,7 @@
     left: 0px;
     right: 0px;
     top: 115px;
-    height: 450px;
+    height: 460px;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0 10px 25px -15px rgb(34, 34, 34);
@@ -345,11 +347,11 @@
 }
 
 .signupSubmitButton {
-    top: 370px;
+    top: 380px;
 }
 
 .signupSubmitButton:active {
-    top: 378px;
+    top: 388px;
 }
 
 .submitAuthButton:hover {
@@ -374,7 +376,7 @@
 }
 
 .signupShadow {
-    top: 379px;
+    top: 389px;
 }
 
 .authButtonShadow {
@@ -417,7 +419,7 @@
     -o-appearance:none;
     position: absolute;
     top: 324px;
-    left: 38px;
+    left: 30px;
     height: 17px;
     width: 17px;
     border: solid 1px rgb(126, 126, 126);
@@ -434,7 +436,7 @@
 .checkMark {
     position: absolute;
     top: 331px;
-    left: 46px;
+    left: 38px;
     height: 9px;
     width: 9px;
     background-color: rgb(255, 255, 255);
@@ -450,8 +452,9 @@
     position: absolute;
     top: 311px;
     font-family: inherit;
-    left: 70px;
-    font-size: 15px;
+    left: 60px;
+    right: 30px;
+    font-size: 14px;
 }
 
 .termsOfServicePeriod {
